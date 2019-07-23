@@ -1,0 +1,14 @@
+.wrapper {
+  background-color: rgb(172, 70, 65);
+  background-position: 10% center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 3vh;
+  display: flex;
+  align-items: center;
+  height: 4vh;
+  padding: 0 2vw;
+}
+img {
+  max-height: 30px;
+}
