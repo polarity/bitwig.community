@@ -2,7 +2,7 @@ import React from 'react'
 import Typography from '../components/typography'
 import Header from '../components/header'
 import SignIn from '../components/sign-in'
-
+import { Link } from 'gatsby'
 const validate = () => {
   // Confirm the link is a sign-in with email link.
   if (window.firebase.auth().isSignInWithEmailLink(window.location.href)) {
@@ -27,6 +27,7 @@ const validate = () => {
         // result.additionalUserInfo.profile == null
         // You can check if the user is new or existing:
         // result.additionalUserInfo.isNewUser
+        window.location = '/'
       })
       .catch((error) => {
         // Some error occurred, you can inspect the code: error.code
@@ -35,13 +36,16 @@ const validate = () => {
   }
 }
 const ValidateMail = () => {
-  validate()
+  if (typeof window !== 'undefined') {
+    validate()
+  }
+
   return <div>
     <Header />
     <SignIn />
 
     <Typography>
-      <p>You are logged in now</p>
+      <p>You are logged in now. <Link to='/'>back to the site</Link></p>
     </Typography>
   </div>
 }

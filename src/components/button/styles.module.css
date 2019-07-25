@@ -1,0 +1,7 @@
+.button {
+  border: 0;
+  padding: 1vh 2vh;
+  display: inline-block;
+  color: #000;
+  cursor: pointer;
+}

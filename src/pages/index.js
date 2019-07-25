@@ -32,7 +32,7 @@ export default Mapped(({ modalLoginState }) => <div>
   <SignIn />
   <Grid>
     <ContentContainer img='made-with-bitwig.png'>
-      <h2>Welcome Bitwigger ->{modalLoginState}</h2>
+      <h2>Welcome Bitwigger</h2>
       <p>
         On this website we want to summarize news and content
         from all over the net that has been created
@@ -44,7 +44,7 @@ export default Mapped(({ modalLoginState }) => <div>
       <p>
         Make this page your browser <b>startpage</b> or at least <a href='https://bitwig.community'>bookmark it</a>.
         If you want to support the development, use
-        the <a href='https://www.patreon.com/polarity_music'><span role='img' aria-label='Champion Emojj'>🏆 </span>patreon</a>.
+        the <span role='img' aria-label='Champion Emojj'>🏆</span> <a href='https://www.patreon.com/polarity_music'>patreon</a>.
         For feedback use
         the <a href='https://discord.gg/0g2ZPafIN3eWParf'>bitwig discord</a>.
       </p>
@@ -59,15 +59,15 @@ export default Mapped(({ modalLoginState }) => <div>
     <ContentContainer img='Bitwig-Studio-Screenshot.png'>
       <h2>Quick Links</h2>
       <ul>
-        <li><a target='_blank' href='https://www.bitwig.com/en/download.html'>Bitwig Download / Demo</a> - Try it for yourself (Linux/Mac/Win)</li>
-        <li><a target='_blank' href='mailto:contact@bitwig.com'>Support Mail</a> - Found a Bug?</li>
-        <li><a target='_blank' href='https://www.youtube.com/watch?v=GRNzPc3UpYg'>Bitwig Key Features</a> Plug-in Hosting & Crash Protection (video)</li>
-        <li><a target='_blank' href='https://www.youtube.com/watch?v=zvPhIm6Ttd8'>Getting around in The Grid</a> (video)</li>
-        <li><b>#bitwig</b> on <a href='https://twitter.com/hashtag/bitwig'>twitter</a>, <a target='_blank' href='https://www.instagram.com/explore/tags/bitwig/'>instagram</a> and <a target='_blank' href='https://www.facebook.com/hashtag/bitwig'>facebook</a></li>
-        <li><a target='_blank' href='https://discord.gg/0g2ZPafIN3eWParf'>Bitwig Chat</a> - Discord</li>
-        <li><a target='_blank' href='https://www.youtube.com/user/thechangeofends'>Brian Bollmann</a> - Videos of all bitwig devices & modulators (maybe outdated)</li>
-        <li>lastest Bitwig Videos on <a target='_blank' href='https://www.youtube.com/results?search_query=bitwig&sp=CAI%253D'>youtube</a> and <a href='https://vimeo.com/search/sort:latest?q=bitwig'>vimeo</a> / <sub>thx wavedigit</sub></li>
-        <li><span title='new addition to the site!' role='img' aria-label='Fire Emojj'>🔥</span> Made With Bitwig <a target='_blank' href='https://open.spotify.com/playlist/579Upg3ro2afKOn25UpPor'>Spotify Playlist</a> by Martin Glover</li>
+        <li><a href='https://www.bitwig.com/en/download.html'>Bitwig Download / Demo</a> - Try it for yourself (Linux/Mac/Win)</li>
+        <li><a href='mailto:contact@bitwig.com'>Support Mail</a> - Found a Bug?</li>
+        <li><a href='https://www.youtube.com/watch?v=GRNzPc3UpYg'>Bitwig Key Features</a> Plug-in Hosting & Crash Protection (video)</li>
+        <li><a href='https://www.youtube.com/watch?v=zvPhIm6Ttd8'>Getting around in The Grid</a> (video)</li>
+        <li><b>#bitwig</b> on <a href='https://twitter.com/hashtag/bitwig'>twitter</a>, <a href='https://www.instagram.com/explore/tags/bitwig/'>instagram</a> and <a href='https://www.facebook.com/hashtag/bitwig'>facebook</a></li>
+        <li><a href='https://discord.gg/0g2ZPafIN3eWParf'>Bitwig Chat</a> - Discord</li>
+        <li><a href='https://www.youtube.com/user/thechangeofends'>Brian Bollmann</a> - Videos of all bitwig devices & modulators (maybe outdated)</li>
+        <li>lastest Bitwig Videos on <a href='https://www.youtube.com/results?search_query=bitwig&sp=CAI%253D'>youtube</a> and <a href='https://vimeo.com/search/sort:latest?q=bitwig'>vimeo</a> / <sub>thx wavedigit</sub></li>
+        <li><span title='new addition to the site!' role='img' aria-label='Fire Emojj'>🔥</span> Made With Bitwig <a href='https://open.spotify.com/playlist/579Upg3ro2afKOn25UpPor'>Spotify Playlist</a> by Martin Glover</li>
       </ul>
 
       <h2>Samples</h2>

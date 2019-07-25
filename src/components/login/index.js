@@ -1,5 +1,6 @@
 import React from 'react'
 import { mapper } from '@reduxless/react'
+import styles from './styles.module.css'
 
 const Mapped = mapper({}, {
   openLogin: (store, ownProps, data) => {
@@ -7,6 +8,12 @@ const Mapped = mapper({}, {
   }
 })
 
-export default Mapped(({openLogin}) => {
-  return <div><button onClick={openLogin}>login</button></div>
-})
+export default Mapped(({openLogin}) =>
+  <div>
+    <span
+      className={styles.login}
+      onClick={openLogin}>
+      login
+    </span>
+  </div>
+)

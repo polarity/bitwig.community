@@ -5,6 +5,7 @@ import Typography from '../typography'
 import FormRow from '../form-row'
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import Button from '../button'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -19,21 +20,23 @@ class Signin extends Component {
       user: false,
       email: false
     }
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({
-          usermail: user.email
-        })
-      } else {
+    if (typeof window !== 'undefined') {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          this.setState({
+            usermail: user.email
+          })
+        } else {
 
-      }
-    })
+        }
+      })
+    }
   }
   createLink (email) {
     const actionCodeSettings = {
       // URL you want to redirect back to. The domain (www.example.com) for this
       // URL must be whitelisted in the Firebase Console.
-      url: window.location + 'validatemail',
+      url: window.location + 'validatemail/index.html',
       // This must be true.
       handleCodeInApp: true,
       iOS: {
@@ -88,10 +91,14 @@ class Signin extends Component {
                   <p>{this.state.info}</p>
                 }
                 {this.state.usermail &&
-                  <p>
-                    looks like you are still logged in with "{this.state.usermail}"
-                    <button onClick={this.props.setModalLoginState}>Cancel</button>
-                  </p>
+                  <div>
+                    <p>
+                      looks like you are still logged in with "{this.state.usermail}"
+                    </p>
+                    <p>
+                      <Button onClick={this.props.setModalLoginState}>Cancel</Button>
+                    </p>
+                  </div>
                 }
               </Typography>
             </div>
@@ -104,8 +111,8 @@ class Signin extends Component {
                 </FormRow>
                 <FormRow>
                   <label>send</label>
-                  <button onClick={this.handleSend.bind(this)}>Login</button>
-                  <button onClick={this.props.setModalLoginState}>Cancel</button>
+                  <Button onClick={this.handleSend.bind(this)}>Login</Button>
+                  <Button onClick={this.props.setModalLoginState}>Cancel</Button>
                 </FormRow>
               </Typography>
             }

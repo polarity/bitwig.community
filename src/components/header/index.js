@@ -12,7 +12,7 @@ const Mapped = mapper({
 
 export default Mapped(({ children, loggedInUser }) =>
   <header className={styles.wrapper}>
-    <a href='https://bitwig.community'><img alt='Bitwig Community Logo by Amadeus Paulussen' src='bitwig-logo.png' className={styles.img} /></a>
+    <a href='https://bitwig.community'><img alt='Bitwig Community Logo by Amadeus Paulussen' src='/bitwig-logo.png' className={styles.img} /></a>
     <Typography>
       {!loggedInUser && <Login />}
       {loggedInUser && <Logout><span>welcome {loggedInUser.displayName}</span></Logout>}

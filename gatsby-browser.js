@@ -6,30 +6,31 @@ import config from './.env.js'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
-firebase.initializeApp(config)
-
 /**
  * Reduxless init
- */
-const store = createStore({
-  initialState: {
-    modalLoginState: false,
-    loggedInUser: {
+ * {
       uid: '',
       displayName: '',
       email: '',
       photoURL: ''
     }
+ */
+const store = createStore({
+  initialState: {
+    modalLoginState: false,
+    loggedInUser: false
   }
 })
-
+window.firebase = firebase
+window.firebase.initializeApp(config)
 /**
  * firebase init
  * subscribe to the login event
  * and set the localStorage for the user
  */
-firebase.auth().onAuthStateChanged((user) => {
+window.firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    console.log('log in', user)
     // User is signed in.
     store.set('loggedInUser', {
       uid: user.uid || false,
@@ -38,9 +39,9 @@ firebase.auth().onAuthStateChanged((user) => {
       photoURL: user.photoURL || ''
     })
   } else {
-    // User is signed out.
+  // User is signed out.
     console.log('Logged out')
-    store.set('loggedInUser', {})
+    store.set('loggedInUser', false)
   }
 })
 
