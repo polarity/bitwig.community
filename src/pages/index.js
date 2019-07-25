@@ -6,8 +6,15 @@ import Grid from '../components/grid'
 import YoutubeContainer from '../components/content-container-youtube'
 import SectionHeader from '../components/section-header'
 import { Helmet } from 'react-helmet'
+import SignIn from '../components/sign-in'
+import { mapper } from '@reduxless/react'
 
-export default () => <div>
+const Mapped = mapper({
+  modalLoginState: store => store.get('modalLoginState')
+}, {
+})
+
+export default Mapped(({ modalLoginState }) => <div>
   <Helmet>
     <meta charSet='utf-8' />
     <title>Bitwig Studio Community - Cool people using the best DAW</title>
@@ -22,10 +29,10 @@ export default () => <div>
   </Helmet>
 
   <Header />
-
+  <SignIn />
   <Grid>
     <ContentContainer img='made-with-bitwig.png'>
-      <h2>Welcome Bitwigger</h2>
+      <h2>Welcome Bitwigger ->{modalLoginState}</h2>
       <p>
         On this website we want to summarize news and content
         from all over the net that has been created
@@ -179,4 +186,4 @@ export default () => <div>
     </ContentContainer>
   </Grid>
 
-</div>
+</div>)

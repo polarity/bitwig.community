@@ -1,0 +1,7 @@
+.formRow {
+  display: flex;
+  justify-content: flex-start;
+}
+.formRow label {
+  width: 10vw;
+}

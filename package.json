@@ -13,6 +13,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@reduxless/core": "^4.0.0",
+    "@reduxless/react": "^4.0.0",
+    "firebase": "^6.3.1",
     "gatsby": "^2.13.9",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-source-youtube-v2": "^1.0.1",
