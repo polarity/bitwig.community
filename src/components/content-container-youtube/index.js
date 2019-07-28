@@ -13,7 +13,7 @@ export default ({ children, channelId, title }) => {
     <StaticQuery
       query={graphql`
         query {
-          allYoutubeVideo(sort: {fields: publishedAt, order: DESC}) {
+          allYoutubeVideo(sort: {fields: publishedAt, order: DESC}, filter: {title: {regex: "/bitwig|grid/gi"}}) {
             edges {
               node {
                 id
