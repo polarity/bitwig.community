@@ -30,7 +30,6 @@ const firebaseConfig = {
   messagingSenderId: process.env.FIREBASE_SENDER_ID
 }
 
-console.log('---> ', firebaseConfig)
 window.firebase = firebase
 window.firebase.initializeApp(firebaseConfig)
 /**
