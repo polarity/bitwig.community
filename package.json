@@ -15,7 +15,9 @@
   "dependencies": {
     "@reduxless/core": "^4.0.0",
     "@reduxless/react": "^4.0.0",
+    "dotenv": "^8.0.0",
     "firebase": "^6.3.1",
+    "fs": "0.0.1-security",
     "gatsby": "^2.13.9",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-source-youtube-v2": "^1.0.1",
