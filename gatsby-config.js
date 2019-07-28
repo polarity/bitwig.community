@@ -41,7 +41,7 @@ module.exports = {
           'UCn2Z_OilkVqNzkBTWOmkDMQ',
           'UCKAr00QT8YRT5G4P47H-gkg'
         ],
-        apiKey: process.env.YOUTUBE_API_KEY,
+        apiKey: process.env.GATSBY_YOUTUBE_API_KEY,
         maxVideos: 10 // Defaults to 50
       }
     }
