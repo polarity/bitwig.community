@@ -8,13 +8,9 @@
   text-indent: -99999px;
   overflow: hidden;
   display: block;
-  background-blend-mode: luminosity;
   background: rgb(26,26,26);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 56.25%;
-}
-.wrapper:hover .articleImage {
-  background-blend-mode: normal;
 }
