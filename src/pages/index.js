@@ -8,6 +8,7 @@ import SectionHeader from '../components/section-header'
 import { Helmet } from 'react-helmet'
 import SignIn from '../components/sign-in'
 import { mapper } from '@reduxless/react'
+// import Chatbox from '../components/chatbox'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -87,6 +88,9 @@ export default Mapped(({ modalLoginState }) => <div>
       <p>Youtube is a great place to show what you've done. Get a youtube account, film your Bitwig creation and send it to us (mail coming soon, use <a href='https://discord.gg/0g2ZPafIN3eWParf'>discord</a> in the meantime).</p>
       <p>This time <a href='https://www.youtube.com/channel/UCn2Z_OilkVqNzkBTWOmkDMQ'>Sparvnätter</a> is showing off some nice Grid patches on youtube.</p>
     </YoutubeContainer>
+    <YoutubeContainer title='Gridniks: Empty Vessel' channelId='UCA3Fs29IqExQki0RdTTEuDg'>
+      <p>Empty Vessel is sitting in a small studio in Otago, New Zealand making noises and trying not to buy any more vintage samplers.</p>
+    </YoutubeContainer>
   </Grid>
 
   <SectionHeader h='Video Tutorials'>
@@ -97,14 +101,11 @@ export default Mapped(({ modalLoginState }) => <div>
     <YoutubeContainer title='Bitwig Official' channelId='UCkVdkd-DBrvSbpC4gefsnkw'>
       <p>The official Bitwig Youtube channel with tutorials and trailers. If you are a Bitwig user you have to subscribe!</p>
     </YoutubeContainer>
+    <YoutubeContainer title='Noize Busters' channelId='UCKAr00QT8YRT5G4P47H-gkg'>
+      <p>Being a successful musician, dj and producer myself, and combining these assets with my well rooted experience as Live music and Studio engineer, I have a founded knowledge for music productions as well as for all of the acoustics, hardware, and everything that revolves around it.</p>
+    </YoutubeContainer>
     <YoutubeContainer title='Mattias Holmgren' channelId='UCPI1x2iyASeNaeRYVSGXTqA'>
       <p>I created this channel to bring my interest in technology, music and design to a tight platform. I've been a professional artist, composer and designer for 20 years and thought I should share a few tricks and help the future generation of creative producers.</p>
-    </YoutubeContainer>
-    <YoutubeContainer title='Baphometrix' channelId='UCuzDmHD4WeS4dwhFXPgm7GA'>
-      <p>Baphometrix makes very detailed videos on all topics concerning Bitwig. If other videos are too flat or don't give you enough information, here you can find long and detailed videos with all details.</p>
-    </YoutubeContainer>
-    <YoutubeContainer title='Land Of Bits' channelId='UCy734gZ6oxkntXZMfCcpbbQ'>
-      <p>Small music oriented tutorials. How to get things done in bitwig without loosing the focus of making music.</p>
     </YoutubeContainer>
     <YoutubeContainer title='Polarity Music' channelId='UC6fkScAhWG63SUSr3D1MI6w'>
       <p>
@@ -112,6 +113,14 @@ export default Mapped(({ modalLoginState }) => <div>
         and is busy on Youtube and Discord doing all kinds of stuff. The Videos
         are always practial.
       </p>
+    </YoutubeContainer>
+  </Grid>
+  <Grid>
+    <YoutubeContainer title='Baphometrix' channelId='UCuzDmHD4WeS4dwhFXPgm7GA'>
+      <p>Baphometrix makes very detailed videos on all topics concerning Bitwig. If other videos are too flat or don't give you enough information, here you can find long and detailed videos with all details.</p>
+    </YoutubeContainer>
+    <YoutubeContainer title='Land Of Bits' channelId='UCy734gZ6oxkntXZMfCcpbbQ'>
+      <p>Small music oriented tutorials. How to get things done in bitwig without loosing the focus of making music.</p>
     </YoutubeContainer>
     <YoutubeContainer title='Audio Digital' channelId='UCMLl5O-kS7iEMJgMrsZayMw'>
       <p>Kevin is the man for synthesis. He knows the different synthesis
@@ -183,6 +192,9 @@ export default Mapped(({ modalLoginState }) => <div>
     </ContentContainer>
     <ContentContainer title='KVR' link='https://www.kvraudio.com/forum/viewforum.php?f=259' img='kvr.png'>
       <p>KVR is older than the Internet just like the users there. If you want to have a forum with all its macken, here you are in good hands.</p>
+    </ContentContainer>
+    <ContentContainer title='Bitwig Studio Trickbox' link='https://www.facebook.com/groups/BSTrickbox/' img='facebook.png'>
+      <p>This group was created to share special Tips & Tricks about Bitwig Studio.</p>
     </ContentContainer>
   </Grid>
 

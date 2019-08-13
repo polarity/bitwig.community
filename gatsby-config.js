@@ -39,7 +39,8 @@ module.exports = {
           'UCMLl5O-kS7iEMJgMrsZayMw',
           'UCsT5lJNXlbaphmYeK9J4mxw',
           'UCn2Z_OilkVqNzkBTWOmkDMQ',
-          'UCKAr00QT8YRT5G4P47H-gkg'
+          'UCKAr00QT8YRT5G4P47H-gkg', // Sparvnätter
+          'UCA3Fs29IqExQki0RdTTEuDg' // Empty Vessel
         ],
         apiKey: process.env.GATSBY_YOUTUBE_API_KEY,
         maxVideos: 10 // Defaults to 50
