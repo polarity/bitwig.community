@@ -73,9 +73,9 @@ module.exports = {
       resolve: `gatsby-source-twitter`,
       options: {
         credentials: {
-          consumer_key: 'XbgK8VF47S5dyci4G6dg',
-          consumer_secret: 'LGVqX8k6ljeX76kBu77MDKsUFLqUL7dXIGnqh2Nt84',
-          bearer_token: 'AAAAAAAAAAAAAAAAAAAAABDjMAAAAAAADqYQAMlyHXSrGjmdIPSHGKzl24o%3DtmyE3qStcIVgm4QYaaBwFgh6sB3btwET9AP3HzPG9pel0E6msZ'
+          consumer_key: process.env.GATSBY_TWITTER_CONSUMERKEY,
+          consumer_secret: process.env.GATSBY_TWITTER_CONSUMERSECRET,
+          bearer_token: process.env.GATSBY_TWITTER_BEARER
         },
         queries: {
           bitwig: {
