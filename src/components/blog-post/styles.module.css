@@ -1,0 +1,19 @@
+.main {
+  margin: 0.2em 0 1.33em 0;
+}
+.avatar {
+  float:left;
+  margin: 0 0.5em 0.5em 0;
+}
+span.pageTitle{
+  color: #4d4d4d;
+}
+h2.title {
+  margin: 0;
+  padding: 0;
+}
+p.posttime {
+  font-size: 0.8em;
+  color: #4d4d4d;
+  margin: 0 0 0 0;
+}

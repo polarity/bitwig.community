@@ -9,6 +9,8 @@ import { Helmet } from 'react-helmet'
 import SignIn from '../components/sign-in'
 import { mapper } from '@reduxless/react'
 // import Chatbox from '../components/chatbox'
+import Tweets from '../components/tweets'
+import Blogs from '../components/blogs'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -91,6 +93,15 @@ export default Mapped(({ modalLoginState }) => <div>
     <YoutubeContainer title='Gridniks: Empty Vessel' channelId='UCA3Fs29IqExQki0RdTTEuDg'>
       <p>Empty Vessel is sitting in a small studio in Otago, New Zealand making noises and trying not to buy any more vintage samplers.</p>
     </YoutubeContainer>
+  </Grid>
+
+  <Grid>
+    <ContentContainer>
+      <Tweets />
+    </ContentContainer>
+    <ContentContainer>
+      <Blogs />
+    </ContentContainer>
   </Grid>
 
   <SectionHeader h='Video Tutorials'>

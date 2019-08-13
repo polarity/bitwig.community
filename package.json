@@ -20,10 +20,14 @@
     "fs": "0.0.1-security",
     "gatsby": "^2.13.9",
     "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-source-rss-feed": "^1.1.1",
+    "gatsby-source-twitter": "^3.0.0",
     "gatsby-source-youtube-v2": "^1.0.1",
+    "linkifyjs": "^2.1.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "truncate": "^2.1.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

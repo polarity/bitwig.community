@@ -28,6 +28,68 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://cdm.link/tag/bitwig/feed/`,
+        name: `CDM`
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://feeds.feedburner.com/SonicstatecomNews`,
+        name: `SonicState`
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.reddit.com/r/Bitwig/.rss`,
+        name: `bitwigReddit`
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://polarity-dnb.de/blog/feed.xml`,
+        name: `rssPolarityBlog`
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.bitwig.com/feed/news`,
+        name: `rssBitwigNews`
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://www.reddit.com/search.rss?q=bitwig&sort=new`,
+        name: `rssRedditBitwigSearch`
+      }
+    },
+    {
+      resolve: `gatsby-source-twitter`,
+      options: {
+        credentials: {
+          consumer_key: 'XbgK8VF47S5dyci4G6dg',
+          consumer_secret: 'LGVqX8k6ljeX76kBu77MDKsUFLqUL7dXIGnqh2Nt84',
+          bearer_token: 'AAAAAAAAAAAAAAAAAAAAABDjMAAAAAAADqYQAMlyHXSrGjmdIPSHGKzl24o%3DtmyE3qStcIVgm4QYaaBwFgh6sB3btwET9AP3HzPG9pel0E6msZ'
+        },
+        queries: {
+          bitwig: {
+            endpoint: 'search/tweets',
+            params: {
+              q: 'bitwig -filter:retweets -filter:replies',
+              result_type: 'recent'
+            },
+            fetchAllResults: true
+          }
+        }
+      }
+    },
+    {
       resolve: `gatsby-source-youtube-v2`,
       options: {
         channelId: [
