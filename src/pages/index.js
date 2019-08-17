@@ -11,6 +11,7 @@ import { mapper } from '@reduxless/react'
 // import Chatbox from '../components/chatbox'
 import Tweets from '../components/tweets'
 import Blogs from '../components/blogs'
+import Boards from '../components/boards'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -20,7 +21,7 @@ const Mapped = mapper({
 export default Mapped(({ modalLoginState }) => <div>
   <Helmet>
     <meta charSet='utf-8' />
-    <title>Bitwig Studio Community - Cool people using the best DAW</title>
+    <title>Bitwig Studio Community - all important links to bitwig</title>
     <meta name='viewport' content='width=device-width' />
     <meta property='og:url' content='https://bitwig.community' />
     <meta property='og:title' content='Bitwig Studio Community - cool people using the best DAW on the planet' />
@@ -101,6 +102,9 @@ export default Mapped(({ modalLoginState }) => <div>
     </ContentContainer>
     <ContentContainer>
       <Blogs />
+    </ContentContainer>
+    <ContentContainer>
+      <Boards />
     </ContentContainer>
   </Grid>
 

@@ -9,7 +9,7 @@ import Tweet from '../tweet'
  */
 const ProcessData = (data) => {
   const result = data.allTwitterSearchTweetsBitwig.edges
-  result.length = 30
+  result.length = 20
   return result
 }
 
@@ -38,7 +38,9 @@ export default ({ children, channelId, title }) => {
           <div>
             <h2>Twitter</h2>
             {map(ProcessData(data), (item, i) => {
-              return <Tweet key={i} avatar={item.node.user.screen_name}>
+              return <Tweet
+                key={i}
+                avatar={item.node.user.screen_name}>
                 {item.node.text}
               </Tweet>
             })}

@@ -30,6 +30,13 @@ module.exports = {
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
+        url: `https://www.kvraudio.com/forum/app.php/feed/forum/259`,
+        name: `KVR`
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
         url: `https://cdm.link/tag/bitwig/feed/`,
         name: `CDM`
       }

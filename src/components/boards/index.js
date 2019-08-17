@@ -10,10 +10,8 @@ import BlogPost from '../blog-post'
  * to the real page names
  */
 const PageNameMapping = {
-  allFeedCdm: 'CDM',
-  allFeedSonicState: 'Sonic State',
-  allFeedrssPolarityBlog: 'Polarity Blog',
-  allFeedrssBitwigNews: 'Bitwig News'
+  allFeedbitwigReddit: '/r/bitwig',
+  allFeedKvr: 'KVR'
 }
 
 /**
@@ -44,7 +42,7 @@ export default ({ children, channelId, title }) => {
     <StaticQuery
       query={graphql`
         query {
-          allFeedCdm(filter: {title: {regex: ""}}) {
+          allFeedbitwigReddit {
             edges {
               node {
                 title
@@ -54,27 +52,7 @@ export default ({ children, channelId, title }) => {
               }
             }
           }
-          allFeedSonicState(filter: {title: {regex: "/bitwig|grid/gi"}}) {
-            edges {
-              node {
-                title
-                contentSnippet
-                link
-                pubDate
-              }
-            }
-          }
-          allFeedrssPolarityBlog {
-            edges {
-              node {
-                title
-                contentSnippet
-                link
-                pubDate
-              }
-            }
-          }
-          allFeedrssBitwigNews {
+          allFeedKvr {
             edges {
               node {
                 title
@@ -89,7 +67,7 @@ export default ({ children, channelId, title }) => {
       render={(data) => {
         return (
           <div>
-            <h2>RSS</h2>
+            <h2>Boards</h2>
             {map(Merge(data), (item, i) => {
               return <BlogPost
                 key={i}
