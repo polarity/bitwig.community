@@ -41,7 +41,7 @@ export default ({ link, title }) => {
       <iframe
         title={title}
         className={styles.iframe}
-        src={'https://www.youtube.com/embed/' + getYoutubeSlug(link) + '?autoplay=1&controls=0'}
+        src={'https://www.youtube.com/embed/' + getYoutubeSlug(link) + '?autoplay=1&controls=1'}
         frameborder='0'
         allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
         allowfullscreen />
