@@ -8,6 +8,8 @@ const getYoutubeSlug = (link) => {
     return link
   }
 }
+
+/**
 const getYoutubeUri = (link) => {
   let result = ''
   if (link.indexOf('?v=') === -1) {
@@ -17,6 +19,7 @@ const getYoutubeUri = (link) => {
   }
   return result
 }
+ */
 
 const getYoutubeImage = (link) => {
   return `https://i3.ytimg.com/vi/${getYoutubeSlug(link)}/hqdefault.jpg`
@@ -27,20 +30,21 @@ const getYoutubeImage = (link) => {
  */
 export default ({ link, title }) => {
   const [player, setPlayer] = useState(false)
-  return (<a
+  return (<div
     rel='noopener noreferrer'
     onClick={() => setPlayer(true)}
     className={styles.wrapper}>
     <img
-      alt=''
+      alt={title}
       src={getYoutubeImage(link)} />
     {player &&
       <iframe
+        title={title}
         className={styles.iframe}
         src={'https://www.youtube.com/embed/' + getYoutubeSlug(link) + '?autoplay=1&controls=0'}
         frameborder='0'
         allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
         allowfullscreen />
     }
-  </a>)
+  </div>)
 }

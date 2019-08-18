@@ -11,7 +11,7 @@ export default ({ children, channelId, title }) => {
     <StaticQuery
       query={graphql`
         query {
-          allFeedGridniks(sort: {fields: pubDate, order: ASC}) {
+          allFeedGridniks(sort: {fields: pubDate, order: DESC}) {
             edges {
               node {
                 id

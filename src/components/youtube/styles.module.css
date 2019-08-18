@@ -1,8 +1,10 @@
-.wrapper {  min-height: 20vh;
+.wrapper {
+  min-height: 20vh;
   max-width: 600px;
   margin: 0 auto;
   border: 1px solid #464646;
   position: relative;
+  cursor: pointer;
 }
 .wrapper img {
   max-width: 100%;
