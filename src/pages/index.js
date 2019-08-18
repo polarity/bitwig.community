@@ -88,13 +88,6 @@ export default Mapped(({ modalLoginState }) => <div>
         </li>
       </ul>
     </ContentContainer>
-    <YoutubeContainer title='Gridniks: Sparvnätter' channelId='UCn2Z_OilkVqNzkBTWOmkDMQ'>
-      <p>Youtube is a great place to show what you've done. Get a youtube account, film your Bitwig creation and send it to us (mail coming soon, use <a href='https://discord.gg/0g2ZPafIN3eWParf'>discord</a> in the meantime).</p>
-      <p>This time <a href='https://www.youtube.com/channel/UCn2Z_OilkVqNzkBTWOmkDMQ'>Sparvnätter</a> is showing off some nice Grid patches on youtube.</p>
-    </YoutubeContainer>
-    <YoutubeContainer title='Gridniks: Empty Vessel' channelId='UCA3Fs29IqExQki0RdTTEuDg'>
-      <p>Empty Vessel is sitting in a small studio in Otago, New Zealand making noises and trying not to buy any more vintage samplers.</p>
-    </YoutubeContainer>
   </Grid>
 
   <SectionHeader h='Gridniks'>
