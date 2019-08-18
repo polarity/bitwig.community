@@ -9,6 +9,6 @@
   height: 4vh;
   padding: 0 2vw;
 }
-img {
+.wrapper img {
   max-height: 30px;
 }

@@ -7,7 +7,7 @@
   box-sizing: border-box;
   text-align: center;
 }
-.heading {
+.wrapper .heading {
   font-size: 3em;
   line-height: 1.33em;
   font-weight: 100;
@@ -15,6 +15,9 @@
   text-transform: uppercase;
   margin: 0;
 }
-.sub {
+.wrapper .sub {
   opacity: 0.7;
+}
+.wrapper a, .wrapper a:link, .wrapper a:visited {
+  color: rgb(204, 152, 50);
 }

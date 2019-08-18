@@ -12,6 +12,7 @@ import { mapper } from '@reduxless/react'
 import Tweets from '../components/tweets'
 import Blogs from '../components/blogs'
 import Boards from '../components/boards'
+import Gridniks from '../components/gridniks'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -96,16 +97,14 @@ export default Mapped(({ modalLoginState }) => <div>
     </YoutubeContainer>
   </Grid>
 
+  <SectionHeader h='Gridniks'>
+    Grids playing by themselves. See what the Grid can do and what others can do with it.&nbsp;
+    <a href='https://www.youtube.com/playlist?list=PLyCfny1Hc_bvfJ33U-3DN4H37gw9cIYTi'>
+      Check the collab playlist on youtube
+    </a>.
+  </SectionHeader>
   <Grid>
-    <ContentContainer>
-      <Tweets />
-    </ContentContainer>
-    <ContentContainer>
-      <Blogs />
-    </ContentContainer>
-    <ContentContainer>
-      <Boards />
-    </ContentContainer>
+    <Gridniks />
   </Grid>
 
   <SectionHeader h='Video Tutorials'>
@@ -210,6 +209,21 @@ export default Mapped(({ modalLoginState }) => <div>
     </ContentContainer>
     <ContentContainer title='Bitwig Studio Trickbox' link='https://www.facebook.com/groups/BSTrickbox/' img='facebook.png'>
       <p>This group was created to share special Tips & Tricks about Bitwig Studio.</p>
+    </ContentContainer>
+  </Grid>
+
+  <SectionHeader h='RSS / Blogs / Forum Posts'>
+    All the new threads and posts from Bitwig Boards and Blogs.
+  </SectionHeader>
+  <Grid>
+    <ContentContainer>
+      <Tweets />
+    </ContentContainer>
+    <ContentContainer>
+      <Blogs />
+    </ContentContainer>
+    <ContentContainer>
+      <Boards />
     </ContentContainer>
   </Grid>
 
