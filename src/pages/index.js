@@ -91,13 +91,13 @@ export default Mapped(({ modalLoginState }) => <div>
   </Grid>
 
   <SectionHeader h='Gridniks'>
-    Grids playing by themselves. See what the Grid can do and what others can do with it.&nbsp;
+    Grids playing by themselves. See what the Grid can do and what others can do with it. <a href='/gridniks'>Watch more Videos!</a>&nbsp;
     <a href='https://www.youtube.com/playlist?list=PLyCfny1Hc_bvfJ33U-3DN4H37gw9cIYTi'>
       Check the collab playlist on youtube
     </a> or <a href='https://www.youtube.com/results?search_query=grid+bitwig&sp=CAI%253D'>search for grid videos</a> on youtube.
   </SectionHeader>
   <Grid>
-    <Gridniks />
+    <Gridniks limit='12' />
   </Grid>
 
   <SectionHeader h='Video Tutorials'>
