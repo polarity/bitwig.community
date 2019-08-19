@@ -18,8 +18,8 @@ export default Mapped(({ modalLoginState }) => <div>
     <title>Gridniks are Grid Vids from Bitwig - check the newest patches</title>
     <meta name='viewport' content='width=device-width' />
     <meta property='og:url' content='https://bitwig.community' />
-    <meta property='og:title' content='Bitwig Studio Community - cool people using the best DAW on the planet' />
-    <meta property='og:description' content='On this website we want to summarize news and content from all over the net that has been created with Bitwig and of which the community can be proud.' />
+    <meta property='og:title' content='Grid Video Music - Bitwig Studio' />
+    <meta property='og:description' content='Listen to great Bitwig Studio Grid patches. Various videos show what the Grid is capable of.' />
     <meta property='og:image:width' content='1080' />
     <meta property='og:image:height' content='1080' />
     <meta property='og:type' content='website' />
