@@ -34,7 +34,7 @@ export default Mapped(({ modalLoginState }) => <div>
     lightning-fast workflows is the newest addition to Bitwig Studio.
     Gridniks are Grid Patches/Presets playing by themselves. See what
     the Grid can do and what others can do with it.&nbsp;
-    <a href='https://www.youtube.com/playlist?list=PLyCfny1Hc_bvfJ33U-3DN4H37gw9cIYTi'>
+    <a href='https://www.youtube.com/playlist?list=PLyCfny1Hc_bvfJ33U-3DN4H37gw9cIYTi&jct=z1d0enqVw1qUM0cwcJwlF6lkjelR3g'>
       Check the collab playlist on youtube
     </a> or <a href='https://www.youtube.com/results?search_query=grid+bitwig&sp=CAI%253D'>search for grid videos</a> on youtube.
   </SectionHeader>
