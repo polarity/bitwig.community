@@ -1,4 +1,4 @@
-import Typography from `../typography`
+import Typography from '../typography'
 
 export default ({ children }) =>
   <Typography>
