@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        defaultLayout: require.resolve("./src/components/layout-wiki/index.js")
+        defaultLayouts: require.resolve("./src/components/layout-wiki/index.js")
       }
     },
     {
