@@ -27,7 +27,12 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayout: require.resolve("./src/components/layout-wiki/index.js")
+      }
+    },
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
