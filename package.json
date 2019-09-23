@@ -29,7 +29,10 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "truncate": "^2.1.0"
+    "truncate": "^2.1.0",
+    "gatsby-plugin-mdx": "@",
+    "@mdx-js/mdx@latest": "@",
+    "@mdx-js/react@latest": "@"    
   },
   "devDependencies": {
     "prettier": "^1.18.2"
