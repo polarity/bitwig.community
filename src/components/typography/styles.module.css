@@ -9,10 +9,20 @@
   color: rgb(223, 223, 223);
   font-size: 1em;
 }
-.content h2 {
+.content h1 {
   margin: 0 0 0.5em 0;
   padding: 0;
   font-size: 1.5em;
+}
+.content h2 {
+  margin: 0 0 0.5em 0;
+  padding: 0;
+  font-size: 1.3em;
+}
+.content h3 {
+  margin: 0 0 0.5em 0;
+  padding: 0;
+  font-size: 1.1em;
 }
 .content p {
   margin: 0 0 1.33em 0;
