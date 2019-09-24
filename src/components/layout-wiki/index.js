@@ -1,7 +1,8 @@
 import React from 'react'
 import Typography from '../typography'
+import styles from './styles.module.css'
 
 export default ({ children }) =>
-  <Typography style="max-width: 640px;margin: auto;">
+  <Typography className={styles.Typo}>
     {children}
   </Typography>
