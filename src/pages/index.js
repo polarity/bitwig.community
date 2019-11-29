@@ -88,6 +88,27 @@ export default Mapped(({ modalLoginState }) => <div>
         </li>
       </ul>
     </ContentContainer>
+    <ContentContainer img='bitwig-studio-3-package.png'>
+      <h2>Buy Bitwig Studio</h2>
+      <p>
+        Bitwig Studio is a dynamic software for creating and performing your musical ideas in the studio and on stage.
+        Here's a quick overview of what Bitwig Studio is all about:
+      </p>
+      <ul>
+        <li> A professional Digital Audio Workstation for Windows, macOS, and Linux</li>
+        <li> Super-fast workflow for sound design, recording, live performance, and beyond</li>
+        <li> A complete package with 80+ instruments and effects</li>
+        <li> Enjoy over 10 GB (and counting) of world-class sound content from Bitwig and selected partners</li>
+        <li> Out-of-the-box support for standard audio interfaces and controllers</li>
+        <li> A unique and highly flexible modulation system for unbound creativity</li>
+        <li> Excellent hardware integration</li>
+      </ul>
+      <ul>
+        <li><a href='https://shop.bitwig.com/order/checkout.php?PRODS=4710161&QTY=1&AFFILIATE=124276&CART=1'>order Bitwig Studio</a></li>
+        <li><a href='https://shop.bitwig.com/order/checkout.php?PRODS=4713256&QTY=1&AFFILIATE=124276&CART=1'>order Bitwig Studio license renewal</a></li>
+      </ul>
+      <p>use the voucher code <b>"POLARITY"</b> for a <b>5% discount!</b></p>
+    </ContentContainer>
   </Grid>
 
   <SectionHeader h='Gridniks'>
@@ -151,35 +172,41 @@ export default Mapped(({ modalLoginState }) => <div>
   <Grid>
     <ContentContainer
       title='Jürgen Moßgraber - Software'
-      link='http://www.mossgrabers.de/Software/Software.html' img='mossgraber.png'>
+      link='http://www.mossgrabers.de/Software/Software.html' img='mossgraber.png'
+    >
       <p>Jürgen is a great developer & musician creating scripts to support several controller devices (Push 1/2, APC40 / APC40mkII, Komplete Kontrol, Maschine and more) and protocols in Bitwig Studio.</p>
     </ContentContainer>
     <ContentContainer
       title='Bitwiggers - Presets'
       link='https://bitwiggers.com'
-      img='bitwiggers.png'>
+      img='bitwiggers.png'
+    >
       <p>A frequent topic of discussion in Bitwig-related channels is that sharing presets is a common but unmet need by the users. Presets are attached to forum posts, shared as Dropbox links, or whatever the sharer is familiar with, and the result is that it's hard to find any of them unless you're actively participating. I hope this changes that.</p>
     </ContentContainer>
     <ContentContainer
       title='Bitwigbits - Presets'
-      link='https://www.bitwigbits.com/' img='bitwigbits.png'>
+      link='https://www.bitwigbits.com/' img='bitwigbits.png'
+    >
       <p>We are a community of active Bitwig enthusiasts who present and share their musical ideas!</p>
     </ContentContainer>
     <ContentContainer
       link='https://github.com/polarity/preset-party-app/releases'
       title='Preset Party - Standalone Tool'
-      img='preset-party.png'>
+      img='preset-party.png'
+    >
       <p>Cross-platform GUI application for sharing and caring presets. Ready to run on all platforms.</p>
       <p>You can this standalone App on your PC to download github hosted presets into your local preset directory with one click.</p>
     </ContentContainer>
     <ContentContainer
       title='Kim Åke - Text Tutorials'
-      link='https://aavepyora.com/category/bitwig/' img='aavepyora.png'>
+      link='https://aavepyora.com/category/bitwig/' img='aavepyora.png'
+    >
       <p>Kim Åke's blog contains many articles about Bitwig written in text form. If you prefer to read and don't watch videos, this is the place for you.</p>
     </ContentContainer>
     <ContentContainer
       title='Audio Bombs - Presets'
-      link='https://www.audiobombs.com/?category=Bitwig&q=&sort=' img='audio-bombs.png'>
+      link='https://www.audiobombs.com/?category=Bitwig&q=&sort=' img='audio-bombs.png'
+    >
       <p>Audiobombs is a collection of user contributed presets and tools for music production, djing, and live performance. All the items on the site are free to download.</p>
     </ContentContainer>
   </Grid>

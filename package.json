@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "bitwig-community",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Community page of Bitwig Studio",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -32,7 +32,7 @@
     "truncate": "^2.1.0",
     "gatsby-plugin-mdx": "*",
     "@mdx-js/mdx": "*",
-    "@mdx-js/react": "*"    
+    "@mdx-js/react": "*"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
