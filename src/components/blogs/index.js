@@ -13,7 +13,9 @@ const PageNameMapping = {
   allFeedCdm: 'CDM',
   allFeedSonicState: 'Sonic State',
   allFeedrssPolarityBlog: 'Polarity Blog',
-  allFeedrssBitwigNews: 'Bitwig News'
+  allFeedrssBitwigNews: 'Bitwig News',
+  allFeedSynthAnatomy: 'SynthSnatomy'
+
 }
 
 /**
@@ -64,6 +66,16 @@ export default ({ children, channelId, title }) => {
               }
             }
           }
+          allFeedSynthAnatomy(filter: {title: {regex: "/bitwig|grid/gi"}}) {
+            edges {
+              node {
+                title
+                contentSnippet
+                link
+                pubDate
+              }
+            }
+          }
           allFeedrssPolarityBlog {
             edges {
               node {
@@ -91,14 +103,17 @@ export default ({ children, channelId, title }) => {
           <div>
             <h2>RSS</h2>
             {map(Merge(data), (item, i) => {
-              return <BlogPost
-                key={i}
-                title={item.node.title}
-                link={item.node.link}
-                date={item._date}
-                pageTitle={item._pageTitle}>
-                {item.node.contentSnippet}
-              </BlogPost>
+              return (
+                <BlogPost
+                  key={i}
+                  title={item.node.title}
+                  link={item.node.link}
+                  date={item._date}
+                  pageTitle={item._pageTitle}
+                >
+                  {item.node.contentSnippet}
+                </BlogPost>
+              )
             })}
           </div>
         )
