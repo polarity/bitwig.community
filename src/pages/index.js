@@ -107,7 +107,7 @@ export default Mapped(({ modalLoginState }) => <div>
         <li><a href='https://shop.bitwig.com/order/checkout.php?PRODS=4710161&QTY=1&AFFILIATE=124276&CART=1'>order Bitwig Studio</a></li>
         <li><a href='https://shop.bitwig.com/order/checkout.php?PRODS=4713256&QTY=1&AFFILIATE=124276&CART=1'>order Bitwig Studio license renewal</a></li>
       </ul>
-      <p>use the voucher code <b>"POLARITY"</b> for a <b>5% discount!</b></p>
+      <p>use the voucher code <b>"POLARITY"</b> for a <b>10% discount!</b></p>
     </ContentContainer>
   </Grid>
 
@@ -247,4 +247,4 @@ export default Mapped(({ modalLoginState }) => <div>
     </ContentContainer>
   </Grid>
 
-</div>)
+                                               </div>)
