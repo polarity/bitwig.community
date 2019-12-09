@@ -22,7 +22,7 @@ const Mapped = mapper({
 export default Mapped(({ modalLoginState }) => <div>
   <Helmet>
     <meta charSet='utf-8' />
-    <title>Bitwig Studio Community - all important links to bitwig</title>
+    <title>🔥 Bitwig Studio Community - Everything about Bitwig</title>
     <meta name='viewport' content='width=device-width' />
     <meta property='og:url' content='https://bitwig.community' />
     <meta property='og:title' content='Bitwig Studio Community - cool people using the best DAW on the planet' />
@@ -247,4 +247,4 @@ export default Mapped(({ modalLoginState }) => <div>
     </ContentContainer>
   </Grid>
 
-                                               </div>)
+</div>)
