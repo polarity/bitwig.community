@@ -1,6 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import { map, each, sortBy } from 'lodash'
+import { map, each, sortBy, get } from 'lodash'
 import Truncate from 'truncate'
 
 import BlogPost from '../blog-post'
@@ -18,7 +18,7 @@ const PageNameMapping = {
  * result of the gql query
  * @param {object} data
  */
-const Merge = (data) => {
+const Merge = (data, quantity = 7) => {
   let newData = []
   each(data, (site, key) => {
     each(site.edges, (entry) => {
@@ -30,14 +30,14 @@ const Merge = (data) => {
     })
   })
   newData = sortBy(newData, ['_timestamp']).reverse()
-  newData.length = 7
+  newData.length = quantity
   return newData
 }
 
 /**
  * query all rss feeds, and render the individual posts
  */
-export default ({ children, channelId, title }) => {
+export default ({ quantity }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -68,15 +68,20 @@ export default ({ children, channelId, title }) => {
         return (
           <div>
             <h2>Boards</h2>
-            {map(Merge(data), (item, i) => {
-              return <BlogPost
-                key={i}
-                title={item.node.title}
-                link={item.node.link}
-                date={item._date}
-                pageTitle={item._pageTitle}>
-                {item.node.contentSnippet}
-              </BlogPost>
+            {map(Merge(data, quantity), (item, i) => {
+              if (item) {
+                return (
+                  <BlogPost
+                    key={i}
+                    title={item.node.title}
+                    link={item.node.link}
+                    date={item._date}
+                    pageTitle={item._pageTitle}
+                  >
+                    {item.node.contentSnippet}
+                  </BlogPost>
+                )
+              }
             })}
           </div>
         )

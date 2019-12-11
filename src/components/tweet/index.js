@@ -8,7 +8,8 @@ export default ({ children, avatar }) => (
     <img
       alt='tweet'
       className={styles.avatar}
-      src={'https://avatars.io/twitter/' + avatar} />
-    <span dangerouslySetInnerHTML={{__html: Linky(children)}} />
+      src={'https://avatars.io/twitter/' + avatar}
+    />
+    <span dangerouslySetInnerHTML={{ __html: Linky(children) }} />
   </div>
 )

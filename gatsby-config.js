@@ -36,10 +36,60 @@ module.exports = {
     {
       resolve: 'gatsby-source-rss-feed',
       options: {
+        url: 'https://news.google.com/rss/search?q=Bitwig',
+        name: 'Google'
+      }
+    },
+    {
+      resolve: 'gatsby-source-rss-feed',
+      options: {
         url: 'https://www.youtube.com/feeds/videos.xml?playlist_id=PLyCfny1Hc_bvfJ33U-3DN4H37gw9cIYTi',
         name: 'Gridniks'
       }
     },
+    {
+      resolve: 'gatsby-source-rss-feed',
+      options: {
+        url: 'https://www.amazona.de/feed/',
+        name: 'Amazona'
+      }
+    },
+    {
+      resolve: 'gatsby-source-rss-feed',
+      options: {
+        url: 'https://www.delamar.de/feed/',
+        name: 'Delamar'
+      }
+    },
+    {
+      resolve: 'gatsby-source-rss-feed',
+      options: {
+        url: 'https://www.heise.de/rss/heise-atom.xml',
+        name: 'Heise'
+      }
+    },
+    {
+      resolve: 'gatsby-source-rss-feed',
+      options: {
+        url: 'https://www.soundandrecording.de/feed/',
+        name: 'Soundrecording'
+      }
+    },
+    {
+      resolve: 'gatsby-source-rss-feed',
+      options: {
+        url: 'https://fr.audiofanzine.com/editorial/tests/a.rss.xml',
+        name: 'Audiofanzine'
+      }
+    },
+    {
+      resolve: 'gatsby-source-rss-feed',
+      options: {
+        url: 'https://www.bonedo.de/feed/rss.xml',
+        name: 'Bonedo'
+      }
+    },
+
     {
       resolve: 'gatsby-source-rss-feed',
       options: {

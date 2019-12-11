@@ -42,4 +42,4 @@ export default Mapped(({ modalLoginState }) => <div>
     <Gridniks />
   </Grid>
 
-</div>)
+                                               </div>)

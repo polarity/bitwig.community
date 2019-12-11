@@ -247,4 +247,4 @@ export default Mapped(({ modalLoginState }) => <div>
     </ContentContainer>
   </Grid>
 
-                                               </div>)
+</div>)

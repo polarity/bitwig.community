@@ -17,5 +17,9 @@ export default Mapped(({ children, loggedInUser }) =>
       {!loggedInUser && <Login />}
       {loggedInUser && <Logout><span>welcome {loggedInUser.displayName}</span></Logout>}
     </Typography>
+    <Typography>
+      <a href='/news/'>Bitwig News</a>
+      &nbsp;| <a href='/gridniks/'>Gridniks</a>
+    </Typography>
   </header>
 )
