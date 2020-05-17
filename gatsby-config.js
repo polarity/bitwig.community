@@ -36,13 +36,6 @@ module.exports = {
     {
       resolve: 'gatsby-source-rss-feed',
       options: {
-        url: 'https://news.google.com/rss/search?q=Bitwig',
-        name: 'Google'
-      }
-    },
-    {
-      resolve: 'gatsby-source-rss-feed',
-      options: {
         url: 'https://www.youtube.com/feeds/videos.xml?playlist_id=PLyCfny1Hc_bvfJ33U-3DN4H37gw9cIYTi',
         name: 'Gridniks'
       }

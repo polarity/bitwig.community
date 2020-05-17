@@ -19,8 +19,7 @@ const PageNameMapping = {
   allFeedHeise: 'Heise',
   allFeedSoundrecording: 'Soundrecording',
   allFeedAudiofanzine: 'Audiofanzine',
-  allFeedBonedo: 'Bonedo',
-  allFeedGoogle: 'Google'
+  allFeedBonedo: 'Bonedo'
 }
 
 /**
@@ -112,16 +111,6 @@ export default ({ quantity }) => {
             }
           }
           allFeedCdm(filter: {title: {regex: ""}}) {
-            edges {
-              node {
-                title
-                contentSnippet
-                link
-                pubDate
-              }
-            }
-          }
-          allFeedGoogle(filter: {title: {regex: ""}}) {
             edges {
               node {
                 title
