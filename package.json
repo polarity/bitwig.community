@@ -31,10 +31,12 @@
     "gatsby-source-youtube-v2": "^1.0.1",
     "gatsby-transformer-remark": "^2.8.8",
     "linkifyjs": "^2.1.8",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
-    "truncate": "^2.1.0"
+    "redux": "^4.0.5",
+    "truncate": "^2.1.0",
+    "video-react": "^0.14.1"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

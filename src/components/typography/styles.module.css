@@ -28,11 +28,16 @@
   margin: 0 0 1.33em 0;
   padding: 0;
 }
-.content ul {
-  margin: 0 0 1.33em 0;
+.content ul, .content ol {
+  margin: 0 0 1.33em 1.33em;
   padding: 0;
   padding-left: 1em;
 }
+.content li p {
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
 .content p b {
   color:#129d90;
 }

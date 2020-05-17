@@ -1,10 +1,20 @@
 import React from 'react'
 import Header from '../header'
+import { MDXProvider } from '@mdx-js/react'
 import { Helmet } from 'react-helmet'
 import SignIn from '../sign-in'
 
+// video player
+import { Player } from 'video-react'
+import '../../../node_modules/video-react/dist/video-react.css'
+import './video-react.css'
+
 import Typography from '../typography'
 import styles from './styles.module.css'
+
+const components = {
+  Player: Player
+}
 
 export default ({ children }) =>
   <div>
@@ -26,7 +36,9 @@ export default ({ children }) =>
 
     <div className={styles.Typo}>
       <Typography>
-        {children}
+        <MDXProvider components={components}>
+          {children}
+        </MDXProvider>
       </Typography>
     </div>
   </div>
