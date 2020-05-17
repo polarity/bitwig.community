@@ -13,26 +13,28 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@mdx-js/mdx": "*",
+    "@mdx-js/react": "*",
     "@reduxless/core": "^4.0.0",
     "@reduxless/react": "^4.0.0",
     "dotenv": "^8.0.0",
     "firebase": "^6.3.1",
     "fs": "0.0.1-security",
     "gatsby": "^2.13.9",
+    "gatsby-plugin-mdx": "*",
     "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-source-filesystem": "^2.3.3",
     "gatsby-source-instagram": "^0.5.1",
     "gatsby-source-rss-feed": "^1.1.1",
     "gatsby-source-soundcloud": "^2.0.6",
     "gatsby-source-twitter": "^3.0.0",
     "gatsby-source-youtube-v2": "^1.0.1",
+    "gatsby-transformer-remark": "^2.8.8",
     "linkifyjs": "^2.1.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "truncate": "^2.1.0",
-    "gatsby-plugin-mdx": "*",
-    "@mdx-js/mdx": "*",
-    "@mdx-js/react": "*"
+    "truncate": "^2.1.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

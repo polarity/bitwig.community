@@ -20,6 +20,7 @@ export default Mapped(({ children, loggedInUser }) =>
     <Typography>
       <a href='/news/'>Bitwig News</a>
       &nbsp;| <a href='/gridniks/'>Gridniks</a>
+      &nbsp;| <a href='/wiki/'>Bitwiggi</a>
     </Typography>
   </header>
 )
