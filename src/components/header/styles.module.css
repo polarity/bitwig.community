@@ -12,3 +12,6 @@
 .wrapper img {
   max-height: 30px;
 }
+a.NavLinks {
+  color: #fff !important;
+}

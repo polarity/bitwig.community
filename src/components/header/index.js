@@ -18,9 +18,10 @@ export default Mapped(({ children, loggedInUser }) =>
       {loggedInUser && <Logout><span>welcome {loggedInUser.displayName}</span></Logout>}
     </Typography>
     <Typography>
-      <a href='/news/'>Bitwig News</a>
-      &nbsp;| <a href='/gridniks/'>Gridniks</a>
-      &nbsp;| <a href='/wiki/'>Bitwiggi</a>
+      <a href='/' className={styles.NavLinks}>Startpage</a>
+      &nbsp;| <a href='/news/' className={styles.NavLinks}>Bitwig News</a>
+      &nbsp;| <a href='/gridniks/' className={styles.NavLinks}>Gridniks</a>
+      &nbsp;| <a href='/wiki/' className={styles.NavLinks}>BitWiki</a>
     </Typography>
   </header>
 )

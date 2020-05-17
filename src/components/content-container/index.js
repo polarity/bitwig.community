@@ -4,14 +4,14 @@ import Typography from '../typography'
 
 const getBgYt = (yt) => {
   if (yt) {
-    return {backgroundImage: `url(https://i3.ytimg.com/vi/${yt}/hqdefault.jpg)`}
+    return { backgroundImage: `url(https://i3.ytimg.com/vi/${yt}/hqdefault.jpg)` }
   } else {
     return {}
   }
 }
 const getImgBg = (img) => {
   if (img) {
-    return {backgroundImage: `url(${img})`}
+    return { backgroundImage: `url(${img})` }
   } else {
     return {}
   }
@@ -26,7 +26,7 @@ const getYT = (yt, title) => {
   }
 }
 
-export default ({ children, channelId, latestYtId, latestYtTitle, img, link, title}) => (
+export default ({ children, channelId, latestYtId, latestYtTitle, img, link, title }) => (
   <article className={styles.wrapper}>
     {latestYtId && <a href={'https://youtu.be/' + latestYtId} rel='noopener noreferrer' target='_blank' className={styles.articleImage} style={getBgYt(latestYtId)}>{latestYtTitle}</a>}
     {img && <a href={link} rel='noopener noreferrer' target='_blank' className={styles.articleImage} style={getImgBg(img)}>{link}</a>}
