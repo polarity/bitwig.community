@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.css'
 
 const getYoutubeSlug = (link) => {
@@ -30,21 +30,24 @@ const getYoutubeImage = (link) => {
  */
 export default ({ link, title }) => {
   const [player, setPlayer] = useState(false)
-  return (<div
-    rel='noopener noreferrer'
-    onClick={() => setPlayer(true)}
-    className={styles.wrapper}>
-    <img
-      alt={title}
-      src={getYoutubeImage(link)} />
-    {player &&
-      <iframe
-        title={title}
-        className={styles.iframe}
-        src={'https://www.youtube.com/embed/' + getYoutubeSlug(link) + '?autoplay=1&controls=1'}
-        frameborder='0'
-        allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-        allowfullscreen />
-    }
-  </div>)
+  return (
+    <div
+      rel='noopener noreferrer'
+      onClick={() => setPlayer(true)}
+      className={styles.wrapper}
+    >
+      <img
+        alt={title}
+        src={getYoutubeImage(link)}
+      />
+      {player &&
+        <iframe
+          title={title}
+          className={styles.iframe}
+          src={'https://www.youtube.com/embed/' + getYoutubeSlug(link) + '?autoplay=1&controls=1'}
+          frameborder='0'
+          allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+          allowfullscreen
+        />}
+    </div>)
 }

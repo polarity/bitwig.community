@@ -8,12 +8,14 @@ import SignIn from '../sign-in'
 import { Player } from 'video-react'
 import '../../../node_modules/video-react/dist/video-react.css'
 import './video-react.css'
+import Youtube from '../youtube'
 
 import Typography from '../typography'
 import styles from './styles.module.css'
 
 const components = {
-  Player: Player
+  Player: Player,
+  Youtube: ({ link }) => <div className={styles.Youtube}><Youtube link={link} /></div>
 }
 
 export default ({ children }) =>
