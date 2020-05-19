@@ -1,0 +1,62 @@
+Contributing
+============
+
+## How can I participate?
+
+The pages are located on [github.com][1] and can be changed there either directly (you
+need a repository membership) or you fork the repo and start a pull request (after a
+short check the pull request will be accepted or rejected).
+
+If you aren't sure where to start, check out the TODO list for ideas on topics that have
+yet to be written:
+
+* [TODO list](todo)
+
+## Where are all the Files?
+
+The wiki pages are all located in the subdirectory `src/pages/wiki` and can easily be
+filled with [markdown][3] (use .mdx for new files). After every change, the website will
+be regenerated and published on [bitwig.community/wiki][2]
+
+## Forking the repo
+
+In addition to editing pages directly on Github, if you plan to make more extensive
+changes, a better approach would be to create your own fork of the wiki repository, make
+changes there, and then submit a pull request.
+
+The basic steps involved are:
+
+1. Create an account on Github.
+2. Click the "fork" button to create your own fork of the repository
+3. `git clone <your fork>`
+4. (Make changes...)
+5. `git add`
+6. `git commit`
+7. `git push`
+8. Create a pull request including your changes.
+
+When using this approach, you will also need to be sure to update your forked versions
+of the git repo from time to time (particularly, before you plan to make new changes),
+retrieving any changes that have been made since your last pull.
+
+To do this, first tell Git where to find the upstream version of the repo:
+
+```
+git remote add upstream https://github.com/polarity/bitwig.community
+```
+
+Now, whenever you want to sync your local forked version of the repo with the main
+upstream version, you can simply do:
+
+```
+git pull upstream master
+```
+
+For more a more detailed explanation of the above workflow, checkout:
+
+- [Github - Forking Projects](https://guides.github.com/activities/forking/)
+- [Github's Fork & Pull Workflow for Git Beginners](https://reflectoring.io/github-fork-and-pull/)
+
+[1]: https://github.com/polarity/bitwig.community
+[2]: https://bitwig.community/wiki/
+[3]: https://www.markdownguide.org/cheat-sheet/
