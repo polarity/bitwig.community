@@ -41,20 +41,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         const discordUserID = file.filename.split('/')[1]
         // userID should be int & finite number
         if (isFinite(parseInt(discordUserID))) {
-          console.log('discordUserID: ', discordUserID)
           // get the user
           const user = await GetDiscordUser(discordUserID)
           file.added = commitDetail.commit.author.date
           file.desc = commitDetail.commit.message
           file.user = user
           file.name = file.filename.split('/')[2]
-          console.log('File DOne!', file)
           Presets.push(file)
         }
       }
     }
   }
-  console.log('------> ', Presets)
   // create page
   actions.createPage({
     path: '/presets',
