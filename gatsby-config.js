@@ -28,6 +28,16 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-source-git',
+      options: {
+        name: 'preset-repo',
+        remote: 'https://github.com/polarity/bitwig-community-presets.git',
+        branch: 'master',
+        // Only import the docs folder from a codebase.
+        patterns: 'discord-presets/**'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: require.resolve('./src/components/layout-wiki/index.js')
