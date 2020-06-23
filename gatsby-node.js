@@ -39,8 +39,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       for (const file of commitDetail.files) {
         // get the user id from the path
         const discordUserID = file.filename.split('/')[1]
+        file.type = file.filename.split('.').pop()
         // userID should be int & finite number
-        if (isFinite(parseInt(discordUserID))) {
+        if (isFinite(parseInt(discordUserID)) && file.type === 'bwpreset') {
           // get the user
           const user = await GetDiscordUser(discordUserID)
           file.added = commitDetail.commit.author.date
