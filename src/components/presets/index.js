@@ -18,7 +18,7 @@ export default ({ children, limit, presets }) => {
     return (
       <article style={{ border: '1px solid #666', backgroundColor: '#333' }}>
         <Typography>
-          <h3>{startCase(file.name)}</h3>
+          <h3>{startCase(file.name.split('.')[0])}</h3>
           <p>by {file.user.username}</p>
           <img style={{ maxWidth: '100%', marginBottom: '10px' }} src='/made-with-bitwig.png' alt='Made with Bitwig Logo' />
           <img style={{ maxWidth: '60px', float: 'left', marginRight: '10px' }} src={file.user.avatarURL} alt='avatar' />
