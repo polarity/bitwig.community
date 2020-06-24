@@ -22,7 +22,7 @@ export default ({ children, limit, presets }) => {
           <p>by {file.user.username}</p>
           <img style={{ maxWidth: '100%', marginBottom: '10px' }} src='/made-with-bitwig.png' alt='Made with Bitwig Logo' />
           <img style={{ maxWidth: '60px', float: 'left', marginRight: '10px' }} src={file.user.avatarURL} alt='avatar' />
-          <p>{file.desc} Click below to download this Bitwig preset! by {file.user.username} <span>💾</span>&nbsp;<a href={'https://github.com/polarity/bitwig-community-presets/raw/master/' + file.filename} title={'Download ' + file.name + ' Preset'}>Download</a></p>
+          <p>{file.desc} Click below to download this Bitwig preset! by {file.user.username} <span>💾</span>&nbsp;<a href={file.download} title={'Download ' + file.name + ' Preset'}>Download</a></p>
         </Typography>
       </article>
     )
