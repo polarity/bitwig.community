@@ -32,11 +32,12 @@ class Signin extends Component {
       })
     }
   }
+
   createLink (email) {
     const actionCodeSettings = {
       // URL you want to redirect back to. The domain (www.example.com) for this
       // URL must be whitelisted in the Firebase Console.
-      url: window.location + 'validatemail/index.html',
+      url: window.location.origin + '/validatemail/',
       // This must be true.
       handleCodeInApp: true,
       iOS: {
@@ -67,17 +68,21 @@ class Signin extends Component {
         })
       })
   }
+
   handleChange (ev) {
     this.setState({
       email: ev.target.value
     })
   }
+
   handleSend (ev) {
     this.createLink(this.state.email)
   }
+
   handleCancel (ev) {
 
   }
+
   render () {
     if (this.props.modalLoginState) {
       return (
@@ -88,8 +93,7 @@ class Signin extends Component {
                 <h1>Passwordless Login</h1>
                 <p>we send you an link via email to log in. no password needed</p>
                 {this.state.info &&
-                  <p>{this.state.info}</p>
-                }
+                  <p>{this.state.info}</p>}
                 {this.state.usermail &&
                   <div>
                     <p>
@@ -98,8 +102,7 @@ class Signin extends Component {
                     <p>
                       <Button onClick={this.props.setModalLoginState}>Cancel</Button>
                     </p>
-                  </div>
-                }
+                  </div>}
               </Typography>
             </div>
 
@@ -114,8 +117,7 @@ class Signin extends Component {
                   <Button onClick={this.handleSend.bind(this)}>Login</Button>
                   <Button onClick={this.props.setModalLoginState}>Cancel</Button>
                 </FormRow>
-              </Typography>
-            }
+              </Typography>}
           </div>
         </div>
       )
