@@ -35,11 +35,8 @@ export default ({ link, title }) => {
       rel='noopener noreferrer'
       onClick={() => setPlayer(true)}
       className={styles.wrapper}
+      style={{ backgroundImage: `url(${getYoutubeImage(link)})` }}
     >
-      <img
-        alt={title}
-        src={getYoutubeImage(link)}
-      />
       {player &&
         <iframe
           title={title}

@@ -9,6 +9,8 @@
   height: 0;
   padding-bottom: 56%;
   border: 2px solid rgb(102, 102, 102);
+  background-size: cover;
+  background-position: center;
 }
 .wrapper img {
   position: absolute;
