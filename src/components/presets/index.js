@@ -20,11 +20,12 @@ export default ({ children, limit, presets }) => {
       <article style={{ border: '1px solid #666', backgroundColor: '#333' }}>
         <Typography>
           <h3 style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{startCase(file.name.split('.')[0])}</h3>
-          <p>by {file.user.username}</p>
+          <p style={{ marginTop: '-10px' }}>by <a href={`https://discordapp.com/users/${file.user.id}`}>{file.user.username}</a></p>
           {!file.videoYoutube && <img style={{ maxWidth: '100%', marginBottom: '10px' }} src='/made-with-bitwig.png' alt='Made with Bitwig Logo' />}
           {file.videoYoutube && <Youtube key={file.id} title={file.name.split('.')[0]} link={file.videoYoutube} />}
           <img style={{ maxWidth: '60px', float: 'left', marginRight: '10px' }} src={file.user.firebaseUrl} alt='avatar' />
-          <p>{file.desc} Click below to download this Bitwig preset! by <b><a href={`https://discordapp.com/users/${file.user.id}`}>{file.user.username}</a></b></p>
+          <p>{file.desc}</p>
+          <p>Click below to download and open this preset in Bitwig Studio. by</p>
           <p><span>💾</span>&nbsp;<a href={file.download} title={'Download ' + file.name + ' Preset'}>Download</a></p>
         </Typography>
       </article>
