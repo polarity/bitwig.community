@@ -24,7 +24,7 @@ export default ({ children, limit, presets }) => {
           {!file.videoYoutube && <img style={{ maxWidth: '100%', marginBottom: '10px' }} src='/made-with-bitwig.png' alt='Made with Bitwig Logo' />}
           {file.videoYoutube && <Youtube key={file.id} title={file.name.split('.')[0]} link={file.videoYoutube} />}
           <img style={{ maxWidth: '60px', float: 'left', marginRight: '10px' }} src={file.user.firebaseUrl} alt='avatar' />
-          <p>{file.desc} Click below to download this Bitwig preset! by <b>{file.user.username}</b></p>
+          <p>{file.desc} Click below to download this Bitwig preset! by <b><a href={`https://discordapp.com/users/${file.user.id}`}>{file.user.username}</a></b></p>
           <p><span>💾</span>&nbsp;<a href={file.download} title={'Download ' + file.name + ' Preset'}>Download</a></p>
         </Typography>
       </article>
