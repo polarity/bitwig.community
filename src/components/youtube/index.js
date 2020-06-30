@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import styles from './styles.module.css'
 
 const getYoutubeSlug = (link) => {
-  if (link.indexOf('?v=') !== -1) {
-    return link.split('?v=')[1]
-  } else {
-    return link
+  const slug = link.match(/(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/gi)
+  if (slug) {
+    return slug[1]
   }
 }
 
