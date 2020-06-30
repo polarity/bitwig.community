@@ -16,11 +16,11 @@ export default Mapped(({ modalLoginState, pageContext }) =>
   <div>
     <Helmet>
       <meta charSet='utf-8' />
-      <title>Gridniks are Grid Vids from Bitwig - check the newest patches</title>
+      <title>Presets for Bitwig Studio by the community</title>
       <meta name='viewport' content='width=device-width' />
       <meta property='og:url' content='https://bitwig.community' />
-      <meta property='og:title' content='Grid Video Music - Bitwig Studio' />
-      <meta property='og:description' content='Listen to great Bitwig Studio Grid patches. Various videos show what the Grid is capable of.' />
+      <meta property='og:title' content='Presets for Bitwig Studio' />
+      <meta property='og:description' content='Browse and download many many presets for Bitwig Studio created by the Community' />
       <meta property='og:image:width' content='1080' />
       <meta property='og:image:height' content='1080' />
       <meta property='og:type' content='website' />

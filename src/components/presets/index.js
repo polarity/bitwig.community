@@ -19,16 +19,22 @@ export default ({ children, limit, presets }) => {
     return (
       <article style={{ border: '1px solid #666', backgroundColor: '#333' }}>
         <Typography>
-          <h3 style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{startCase(file.name.split('.')[0])}</h3>
-          <p className={styles.subheader}>by <a href={`https://discordapp.com/users/${file.user.id}`}>{file.user.username}</a></p>
-          {!file.videoYoutube && <img style={{ maxWidth: '100%', marginBottom: '10px' }} src='/made-with-bitwig.png' alt='Made with Bitwig Logo' />}
-          {file.videoYoutube && <Youtube key={file.id} title={file.name.split('.')[0]} link={file.videoYoutube} />}
-
-          <div className={styles.info}>
-            <img width='40' height='40' className={styles.avatar} src={file.user.firebaseUrl} alt='avatar' />
-            <p className={styles.desc}>{file.desc}</p>
+          <div className={styles.header}>
+            <div className={styles.headerText}>
+              <h3 style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{startCase(file.name.split('.')[0])}</h3>
+              <p className={styles.subheader}>by <a href={`https://discordapp.com/users/${file.user.id}`}>{file.user.username}</a></p>
+            </div>
+            {file.user.firebaseUrl && <img width='40' height='40' className={styles.avatar} src={file.user.firebaseUrl} alt={'Discord Avatar of ' + file.user.username} />}
           </div>
-          <p><i>Click here to download and open this preset in Bitwig Studio:</i> <span>💾</span>&nbsp;<a href={file.download} title={'Download ' + file.name + ' Preset'}>Download</a></p>
+          <div className={styles.cover}>
+            {!file.videoYoutube && <img src='/made-with-bitwig.png' alt='Made with Bitwig Logo' />}
+            {file.videoYoutube && <Youtube key={file.id} title={file.name.split('.')[0]} link={file.videoYoutube} />}
+          </div>
+          {file.desc &&
+            <div className={styles.info}>
+              <p className={styles.desc}>{file.desc}</p>
+            </div>}
+          <p><span>💾</span>&nbsp;<a href={file.download} title={'Download ' + file.name + ' Preset'}>Download</a> this preset</p>
         </Typography>
       </article>
     )
