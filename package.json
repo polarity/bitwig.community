@@ -41,6 +41,7 @@
     "react-helmet": "^5.2.1",
     "redux": "^4.0.5",
     "truncate": "^2.1.0",
+    "uuid-v4": "^0.1.0",
     "video-react": "^0.14.1"
   },
   "devDependencies": {
