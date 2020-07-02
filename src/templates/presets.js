@@ -32,7 +32,8 @@ export default Mapped(({ modalLoginState, pageContext }) =>
 
     <SectionHeader h='Presets'>
       Download Presets for Bitwig Studio from the community.
-      Want to add your Preset? Join our <a href='https://discord.gg/nGgWY7w'>Bitwig discord</a> and drag &amp; drop your files.
+      <br />Want to add your Preset? Join our <a href='https://discord.gg/nGgWY7w'>Bitwig discord</a> and drag &amp; drop your files.
+      <br /><br />you can find more presets on <span>🤘</span><a href='https://bitwiggers.com/' target='_blank'><b>bitwiggers.com</b></a>
     </SectionHeader>
     <Grid>
       <Presets presets={pageContext.presets} />
