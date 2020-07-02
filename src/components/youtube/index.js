@@ -44,7 +44,7 @@ export default ({ link, title }) => {
           src={'https://www.youtube.com/embed/' + getYoutubeSlug(link) + '?autoplay=1&controls=1'}
           frameborder='0'
           allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-          allowfullscreen
+          allowfullscreen='allowfullscreen'
         />}
     </div>)
 }
