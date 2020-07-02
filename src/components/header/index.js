@@ -19,7 +19,6 @@ export default Mapped(({ children, loggedInUser }) =>
     </Typography>
     <Typography>
       <a href='/' className={styles.NavLinks}>Startpage</a>
-      &nbsp;| <a href='/news/' className={styles.NavLinks}>Bitwig News</a>
       &nbsp;| <a href='/gridniks/' className={styles.NavLinks}>Gridniks</a>
       &nbsp;| <a href='/presets' className={styles.NavLinks}>Presets</a>
       &nbsp;| <a href='/wiki/' className={styles.NavLinks}>BitWiki</a>
