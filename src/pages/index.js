@@ -184,12 +184,6 @@ export default Mapped(({ modalLoginState }) => <div>
       <p>A frequent topic of discussion in Bitwig-related channels is that sharing presets is a common but unmet need by the users. Presets are attached to forum posts, shared as Dropbox links, or whatever the sharer is familiar with, and the result is that it's hard to find any of them unless you're actively participating. I hope this changes that.</p>
     </ContentContainer>
     <ContentContainer
-      title='Bitwigbits - Presets'
-      link='https://www.bitwigbits.com/' img='bitwigbits.png'
-    >
-      <p>We are a community of active Bitwig enthusiasts who present and share their musical ideas!</p>
-    </ContentContainer>
-    <ContentContainer
       link='https://github.com/polarity/preset-party-app/releases'
       title='Preset Party - Standalone Tool'
       img='preset-party.png'
@@ -247,4 +241,4 @@ export default Mapped(({ modalLoginState }) => <div>
     </ContentContainer>
   </Grid>
 
-</div>)
+                                               </div>)
