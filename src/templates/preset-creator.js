@@ -40,7 +40,7 @@ export default Mapped(({ modalLoginState, pageContext }) => {
       Download Presets for Bitwig Studio by {pageContext.presets[0].user.username}.
         <br />Want to add your Preset? Join our <a href='https://discord.gg/nGgWY7w'>Bitwig discord</a> and drag &amp; drop your files.
       </SectionHeader>
-      <Grid>
+      <Grid fill='true'>
         <Presets presets={presets} />
       </Grid>
 
