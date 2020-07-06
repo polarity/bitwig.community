@@ -1,5 +1,6 @@
 const firebase = require('firebase-admin')
 const path = require('path')
+const urlSlug = require('url-slug')
 
 const firebaseConfig = {
   credential: firebase.credential.cert({
@@ -33,8 +34,18 @@ const load = async (details) => {
 // data layer is bootstrapped to let plugins create pages from data.
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const Presets = []
+  const Creators = []
   const snapshot = await load()
-  snapshot.forEach((doc) => Presets.push(doc.data()))
+  snapshot.forEach((doc) => {
+    const data = doc.data()
+    Presets.push(data)
+    if (Creators[urlSlug(data.user.username)]) {
+      Creators[urlSlug(data.user.username)].push(data)
+    } else {
+      Creators[urlSlug(data.user.username)] = []
+      Creators[urlSlug(data.user.username)].push(data)
+    }
+  })
 
   // create page
   actions.createPage({
@@ -45,12 +56,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   })
 
+  // pages for each preset
   for (const Preset of Presets) {
     actions.createPage({
       path: '/preset-' + Preset.name.split('.')[0],
       component: path.resolve('src/templates/preset-detail.js'),
       context: {
         preset: Preset
+      }
+    })
+  }
+
+  // pages for each creator
+  for (const key in Creators) {
+    actions.createPage({
+      path: '/creator-' + key,
+      component: path.resolve('src/templates/preset-creator.js'),
+      context: {
+        presets: Creators[key]
       }
     })
   }

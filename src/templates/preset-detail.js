@@ -9,6 +9,7 @@ import Youtube from '../components/youtube'
 import { startCase } from 'lodash'
 import SectionContent from '../components/section-content'
 import getYoutubeImage from '../utils/getYoutubeImage'
+import urlSlug from 'url-slug'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -36,7 +37,7 @@ export default Mapped(({ modalLoginState, pageContext }) => {
       <Header />
       <SignIn />
       <SectionHeader h={startCase(file.name.split('.')[0])}>
-        <br />{file.desc} <i>by</i> <a href={`https://discordapp.com/users/${file.user.id}`}>{file.user.username}</a>
+        <br />{file.desc} <i>by</i> <a href={`/creator-${urlSlug(file.user.username)}`}>{file.user.username}</a>
       </SectionHeader>
 
       <SectionContent>

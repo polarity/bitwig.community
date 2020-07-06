@@ -3,6 +3,7 @@ import { map, startCase } from 'lodash'
 import Typography from '../typography'
 import styles from './styles.module.css'
 import Youtube from '../youtube'
+import urlSlug from 'url-slug'
 
 const Limit = (data, limit) => {
   if (limit) {
@@ -24,7 +25,7 @@ export default ({ children, limit, presets }) => {
               <h3 style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 <a href={'/preset-' + file.name.split('.')[0]}>{startCase(file.name.split('.')[0])}</a>
               </h3>
-              <p className={styles.subheader}>by <a href={`https://discordapp.com/users/${file.user.id}`}>{file.user.username}</a></p>
+              <p className={styles.subheader}>by <a href={`/creator-${urlSlug(file.user.username)}`}>{file.user.username}</a></p>
             </div>
             {file.user.firebaseUrl && <img width='40' height='40' className={styles.avatar} src={file.user.firebaseUrl} alt={'Discord Avatar of ' + file.user.username} />}
           </div>
