@@ -16,7 +16,6 @@ const Mapped = mapper({
 })
 
 export default Mapped(({ modalLoginState, pageContext }) => {
-  console.log('----->', pageContext)
   const file = pageContext.preset
   return (
     <div>
