@@ -44,4 +44,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       presets: Presets
     }
   })
+
+  for (const Preset of Presets) {
+    actions.createPage({
+      path: '/preset-' + Preset.name.split('.')[0],
+      component: path.resolve('src/templates/preset-detail.js'),
+      context: {
+        preset: Preset
+      }
+    })
+  }
 }

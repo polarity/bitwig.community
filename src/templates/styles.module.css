@@ -1,0 +1,21 @@
+.avatar {
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+.downloadButton {
+  background-color: green;
+  display: inline-block;
+  padding: 1em;
+  border-radius: 5px;
+  color: #fff;
+}
+a.downloadButton ,
+a.downloadButton:link,
+a.downloadButton:visited,
+a.downloadButton:hover {
+  color: #fff !important;
+  font-size: 1.5em;
+  text-decoration: none;
+}
