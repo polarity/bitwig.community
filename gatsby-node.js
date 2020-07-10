@@ -30,9 +30,25 @@ const load = async (details) => {
   return db.collection('presets').orderBy('added', 'desc').get()
 }
 
+exports.onCreatePage = async ({ page, actions }) => {
+  // the code (as well as the gatsby-plugin-create-client-paths plugin) updates
+  // the /app page at build time to add the matchPath parameter in the page object
+  // to make it so that the configured pages (in this case, everything after /app,
+  // like /app/dashboard or /app/user) can be navigated to by Reach Router.
+  // Only update the `/app` page.
+  if (page.path.match(/^\/dashboard/)) {
+    // page.matchPath is a special key that's used for matching pages
+    // with corresponding routes only on the client.
+    page.matchPath = '/dashboard/*'
+    // Update the page.
+    actions.createPage(page)
+  }
+}
+
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
 exports.createPages = async ({ graphql, actions, reporter }) => {
+  // prepare preset data
   const Presets = []
   const Creators = []
   const snapshot = await load()
@@ -47,7 +63,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   })
 
-  // create page
+  // create preset overview page
+  // and send all presets from firebase
   actions.createPage({
     path: '/presets',
     component: path.resolve('src/templates/presets.js'),

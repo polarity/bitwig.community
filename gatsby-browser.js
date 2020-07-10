@@ -4,7 +4,7 @@ import { createStore } from '@reduxless/core'
 import { Container } from '@reduxless/react'
 import firebase from 'firebase/app'
 import 'firebase/auth'
-
+import 'firebase/firestore'
 /**
  * Reduxless init
  * {
