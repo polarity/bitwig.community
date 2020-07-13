@@ -1,0 +1,8 @@
+.value {
+  border-bottom: 1px dashed #593d3d;
+  min-width: 20px;
+  min-height: 19px;
+  cursor: pointer;
+  padding: 0px 3px;
+  background-color: #1e1e1e;
+}
