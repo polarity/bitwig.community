@@ -5,12 +5,14 @@ import Typography from '../typography'
 import FormRow from '../form-row'
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import Button from '../button'
+import Button from '../input-button'
+import InputText from '../input-text'
+import Label from '../input-label'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
 }, {
-  setModalLoginState: store => store.set('modalLoginState', false)
+  handleModalState: store => store.set('modalLoginState', false)
 })
 
 class Signin extends Component {
@@ -91,7 +93,10 @@ class Signin extends Component {
             <div>
               <Typography>
                 <h1>Passwordless Login</h1>
-                <p>we send you an link via email to log in. no password needed</p>
+                <p>
+                  You do not need a password for this website. Enter your email address below and we will send you a link to log in.
+                  <b>Your account will be bound to this email address.</b>
+                </p>
                 {this.state.info &&
                   <p>{this.state.info}</p>}
                 {this.state.usermail &&
@@ -100,7 +105,7 @@ class Signin extends Component {
                       looks like you are still logged in with "{this.state.usermail}"
                     </p>
                     <p>
-                      <Button onClick={this.props.setModalLoginState}>Cancel</Button>
+                      <Button onClick={this.props.handleModalState}>Cancel</Button>
                     </p>
                   </div>}
               </Typography>
@@ -109,13 +114,13 @@ class Signin extends Component {
             {!this.state.inProcess && !this.state.usermail &&
               <Typography>
                 <FormRow>
-                  <label>E-Mail:</label>
-                  <input type='email' onChange={this.handleChange.bind(this)} />
+                  <Label style={{ width: '10vw' }} className={styles.label}>E-Mail:</Label>
+                  <InputText type='email' placeholder='your email' onChange={this.handleChange.bind(this)} />
                 </FormRow>
                 <FormRow>
-                  <label>send</label>
-                  <Button onClick={this.handleSend.bind(this)}>Login</Button>
-                  <Button onClick={this.props.setModalLoginState}>Cancel</Button>
+                  <Label style={{ width: '10vw' }}>send</Label>
+                  <Button onClick={this.handleSend.bind(this)} color='red'>Login</Button>
+                  <Button onClick={this.props.handleModalState}>Cancel</Button>
                 </FormRow>
               </Typography>}
           </div>

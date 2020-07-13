@@ -5,6 +5,8 @@ import { Container } from '@reduxless/react'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
+import 'firebase/analytics'
+
 /**
  * Reduxless init
  * {
@@ -27,11 +29,15 @@ const firebaseConfig = {
   databaseURL: process.env.GATSBY_FIREBASE_DB_URL,
   projectId: process.env.GATSBY_FIREBASE_PROJECT_ID,
   storageBucket: process.env.GATSBY_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.GATSBY_FIREBASE_SENDER_ID
+  messagingSenderId: process.env.GATSBY_FIREBASE_SENDER_ID,
+  measurementId: process.env.GATSBY_FIREBASE_MEASUREMENTID,
+  appId: process.env.GATSBY_FIREBASE_APPID
 }
 
 window.firebase = firebase
-window.firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(firebaseConfig)
+firebase.analytics().logEvent('app started')
+
 /**
  * firebase init
  * subscribe to the login event

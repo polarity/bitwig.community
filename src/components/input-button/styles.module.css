@@ -1,0 +1,11 @@
+.button {
+  border: 0;
+  padding: 5px 10px;
+  display: inline-block;
+  color: #fffff7;
+  cursor: pointer;
+  background: rgb(65,65,65);
+  background: linear-gradient(0deg, rgba(65,65,65,1) 0%, rgba(75,75,75,1) 11%, rgba(75,75,75,1) 90%, rgba(84,84,84,1) 100%);
+  border-radius: 4px;
+  margin-right: 10px;
+}

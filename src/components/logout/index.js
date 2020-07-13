@@ -1,10 +1,15 @@
 import React from 'react'
 import { mapper } from '@reduxless/react'
 import styles from './styles.module.css'
+import firebase from 'firebase/app'
 
 const Mapped = mapper({}, {
   logout: (store, ownProps, data) => {
-    store.set('loggedInUser', false)
+    firebase.auth().signOut().then(() => {
+      store.set('loggedInUser', false)
+    }).catch((error) => {
+      console.log('error: ', error)
+    })
   }
 })
 

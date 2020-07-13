@@ -8,7 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7)
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2
 }
 .modal {
   width: 500px;

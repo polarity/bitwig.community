@@ -8,11 +8,12 @@ const Mapped = mapper({}, {
   }
 })
 
-export default Mapped(({openLogin}) =>
+export default Mapped(({ openLogin }) =>
   <div>
     <span
       className={styles.login}
-      onClick={openLogin}>
+      onClick={openLogin}
+    >
       login
     </span>
   </div>
