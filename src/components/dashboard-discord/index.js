@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import firebase from 'firebase/app'
 import Typography from '../typography'
 import { Link } from 'gatsby'
@@ -6,8 +6,13 @@ import { Link } from 'gatsby'
 // get the access token from url,
 // make request to discord for user ID
 const getParams = async (connectionState, setConnectionState) => {
+  // try and get the access token from the url
   const accessToken = window.location.href.match(/&access_token=(\w*)&/)
+
+  // looks like we have an access toke, use it
+  // to communicate with the discord api
   if (accessToken && accessToken.length > 1) {
+    // get the logged in discord user from discord
     const response = await window.fetch('https://discord.com/api/users/@me', {
       method: 'GET',
       headers: {
@@ -15,17 +20,24 @@ const getParams = async (connectionState, setConnectionState) => {
       }
     })
 
+    const db = firebase.firestore()
+
+    // current logged in user id
+    const uid = firebase.auth().currentUser.uid
+
+    // remember discord user id
     const discordUser = await response.json()
 
+    // prepare the new user profile object
     const userDoc = {
-      uid: firebase.auth().currentUser.uid,
+      uid: uid,
       discordUid: discordUser.id,
       username: discordUser.username
     }
 
-    // add to firebase
+    // add new user profile doc to firebase
     try {
-      const docRef = await firebase.firestore()
+      const docRef = await db
         .collection('profile')
         .doc(firebase.auth().currentUser.uid)
         .set(userDoc)
@@ -36,14 +48,32 @@ const getParams = async (connectionState, setConnectionState) => {
       console.error('Error adding document: ', error)
     }
 
-    return userDoc
+    // get presets from the this discord user
+    // and add the uid for the logged in user!
+    db
+      .collection('presets')
+      .where('user.id', '==', discordUser.id)
+      .get()
+      .then((onSnapshot) => {
+        // get, change and save the doc
+        onSnapshot.forEach((doc) => {
+          const newDoc = doc.data()
+          newDoc.uid = uid
+          db.collection('presets').doc(doc.id).set(newDoc)
+        })
+      })
+      .catch((err) => console.log('cant write preset: ', err))
   }
 }
 
+// present the user success or error
 export default () => {
   const [connectionState, setConnectionState] = useState('waiting')
 
-  getParams(connectionState, setConnectionState)
+  // load data once
+  useEffect(() => {
+    getParams(connectionState, setConnectionState)
+  }, [])
 
   return (
     <div>
