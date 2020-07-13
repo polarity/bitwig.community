@@ -1,6 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import { map, each, sortBy, get } from 'lodash'
+import { map, each, sortBy } from 'lodash'
 import Truncate from 'truncate'
 
 import BlogPost from '../blog-post'

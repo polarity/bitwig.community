@@ -22,7 +22,7 @@ export default ({ children }) =>
   <div>
     <Helmet>
       <meta charSet='utf-8' />
-      <title>Bitwig Studio 🐱‍🏍 BitWiki - Everything you need to know</title>
+      <title>Bitwig Studio BitWiki - Everything you need to know</title>
       <meta name='viewport' content='width=device-width' />
       <meta property='og:url' content='https://bitwig.community' />
       <meta property='og:title' content='Bitwig Studio Community - cool people using the best DAW on the planet' />

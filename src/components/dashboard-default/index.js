@@ -14,7 +14,7 @@ export default () => {
         <hr />
         <h2>Bitwig Discord - Bitwig Community</h2>
         <p>If you have already uploaded presets in the discord and they are displayed here on the page, you can <b>link your discord account</b> with the community account here. After that you can manage all your presets.</p>
-        <p><a href={`https://discord.com/api/oauth2/authorize?response_type=token&redirect_uri=${redirect}&client_id=${clientId}&state=${state}&scope=${scope}`}><span>🔧</span> Discord oAuth</a></p>
+        <p><a href={`https://discord.com/api/oauth2/authorize?response_type=token&redirect_uri=${redirect}&client_id=${clientId}&state=${state}&scope=${scope}`}><span role='img' aria-label='wrench symbol'>🔧</span> Discord oAuth</a></p>
       </Typography>
     </div>
   )

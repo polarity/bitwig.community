@@ -39,7 +39,6 @@ window.firebase.initializeApp(firebaseConfig)
  */
 window.firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    console.log('log in', user)
     // User is signed in.
     store.set('loggedInUser', {
       uid: user.uid || false,

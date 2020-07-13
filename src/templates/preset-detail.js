@@ -46,7 +46,7 @@ export default Mapped(({ modalLoginState, pageContext }) => {
       </SectionContent>
       <SectionContent>
         {file.user.firebaseUrl && <img width='40' height='40' className={styles.avatar} src={file.user.firebaseUrl} alt={'Discord Avatar of ' + file.user.username} />}
-        <p><a href={file.download} className={styles.downloadButton} title={'Download ' + file.name + ' Preset'}><span>💾</span>&nbsp;Download</a></p>
+        <p><a href={file.download} className={styles.downloadButton} title={'Download ' + file.name + ' Preset'}><span role='img' aria-label='disk symbol'>💾</span>&nbsp;Download</a></p>
         <br />Want to add your Bitwig Preset?
         <br />Join our <a href='https://discord.gg/nGgWY7w'>Bitwig discord</a> and drag &amp; drop your files.
       </SectionContent>

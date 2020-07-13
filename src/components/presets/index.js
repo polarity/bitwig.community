@@ -37,7 +37,7 @@ export default ({ children, limit, presets }) => {
             <div className={styles.info}>
               <p className={styles.desc}>{file.desc}</p>
             </div>}
-          <p><span>💾</span>&nbsp;<a href={file.download} title={'Download ' + file.name + ' Preset'}>Download</a> this preset</p>
+          <p><span role='img' aria-label='disk symbol'>💾</span>&nbsp;<a href={file.download} title={'Download ' + file.name + ' Preset'}>Download</a> this preset</p>
         </Typography>
       </article>
     )
