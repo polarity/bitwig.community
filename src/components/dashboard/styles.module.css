@@ -4,7 +4,8 @@
   margin: auto;
 }
 nav {
-  border-right: 1px solid rgb(172, 70, 65);
+  border-top: 1px solid rgb(49, 49, 49);;
+  border-right: 1px solid rgb(72, 39, 37);
   background-color: rgba(172, 70, 70,0.2);
   flex-basis: 30%;
 }

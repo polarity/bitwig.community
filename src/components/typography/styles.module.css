@@ -3,8 +3,6 @@
   box-sizing: border-box;
   opacity: 1;
   color: rgb(223, 223, 223);
-}
-.content * {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.33em;
   color: rgb(223, 223, 223);
