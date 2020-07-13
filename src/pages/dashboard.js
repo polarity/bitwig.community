@@ -44,10 +44,27 @@ const div = ({ loggedInUser }) => (
       <Dashboard>
         <nav>
           <Typography>
+            <h2>Main Menu</h2>
             <ul>
               <li><Link to='/dashboard'>Dashboard</Link></li>
+            </ul>
+            <h2>Your Creations</h2>
+            <ul>
+              <li>My Articles</li>
               <li><Link to='/dashboard/presets'>My Presets</Link></li>
               <li><Link to='/dashboard/songs'>My Songs</Link></li>
+              <li>My Wiki Entries</li>
+            </ul>
+            <h2>Your Pofile</h2>
+            <ul>
+              <li>My Artist Profile</li>
+              <li>My Customer Profile</li>
+            </ul>
+            <h2>General</h2>
+            <ul>
+              <li>My Login / Avatar</li>
+              <li>My Connections</li>
+              <li>Contact Admin / Help</li>
             </ul>
           </Typography>
         </nav>
