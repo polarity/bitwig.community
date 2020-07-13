@@ -10,6 +10,7 @@ const getData = async (setPresets, itemsOnPage) => {
   const dbQuery = firebase
     .firestore()
     .collection('presets')
+    .where('uid', '==', firebase.auth().currentUser.uid)
     .orderBy('added', 'desc')
 
   // we have a start? pagination
@@ -35,11 +36,14 @@ const getData = async (setPresets, itemsOnPage) => {
 }
 export default () => {
   const [presets, setPresets] = useState([])
-  const [itemsOnPage, setItemsOnPage] = useState(50)
+  const [itemsOnPage] = useState(50)
 
   // load data once
   useEffect(() => {
-    getData(setPresets, itemsOnPage)
+    const fetch = async () => {
+      getData(setPresets, itemsOnPage)
+    }
+    fetch()
   }, [])
 
   return (
