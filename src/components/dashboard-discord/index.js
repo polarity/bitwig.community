@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import firebase from 'firebase/app'
+import Typography from '../typography'
+import { Link } from 'gatsby'
 
 // get the access token from url,
 // make request to discord for user ID
-const getParams = async () => {
+const getParams = async (connectionState, setConnectionState) => {
   const accessToken = window.location.href.match(/&access_token=(\w*)&/)
   if (accessToken && accessToken.length > 1) {
     const response = await window.fetch('https://discord.com/api/users/@me', {
@@ -22,26 +24,46 @@ const getParams = async () => {
     }
 
     // add to firebase
-    firebase.firestore()
-      .collection('profile')
-      .doc(firebase.auth().currentUser.uid)
-      .set(userDoc)
-      .then((docRef) => console.log('Document written with ID: ', docRef))
-      .catch((error) => {
-        console.error('Error adding document: ', error)
-      })
+    try {
+      const docRef = await firebase.firestore()
+        .collection('profile')
+        .doc(firebase.auth().currentUser.uid)
+        .set(userDoc)
+      console.log('Document written with ID: ', docRef)
+      setConnectionState('success')
+    } catch (error) {
+      setConnectionState('error')
+      console.error('Error adding document: ', error)
+    }
 
     return userDoc
   }
 }
 
 export default () => {
-  getParams()
+  const [connectionState, setConnectionState] = useState('waiting')
+
+  getParams(connectionState, setConnectionState)
+
   return (
     <div>
-      cool
+      {connectionState === 'success' &&
+        <Typography>
+          <h1>Success!!</h1>
+          <p>You just connected your discord account with your bitwig.community account.!</p>
+          <p>you can go back to your <Link to='/dashboard'>Dashboard!</Link></p>
+        </Typography>}
+      {connectionState === 'error' &&
+        <Typography>
+          <h1>mhhhhh...</h1>
+          <p>something didn't work, try it again</p>
+          <p>back to your <Link to='/dashboard'>Dashboard!</Link></p>
+        </Typography>}
+      {connectionState === 'waiting' &&
+        <Typography>
+          <h1>Just a moment...</h1>
+          <p>If you see this screen for too long, something went wrong. go back to your <Link to='/dashboard'>Dashboard!</Link></p>
+        </Typography>}
     </div>
   )
 }
-
-// http://localhost:8000/dashboard/discord-identify#token_type=Bearer&access_token=xlNF2WnQIGXyAh8HaOLjG1DF8WlQ8i&expires_in=604800&scope=identify&state=15773059ghq9183habn

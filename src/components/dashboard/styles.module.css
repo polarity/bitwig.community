@@ -1,14 +1,13 @@
 .wrapper {
   display: flex;
-  border: 1px solid yellow;
-  max-width: 1200px;
+ max-width: 1200px;
   margin: auto;
 }
 nav {
-  border: 1px solid red;
+  border-right: 1px solid rgb(172, 70, 65);
+  background-color: rgba(172, 70, 70,0.2);
   flex-basis: 30%;
 }
 section {
-  border: 1px solid red;
   flex-basis: 70%;
 }
