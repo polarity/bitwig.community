@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import firebase from 'firebase/app'
 import { map } from 'lodash'
 import styles from './styles.module.css'
 import Typography from '../typography'
+import TextInpuToggle from '../text-input-toggle'
 
 const getData = async (setPresets, itemsOnPage) => {
   // init db query
@@ -35,15 +36,19 @@ const getData = async (setPresets, itemsOnPage) => {
 export default () => {
   const [presets, setPresets] = useState([])
   const [itemsOnPage, setItemsOnPage] = useState(50)
-  getData(setPresets, itemsOnPage)
+
+  // load data once
+  useEffect(() => {
+    getData(setPresets, itemsOnPage)
+  }, [])
+
   return (
     <div>
       {map(presets, (preset, index) => {
         return (
           <div key={index} id={preset.id} className={styles.preset}>
             <Typography>
-              {preset.name} | change
-
+              {preset.name} | <TextInpuToggle doc={preset} keyString='videoYoutube' />
             </Typography>
           </div>
         )
