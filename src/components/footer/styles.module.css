@@ -2,4 +2,7 @@
   height:200px;
   display:flex;
   justify-items: center;
+  border-top: 1px solid #cc9832;
+  background-color: #0b0b0b;
+  margin-top: 200px;
 }
