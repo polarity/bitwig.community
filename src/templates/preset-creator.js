@@ -1,5 +1,6 @@
 import React from 'react'
-import Header from '../components/menu-main'
+import MenuMain from '../components/menu-main'
+import MenuSub from '../components/menu-presets'
 import Grid from '../components/grid'
 import SectionHeader from '../components/section-header'
 import { Helmet } from 'react-helmet'
@@ -34,9 +35,9 @@ export default Mapped(({ modalLoginState, pageContext }) => {
         {fp.videoYoutube && <meta property='og:image' content={getYoutubeImage(fp.videoYoutube, 'max')} />}
       </Helmet>
 
-      <Header />
+      <MenuMain />
+      <MenuSub />
       <SignIn />
-
       <SectionHeader h={fp.user.username}>
       Download Presets for Bitwig Studio by {pageContext.presets[0].user.username}.
         <br />Want to add your Preset? Join our <a href='https://discord.gg/nGgWY7w'>Bitwig discord</a> and drag &amp; drop your files.

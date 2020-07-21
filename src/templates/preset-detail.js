@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/menu-main'
+import MenuMain from '../components/menu-main'
 import SectionHeader from '../components/section-header'
 import { Helmet } from 'react-helmet'
 import SignIn from '../components/sign-in'
@@ -11,6 +11,7 @@ import SectionContent from '../components/section-content'
 import getYoutubeImage from '../utils/getYoutubeImage'
 import urlSlug from 'url-slug'
 import Footer from '../components/footer'
+import MenuSub from '../components/menu-presets'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -35,8 +36,11 @@ export default Mapped(({ modalLoginState, pageContext }) => {
         {file.videoYoutube && <meta property='og:image' content={getYoutubeImage(file.videoYoutube, 'max')} />}
       </Helmet>
 
-      <Header />
+      <MenuMain />
+      <MenuSub />
+
       <SignIn />
+
       <SectionHeader h={startCase(file.name.split('.')[0])}>
         <br />{file.desc} <i>by</i> <a href={`/creator-${urlSlug(file.user.username)}`}>{file.user.username}</a>
       </SectionHeader>
