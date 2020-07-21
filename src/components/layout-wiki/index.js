@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../header'
+import Header from '../menu-main'
 import { MDXProvider } from '@mdx-js/react'
 import { Helmet } from 'react-helmet'
 import SignIn from '../sign-in'

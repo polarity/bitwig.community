@@ -1,6 +1,6 @@
 import React from 'react'
 import Typography from '../components/typography'
-import Header from '../components/header'
+import Header from '../components/menu-main'
 import SignIn from '../components/sign-in'
 import { Link } from 'gatsby'
 const validate = () => {
@@ -47,7 +47,7 @@ const ValidateMail = () => {
     <Typography>
       <p>You are logged in now. <Link to='/'>back to the site</Link></p>
     </Typography>
-  </div>
+         </div>
 }
 
 export default ValidateMail

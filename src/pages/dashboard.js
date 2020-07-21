@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/header'
+import Header from '../components/menu-main'
 import { Helmet } from 'react-helmet'
 import SignIn from '../components/sign-in'
 import { mapper } from '@reduxless/react'
@@ -10,6 +10,7 @@ import DashboardPresets from '../components/dashboard-presets'
 import DashboardDefault from '../components/dashboard-default'
 import { Link } from 'gatsby'
 import DashboardDiscord from '../components/dashboard-discord'
+import Footer from '../components/footer'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState'),
@@ -76,6 +77,7 @@ const div = ({ loggedInUser }) => (
           <p>Please login to show your Dashboard</p>
         </Typography>
       </div>}
+    <Footer />
   </div>
 )
 

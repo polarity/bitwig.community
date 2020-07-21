@@ -3,11 +3,18 @@
   background-position: 10% center;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-bottom: 3vh;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 40px;
   padding: 0 2vw;
+}
+.login {
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 300px;
 }
 .wrapper img {
   max-height: 30px;

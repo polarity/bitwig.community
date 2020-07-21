@@ -1,11 +1,12 @@
 import React from 'react'
-import Header from '../components/header'
+import Header from '../components/menu-main'
 import Grid from '../components/grid'
 import SectionHeader from '../components/section-header'
 import { Helmet } from 'react-helmet'
 import SignIn from '../components/sign-in'
 import { mapper } from '@reduxless/react'
 import Gridniks from '../components/gridniks'
+import Footer from '../components/footer'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -41,6 +42,6 @@ export default Mapped(({ modalLoginState }) =>
     <Grid>
       <Gridniks />
     </Grid>
-
+    <Footer />
   </div>
 )

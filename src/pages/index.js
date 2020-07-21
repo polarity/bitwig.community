@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/header'
+import Header from '../components/menu-main'
 import ContentContainer from '../components/content-container'
 import Grid from '../components/grid'
 // import IndexStyles from '../styles/Index.css'
@@ -10,6 +10,7 @@ import SignIn from '../components/sign-in'
 import { mapper } from '@reduxless/react'
 // import Chatbox from '../components/chatbox'
 import Gridniks from '../components/gridniks'
+import Footer from '../components/footer'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -34,6 +35,9 @@ export default Mapped(({ modalLoginState }) => {
 
       <Header />
       <SignIn />
+      <SectionHeader h='Bitwig Community'>
+        Collected Bitwig Studio ressources. Join our <a href='https://discord.gg/nGgWY7w' target='_blank' rel='noopener noreferrer'>Bitwig discord</a> and say hello!
+      </SectionHeader>
       <Grid>
         <ContentContainer img='made-with-bitwig.png'>
           <h2>Welcome Bitwigger</h2>
@@ -224,6 +228,7 @@ export default Mapped(({ modalLoginState }) => {
           <p>This group was created to share special Tips & Tricks about Bitwig Studio.</p>
         </ContentContainer>
       </Grid>
+      <Footer />
     </div>
   )
 })

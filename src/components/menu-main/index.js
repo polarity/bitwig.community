@@ -13,11 +13,6 @@ const Mapped = mapper({
 
 export default Mapped(({ children, loggedInUser }) =>
   <header className={styles.wrapper}>
-    <a href='https://bitwig.community'><img alt='Bitwig Community Logo by Amadeus Paulussen' src='/bitwig-logo.png' className={styles.img} /></a>
-    <Typography>
-      {!loggedInUser && <Login />}
-      {loggedInUser && <Logout><span>Welcome <b>{loggedInUser.displayName}</b></span></Logout>}
-    </Typography>
     <Typography>
       {loggedInUser && <Link to='/dashboard' className={styles.NavLinks}><b>Dashboard</b></Link>}
       {loggedInUser && <span>&nbsp;|| </span>}
@@ -26,5 +21,12 @@ export default Mapped(({ children, loggedInUser }) =>
       &nbsp;| <Link to='/presets' className={styles.NavLinks}>Presets</Link>
       &nbsp;| <Link to='/wiki/' className={styles.NavLinks}>BitWiki</Link>
     </Typography>
+    <div className={styles.login}>
+      <Typography>
+        {!loggedInUser && <Login />}
+        {loggedInUser && <Logout><span>Welcome <b>{loggedInUser.displayName}</b></span></Logout>}
+      </Typography>
+      <a href='https://bitwig.community'><img alt='Bitwig Community Logo by Amadeus Paulussen' src='/bitwig-logo.png' className={styles.img} /></a>
+    </div>
   </header>
 )

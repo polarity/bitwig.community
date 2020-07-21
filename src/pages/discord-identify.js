@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import firebase from 'firebase/app'
 import Typography from '../components/typography'
 import { Link } from 'gatsby'
+import Footer from '../components/footer'
 
 // get the access token from url,
 // make request to discord for user ID
@@ -94,6 +95,7 @@ export default () => {
           <h1>Just a moment...</h1>
           <p>If you see this screen for too long, something went wrong. go back to your <Link to='/dashboard'>Dashboard!</Link></p>
         </Typography>}
+      <Footer />
     </div>
   )
 }

@@ -1,3 +1,4 @@
+const filter = require('lodash').filter
 const firebase = require('firebase-admin')
 const path = require('path')
 const urlSlug = require('url-slug')
@@ -51,10 +52,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // create preset overview page
   // and send all presets from firebase
   actions.createPage({
-    path: '/presets',
+    path: '/presets-all',
     component: path.resolve('src/templates/presets.js'),
     context: {
       presets: Presets
+    }
+  })
+
+  // create preset overview page
+  // and send all presets from firebase
+  actions.createPage({
+    path: '/presets',
+    component: path.resolve('src/templates/presets-featured.js'),
+    context: {
+      presets: filter(Presets, { featured: true })
     }
   })
 

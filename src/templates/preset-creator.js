@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/header'
+import Header from '../components/menu-main'
 import Grid from '../components/grid'
 import SectionHeader from '../components/section-header'
 import { Helmet } from 'react-helmet'
@@ -8,6 +8,8 @@ import { mapper } from '@reduxless/react'
 import Presets from '../components/presets'
 import getYoutubeImage from '../utils/getYoutubeImage'
 import urlSlug from 'url-slug'
+import Footer from '../components/footer'
+
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
 }, {
@@ -42,7 +44,7 @@ export default Mapped(({ modalLoginState, pageContext }) => {
       <Grid fill='true'>
         <Presets presets={presets} />
       </Grid>
-
+      <Footer />
     </div>
   )
 })
