@@ -8,6 +8,7 @@ import Typography from '../components/typography'
 import { Router } from '@reach/router'
 import DashboardPresets from '../components/dashboard-presets'
 import DashboardDefault from '../components/dashboard-default'
+import DashboardProfile from '../components/dashboard-profile'
 import { Link } from 'gatsby'
 import DashboardDiscord from '../components/dashboard-discord'
 import Footer from '../components/footer'
@@ -52,7 +53,7 @@ const div = ({ loggedInUser }) => (
             </ul>
             <h2>Your Pofile</h2>
             <ul>
-              <li>My Artist Profile</li>
+              <li><Link to='/dashboard/profile'>My Profile</Link></li>
               <li>My Customer Profile</li>
             </ul>
             <h2>General</h2>
@@ -67,6 +68,7 @@ const div = ({ loggedInUser }) => (
           <Router basepath='/dashboard'>
             <DashboardDiscord path='/discord-identify' />
             <DashboardPresets path='/presets' />
+            <DashboardProfile path='/profile' />
             <DashboardDefault path='/' />
           </Router>
         </section>

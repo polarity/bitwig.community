@@ -3,7 +3,7 @@ import firebase from 'firebase/app'
 import { map } from 'lodash'
 import styles from './styles.module.css'
 import Typography from '../typography'
-import TextInpuToggle from '../text-input-toggle'
+import InlineEdit from '../inline-edit'
 
 const clientId = process.env.GATSBY_DISCORD_CLIENT
 const state = process.env.GATSBY_DISCORD_STATE
@@ -70,8 +70,13 @@ export default () => {
             <Typography>
               <h3>{preset.name}</h3>
               <ul className={styles.list}>
-                <li><b>Description:</b> <TextInpuToggle doc={preset} keyString='desc' /></li>
-                <li><b>Youtube:</b> <TextInpuToggle doc={preset} keyString='videoYoutube' /></li>
+                {map(preset, (info, key) => {
+                  if (['uid', 'id', 'user', 'type', 'added', 'download', 'name'].indexOf(key) < 0) {
+                    return (<li key={key}><b>{key}:</b> <InlineEdit collection='presets' doc={preset} keyString={key} /></li>)
+                  } else {
+                    return ''
+                  }
+                })}
               </ul>
             </Typography>
           </div>

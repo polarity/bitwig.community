@@ -33,14 +33,14 @@ export default ({ children, limit }) => {
      `}
       render={(data) => {
         return (
-          <React.Fragment>
+          <>
             {map(Limit(data.allFeedGridniks.edges, limit), (item, i) => {
               return <Youtube
                 key={item.node.id}
                 title={item.node.title}
                 link={item.node.link} />
             })}
-          </React.Fragment>
+          </>
         )
       }}
     />

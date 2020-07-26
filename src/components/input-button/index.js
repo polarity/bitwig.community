@@ -4,6 +4,7 @@ import styles from './styles.module.css'
 export default ({ children, onClick }) =>
   <button
     onClick={onClick}
-    className={styles.button}>
+    className={styles.button}
+  >
     {children}
   </button>

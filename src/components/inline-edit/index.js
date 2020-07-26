@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import firebase from 'firebase/app'
 import styles from './styles.module.css'
 
-const storeDoc = async (value, doc, keyString, setToggle) => {
+const storeDoc = async (collection, value, doc, keyString, setToggle) => {
   if (value && value.length > 0) {
     doc[keyString] = value
   } else {
@@ -12,7 +12,7 @@ const storeDoc = async (value, doc, keyString, setToggle) => {
   try {
     await firebase
       .firestore()
-      .collection('presets')
+      .collection(collection)
       .doc(doc.id)
       .set(doc)
     setToggle(false)
@@ -22,7 +22,7 @@ const storeDoc = async (value, doc, keyString, setToggle) => {
   }
 }
 
-export default ({ keyString, doc }) => {
+export default ({ keyString, doc, collection }) => {
   const [toggle, setToggle] = useState(false)
   const [value, setValue] = useState(doc[keyString] || '')
   return (
@@ -36,7 +36,7 @@ export default ({ keyString, doc }) => {
             value={value}
             onChange={(ev) => setValue(ev.target.value)}
           />
-          <button onClick={() => storeDoc(value, doc, keyString, setToggle)}>save</button>
+          <button onClick={() => storeDoc(collection, value, doc, keyString, setToggle)}>save</button>
           <button onClick={() => setToggle(false)}>cancel</button>
         </span>}
     </>
