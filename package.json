@@ -14,10 +14,13 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^20.0.0",
+    "@ckeditor/ckeditor5-react": "^2.1.0",
     "@mdx-js/mdx": "*",
     "@mdx-js/react": "*",
     "@reduxless/core": "^4.0.0",
     "@reduxless/react": "^4.0.0",
+    "dayjs": "^1.8.30",
     "discord.js": "^12.2.0",
     "dotenv": "^8.0.0",
     "firebase": "^7.0.0",

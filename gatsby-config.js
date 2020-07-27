@@ -29,7 +29,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-create-client-paths',
-      options: { prefixes: ['/dashboard/*'] }
+      options: { prefixes: ['/dashboard/*', '/forum/*'] }
     },
     {
       resolve: 'gatsby-source-git',
