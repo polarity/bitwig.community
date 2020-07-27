@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/menu-main'
+import MenuMain from '../components/menu-main'
 import { Helmet } from 'react-helmet'
 import SignIn from '../components/sign-in'
 import { mapper } from '@reduxless/react'
@@ -10,6 +10,7 @@ import ForumAdd from '../components/forum-add'
 import ForumTopicView from '../components/forum-topic-view'
 import { Link } from 'gatsby'
 import Footer from '../components/footer'
+import MenuSub from '../components/menu-forum'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState'),
@@ -32,18 +33,10 @@ const div = ({ loggedInUser }) => (
       <meta property='og:image' content='https://bitwig.community/bitwig-for-life.jpg' />
     </Helmet>
 
-    <Header />
+    <MenuMain />
+    <MenuSub />
     <SignIn />
 
-    <nav>
-      <Typography>
-        <h2>Main Menu</h2>
-        <ul>
-          <li><Link to='/forum'>Forum</Link></li>
-          <li><Link to='/forum/add'>new Thread</Link></li>
-        </ul>
-      </Typography>
-    </nav>
     <section>
       <Router basepath='/forum'>
         <ForumDefault path='/' />

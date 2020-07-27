@@ -1,0 +1,16 @@
+.wrapper {
+  background-color: rgba(172, 70, 65,0.5);
+  background-position: 10% center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 2vw;
+}
+.wrapper img {
+  max-height: 30px;
+}
+a.NavLinks {
+  color: #fff !important;
+}

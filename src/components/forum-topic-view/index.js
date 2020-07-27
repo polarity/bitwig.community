@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Profiler } from 'react'
 import firebase from 'firebase/app'
 import Typography from '../typography'
 import { map } from 'lodash'
 import { Link } from 'gatsby'
 import styles from './styles.module.css'
 import ForumAdd from '../forum-add'
+import Typo from '../typo'
+import formatDateRelative from '../../utils/formatDateRelative'
 
 const getTopic = async (collection, setData, itemsOnPage, slug) => {
   firebase
@@ -54,25 +56,38 @@ export default ({ slug }) => {
   return (
     <div id='Forum'>
       <div id={topic.id} className={styles.topic}>
-        <Typography>
-          <h1>{topic.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: topic.content }} />
-        </Typography>
+        <div className={styles.topicAvatar}>
+          {topic.uimage && <img src={topic.uimage} alt={'profile image of ' + topic.uname} />}
+        </div>
+        <div className={styles.topicContent}>
+          <Typography>
+            <h1>{topic.title}</h1>
+            <p className={styles.subinfo}>by {topic.uname}</p>
+            <div dangerouslySetInnerHTML={{ __html: topic.content }} />
+          </Typography>
+        </div>
       </div>
 
       {map(replies, (reply, index) => {
         return (
           <div id={reply.id} key={reply.id} className={styles.reply}>
-            <Typography>
-              <hr />
-              <div dangerouslySetInnerHTML={{ __html: reply.content }} />
-            </Typography>
+            <div className={styles.replyAvatar}>
+              {reply.uimage && <img src={reply.uimage} alt={'profile image of ' + reply.uname} />}
+            </div>
+            <div className={styles.replyContent}>
+              <Typography>
+                <p className={styles.subinfo}>reply by {reply.uname} - {formatDateRelative(reply.added)}</p>
+                <div dangerouslySetInnerHTML={{ __html: reply.content }} />
+              </Typography>
+            </div>
           </div>
         )
       })}
 
-      <div>
-        <ForumAdd type='reply' topictitle={topic.title} topicid={topic.id} />
+      <div id='AddReplyBox'>
+        <Typography>
+          <ForumAdd type='reply' topictitle={topic.title} topicid={topic.id} />
+        </Typography>
       </div>
     </div>
   )

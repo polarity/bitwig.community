@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import firebase from 'firebase/app'
+import Typo from '../typo'
 import Typography from '../typography'
 import { map } from 'lodash'
 import { Link } from 'gatsby'
@@ -49,15 +50,20 @@ export default () => {
   return (
     <div id='Forum'>
       <Typography>
-        <h1>Welcome to our Forum</h1>
+        <h1>Welcome to the Bitwig Community Forum</h1>
+        <p>Hey guys, normally the <a rel='noopener noreferrer' target='_blank' href='https://discord.gg/0g2ZPafIN3eWParf'>Bitwig Discord</a> is enough for the whole banter,
+          but every now and then you need a well maintained forum with persistent
+          good information and all the discussions around it.
+          And that's where you are right now.
+        </p>
       </Typography>
       {map(topics, (topic, index) => {
         return (
           <div key={index} id={topic.id} className={styles.topic}>
-            <Typography>
-              <Link to={'/forum/topic/' + topic.id}>{topic.title}</Link>
-              <br />by {topic.uname} - {formatDateRelative(topic.added)}
-            </Typography>
+            <Typo>
+              <h2><Link to={'/forum/topic/' + topic.id}>{topic.title}</Link></h2>
+              <span className={styles.subHeader}>by {topic.uname} - {formatDateRelative(topic.added)}</span>
+            </Typo>
           </div>
         )
       })}

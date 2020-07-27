@@ -2,26 +2,18 @@
   padding: 2vh;
   box-sizing: border-box;
   opacity: 1;
-  color: rgb(223, 223, 223);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.33em;
-  color: rgb(223, 223, 223);
-  font-size: 1em;
 }
 .content h1 {
   margin: 0 0 0.5em 0;
   padding: 0;
-  font-size: 1.5em;
 }
 .content h2 {
   margin: 0 0 0.5em 0;
   padding: 0;
-  font-size: 1.3em;
 }
 .content h3 {
   margin: 0 0 0.5em 0;
   padding: 0;
-  font-size: 1.1em;
 }
 .content p, .content hr {
   margin: 0 0 1.33em 0;
@@ -36,15 +28,9 @@
   margin: 0 0 1em 0;
   padding: 0;
 }
-
 .content p b {
-  color:#129d90;
 }
 .content a,.content a:link, .content a:visited {
-  color: #3d9ec1;
-  text-decoration: none;
 }
 .content a:hover, .content a:active {
-  color: #fff;
-  text-decoration: underline;
 }
