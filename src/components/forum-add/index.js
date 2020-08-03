@@ -3,17 +3,16 @@ import firebase from 'firebase/app'
 import Typography from '../typography'
 import styles from './styles.module.css'
 import getUserProfile from '../../utils/getUserProfile'
-
-import CKEditor from '@ckeditor/ckeditor5-react'
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
-
 import Button from '../input-button'
 import urlSlug from 'url-slug'
 import UUID from 'uuid-v4'
-
 import getProfileImage from '../../utils/getProfileImage'
+import isBrowser from '../../utils/isBrowser'
 
-import './ckstyles.css'
+let CKEditor = false
+if (isBrowser) {
+  CKEditor = require('../ckeditor')
+}
 
 const sendData = async (type, collection, title, text, topicId) => {
   const userProfile = await getUserProfile(firebase.auth().currentUser)
@@ -77,19 +76,7 @@ export default ({ type, topicid, topictitle }) => {
     <div id='Forum'>
       {elemHeader}
       {elemInputTitle}
-      <div class='ck-content'>
-        <CKEditor
-          editor={ClassicEditor}
-          data=''
-          onInit={editor => {
-          // You can store the "editor" and use when it is needed.
-            console.log('Editor is ready to use!', editor)
-          }}
-          onChange={(event, editor) => {
-            setText(editor.getData())
-          }}
-        />
-      </div>
+      {CKEditor && CKEditor}
       <Button onClick={(ev) => sendData(type, collName, title, text, id)}>Send</Button>
     </div>
   )

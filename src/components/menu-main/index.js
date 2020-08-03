@@ -17,7 +17,7 @@ export default Mapped(({ children, loggedInUser }) =>
       {loggedInUser && <Link to='/dashboard' className={styles.NavLinks}><b>Dashboard</b></Link>}
       {loggedInUser && <span>&nbsp;|| </span>}
       <Link to='/' className={styles.NavLinks}>Startpage</Link>
-
+      &nbsp;| <Link to='/forum/' className={styles.NavLinks}>Forum</Link>
       &nbsp;| <Link to='/gridniks/' className={styles.NavLinks}>Gridniks</Link>
       &nbsp;| <Link to='/presets' className={styles.NavLinks}>Presets</Link>
       &nbsp;| <Link to='/wiki/' className={styles.NavLinks}>BitWiki</Link>
