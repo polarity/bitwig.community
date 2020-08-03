@@ -8,6 +8,7 @@ import 'firebase/auth'
 import Button from '../input-button'
 import InputText from '../input-text'
 import Label from '../input-label'
+import isBrowser from '../../utils/isBrowser'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -22,7 +23,7 @@ class Signin extends Component {
       user: false,
       email: false
     }
-    if (typeof window !== 'undefined') {
+    if (isBrowser) {
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           this.setState({

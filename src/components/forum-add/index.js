@@ -76,7 +76,7 @@ export default ({ type, topicid, topictitle }) => {
     <div id='Forum'>
       {elemHeader}
       {elemInputTitle}
-      {CKEditor && CKEditor}
+      {CKEditor && <CKEditor {...setText} />}
       <Button onClick={(ev) => sendData(type, collName, title, text, id)}>Send</Button>
     </div>
   )
