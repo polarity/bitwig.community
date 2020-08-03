@@ -8,11 +8,7 @@ import urlSlug from 'url-slug'
 import UUID from 'uuid-v4'
 import getProfileImage from '../../utils/getProfileImage'
 import isBrowser from '../../utils/isBrowser'
-
-let CKEditor = false
-if (isBrowser) {
-  CKEditor = require('../ckeditor')
-}
+import CKEditor from '../ckeditor'
 
 const sendData = async (type, collection, title, text, topicId) => {
   const userProfile = await getUserProfile(firebase.auth().currentUser)
@@ -76,7 +72,7 @@ export default ({ type, topicid, topictitle }) => {
     <div id='Forum'>
       {elemHeader}
       {elemInputTitle}
-      {CKEditor && <CKEditor {...setText} />}
+      <CKEditor {...setText} />
       <Button onClick={(ev) => sendData(type, collName, title, text, id)}>Send</Button>
     </div>
   )
