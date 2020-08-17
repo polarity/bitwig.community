@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Profiler } from 'react'
 import firebase from 'firebase/app'
-import Typography from '../typography'
 import { map } from 'lodash'
 import { Link } from 'gatsby'
 import styles from './styles.module.css'
@@ -87,9 +86,7 @@ export default ({ slug }) => {
       })}
 
       <div id='AddReplyBox'>
-        <Typography>
-          <ForumAdd type='reply' topictitle={topic.title} topicid={topic.id} />
-        </Typography>
+        <ForumAdd type='reply' topictitle={topic.title} topicid={topic.id} />
       </div>
     </div>
   )

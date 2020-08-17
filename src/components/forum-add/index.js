@@ -8,6 +8,8 @@ import urlSlug from 'url-slug'
 import UUID from 'uuid-v4'
 import getProfileImage from '../../utils/getProfileImage'
 import CKEditor from '../ckeditor'
+import { navigate } from 'gatsby'
+import Typography from '../typography'
 
 const createValidation = (fn, errorMsg, type) => {
   return (data) => {
@@ -86,8 +88,14 @@ const sendData = async (setError, type, collection, title, text, topicId) => {
         .collection(collection)
         .doc(slug)
         .set(doc)
+
       console.log('doc saved')
       setError('')
+
+      // redirect after new topic
+      if (type !== 'reply') {
+        navigate('/forum/topic/' + slug)
+      }
     } catch (error) {
       console.log('something went wrong ', error)
     }
@@ -121,11 +129,13 @@ export default ({ type, topicid, topictitle }) => {
 
   return (
     <div id='Forum' className={styles.Forum}>
-      {elemHeader}
-      {elemInputTitle}
-      {error && <div className={styles.error}>{error}</div>}
-      <CKEditor {...{ setText }} />
-      <Button onClick={(ev) => sendData(setError, type, collName, title, text, id)}>Send</Button>
+      <Typography>
+        {elemHeader}
+        {elemInputTitle}
+        {error && <div className={styles.error}>{error}</div>}
+        <CKEditor {...{ setText }} />
+        <Button onClick={(ev) => sendData(setError, type, collName, title, text, id)}>Send</Button>
+      </Typography>
     </div>
   )
 }
