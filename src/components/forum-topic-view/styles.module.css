@@ -1,31 +1,53 @@
+.Forum {
+  max-width: 1024px;
+  margin: 5vh auto;
+}
 .topic{
   display: flex;
 }
 .topicAvatar {
-  flex-basis: 80px;
-  min-width: 80px;
-  max-width: 80px;
+  flex-basis: 90px;
   padding: 10px;
   box-sizing: border-box;
 }
-.topicContent {}
+.topicAvatar img {
+  max-width: 70px;
+}
+.topicContent {
+  padding: 10px;
+  box-sizing: border-box;
+}
+.topicContent h1 {
+  margin-bottom: 0.5em;
+}
+.topicContent p {
+  margin-bottom: 1em;
+}
+.topicContent ul,.topicContent ol  {
+  margin: 1em;
+}
 .reply {
   display: flex;
   border-top: 1px solid rgb(172, 70, 65);
 }
 .replyAvatar {
-  flex-basis: 80px;
-  min-width: 80px;
-  max-width: 80px;
-  padding: 10px 0 0 10px;
+  flex-basis: 90px;
+  padding: 10px 10px;
   box-sizing: border-box;
 }
 .replyAvatar img {
   width: 70px;
 }
-.replyContent {}
+.replyContent {
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
 .subinfo {
   margin-top: -0.5em !important;
   opacity: 0.5;
   margin-bottom:0.5em !important;
+}
+.subinfoStandalone {
+  opacity: 0.5;
+  margin-bottom:0 !important;
 }

@@ -48,7 +48,7 @@ export default () => {
   }, [])
 
   return (
-    <div id='Forum'>
+    <div id='Forum' className={styles.Forum}>
       <Typography>
         <h1>Welcome to the Bitwig Community Forum</h1>
         <p>Hey guys, normally the <a rel='noopener noreferrer' target='_blank' href='https://discord.gg/0g2ZPafIN3eWParf'>Bitwig Discord</a> is enough for the whole banter,

@@ -1,3 +1,7 @@
+.Forum {
+  max-width: 1024px;
+  margin: 5vh auto;
+}
 .topic {
   border-top: 1px solid rgb(172, 70, 65);
   padding: 1em;

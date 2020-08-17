@@ -1,0 +1,13 @@
+.Forum {
+  max-width: 1024px;
+  margin: 5vh auto;
+}
+.error {
+  background-color: red;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.errorline {
+  margin:0px !important;
+  padding: 0px !important;
+}

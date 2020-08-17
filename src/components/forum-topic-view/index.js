@@ -54,17 +54,18 @@ export default ({ slug }) => {
   }, [])
 
   return (
-    <div id='Forum'>
+    <div className={styles.Forum} id='Forum'>
       <div id={topic.id} className={styles.topic}>
         <div className={styles.topicAvatar}>
           {topic.uimage && <img src={topic.uimage} alt={'profile image of ' + topic.uname} />}
+          {!topic.uimage && <img src='/no-avatar.jpg' alt={'profile image of ' + topic.uname} />}
         </div>
         <div className={styles.topicContent}>
-          <Typography>
+          <Typo>
             <h1>{topic.title}</h1>
             <p className={styles.subinfo}>by {topic.uname}</p>
             <div dangerouslySetInnerHTML={{ __html: topic.content }} />
-          </Typography>
+          </Typo>
         </div>
       </div>
 
@@ -73,12 +74,13 @@ export default ({ slug }) => {
           <div id={reply.id} key={reply.id} className={styles.reply}>
             <div className={styles.replyAvatar}>
               {reply.uimage && <img src={reply.uimage} alt={'profile image of ' + reply.uname} />}
+              {!reply.uimage && <img src='/no-avatar.jpg' alt={'profile image of ' + topic.uname} />}
             </div>
             <div className={styles.replyContent}>
-              <Typography>
-                <p className={styles.subinfo}>reply by {reply.uname} - {formatDateRelative(reply.added)}</p>
+              <Typo>
+                <p className={styles.subinfoStandalone}>reply by {reply.uname} - {formatDateRelative(reply.added)}</p>
                 <div dangerouslySetInnerHTML={{ __html: reply.content }} />
-              </Typography>
+              </Typo>
             </div>
           </div>
         )
