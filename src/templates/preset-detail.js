@@ -33,7 +33,7 @@ export default Mapped(({ modalLoginState, pageContext }) => {
         <meta property='og:image:height' content='1080' />
         <meta property='og:type' content='website' />
         {!file.videoYoutube && <meta property='og:image' content='https://bitwig.community/bitwig-for-life.jpg' />}
-        {file.videoYoutube && <meta property='og:image' content={getYoutubeImage(file.videoYoutube, 'max')} />}
+        {file.videoYoutube && <meta property='og:image' content={getYoutubeImage(file.videoYoutube)} />}
       </Helmet>
 
       <MenuMain />
