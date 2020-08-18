@@ -12,6 +12,24 @@
   background-size: cover;
   background-position: center;
 }
+.wrapper::before {
+  opacity: 0;
+  content: '';
+  display: block;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url('/play-button.png');
+  background-size: 10%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+}
+.wrapper:hover::before {
+  opacity: 1;
+}
+
 .wrapper img {
   position: absolute;
   width: 100%;
