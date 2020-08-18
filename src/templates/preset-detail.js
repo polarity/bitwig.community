@@ -8,7 +8,7 @@ import styles from './styles.module.css'
 import Youtube from '../components/youtube'
 import { startCase } from 'lodash'
 import SectionContent from '../components/section-content'
-import getYoutubeImage from '../utils/getYoutubeImage'
+import getYoutubeSlug from '../utils/getYoutubeSlug'
 import urlSlug from 'url-slug'
 import Footer from '../components/footer'
 import MenuSub from '../components/menu-presets'
@@ -33,7 +33,7 @@ export default Mapped(({ modalLoginState, pageContext }) => {
         <meta property='og:image:height' content='1080' />
         <meta property='og:type' content='website' />
         {!file.videoYoutube && <meta property='og:image' content='https://bitwig.community/bitwig-for-life.jpg' />}
-        {file.videoYoutube && <meta property='og:image' content={getYoutubeImage(file.videoYoutube)} />}
+        {file.videoYoutube && <meta property='og:image' content={`https://i3.ytimg.com/vi/${getYoutubeSlug(file.videoYoutube)}/hqdefault.jpg`} />}
       </Helmet>
 
       <MenuMain />
