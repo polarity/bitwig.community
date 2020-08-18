@@ -18,7 +18,7 @@ const Limit = (data, limit) => {
 export default ({ children, limit, presets }) => {
   return map(Limit(presets, limit), (file, i) => {
     return (
-      <article style={{ border: '1px solid #666', backgroundColor: '#333' }}>
+      <article key={'preset-' + i} style={{ border: '1px solid #666', backgroundColor: '#333' }}>
         <Typography>
           <div className={styles.header}>
             <div className={styles.headerText}>
