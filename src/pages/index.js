@@ -114,6 +114,10 @@ export default Mapped(({ modalLoginState }) => {
         </ContentContainer>
       </Grid>
 
+      <SectionHeader h='Video Tutorials'>
+        If you like watching videos and learning something, you are in good hands with these Youtube channels.
+      </SectionHeader>
+
       <SectionHeader h='Gridniks'>
         Grids playing by themselves. See what the Grid can do and what others can do with it. <a href='/gridniks'>Watch more Videos!</a>&nbsp;
         <a href='https://www.youtube.com/playlist?list=PLyCfny1Hc_bvfJ33U-3DN4H37gw9cIYTi&jct=z1d0enqVw1qUM0cwcJwlF6lkjelR3g'>
@@ -123,10 +127,6 @@ export default Mapped(({ modalLoginState }) => {
       <Grid>
         <Gridniks limit='12' />
       </Grid>
-
-      <SectionHeader h='Video Tutorials'>
-        If you like watching videos and learning something, you are in good hands with these Youtube channels.
-      </SectionHeader>
 
       <Grid>
         <YoutubeContainer title='Bitwig Official' channelId='UCkVdkd-DBrvSbpC4gefsnkw'>
