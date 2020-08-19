@@ -11,6 +11,7 @@ import { mapper } from '@reduxless/react'
 // import Chatbox from '../components/chatbox'
 import Gridniks from '../components/gridniks'
 import Footer from '../components/footer'
+import { Link } from 'gatsby'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -63,6 +64,11 @@ export default Mapped(({ modalLoginState }) => {
             also <a href='made-with-bitwig-pack.zip'>download a press pack (3mb)</a> with
             the logo and a teaser video to use with your posts, videos etc.
           </p>
+          <p>
+            <a href='https://discord.gg/0g2ZPafIN3eWParf' target='_blank' rel='noopener noreferrer'>
+              <img style={{ maxWidth: '100%' }} src='/join-discord.png' alt='join the bitwig discord' />
+            </a>
+          </p>
         </ContentContainer>
         <ContentContainer img='Bitwig-Studio-Screenshot.png'>
           <h2>Quick Links</h2>
@@ -78,6 +84,16 @@ export default Mapped(({ modalLoginState }) => {
             <li><span title='new addition to the site!' role='img' aria-label='Fire Emojj'>🔥</span> Made With Bitwig <a href='https://open.spotify.com/playlist/579Upg3ro2afKOn25UpPor'>Spotify Playlist</a> by Martin Glover</li>
           </ul>
 
+          <h2>Presets</h2>
+          <ul>
+            <li>
+              <Link to='/presets'>Presets from the Community</Link>
+            </li>
+            <li>
+              <a href='https://www.bitwig.com/en/bitwig-studio/sound-content.html'>Official Sound Packs</a> - use the bitwig package manager
+            </li>
+          </ul>
+
           <h2>Samples</h2>
           <ul>
             <li>
@@ -87,8 +103,18 @@ export default Mapped(({ modalLoginState }) => {
               <a href='https://hiphopdrumsamples.com/'>The Drum Broker</a> - vinyl samples
             </li>
             <li>
-              <a href='https://freesound.org/'>Freesounds</a> - Sample community with all kinds of random samples
+              <a href='https://freesound.org/'>Freesounds</a> - Sample community with random samples
             </li>
+            <li>
+              <a href='https://splice.com/sounds'>Splice</a> - Proffessional and modern samples
+            </li>
+            <li>
+              <a href='https://www.noiiz.com/cloud'>Noiiz</a> - Many many good Samplepacks for a monthly fee
+            </li>
+            <li>
+              <a href='https://www.ghostsyndicate.net/sample-packs/'>Ghostsyndicate</a> - Sample packs for electronic music
+            </li>
+
           </ul>
         </ContentContainer>
         <ContentContainer img='bitwig-studio-3-package.png'>
@@ -117,17 +143,6 @@ export default Mapped(({ modalLoginState }) => {
       <SectionHeader h='Video Tutorials'>
         If you like watching videos and learning something, you are in good hands with these Youtube channels.
       </SectionHeader>
-
-      <SectionHeader h='Gridniks'>
-        Grids playing by themselves. See what the Grid can do and what others can do with it. <a href='/gridniks'>Watch more Videos!</a>&nbsp;
-        <a href='https://www.youtube.com/playlist?list=PLyCfny1Hc_bvfJ33U-3DN4H37gw9cIYTi&jct=z1d0enqVw1qUM0cwcJwlF6lkjelR3g'>
-        Check the collab playlist on youtube
-        </a> or <a href='https://www.youtube.com/results?search_query=grid+bitwig&sp=CAI%253D'>search for grid videos</a> on youtube.
-      </SectionHeader>
-      <Grid>
-        <Gridniks limit='12' />
-      </Grid>
-
       <Grid>
         <YoutubeContainer title='Bitwig Official' channelId='UCkVdkd-DBrvSbpC4gefsnkw'>
           <p>The official Bitwig Youtube channel with tutorials and trailers. If you are a Bitwig user you have to subscribe!</p>
@@ -166,6 +181,16 @@ export default Mapped(({ modalLoginState }) => {
         or <a href='https://github.com/TraNzeM/tnm-bitwig-presets'>github</a>.
           </p>
         </YoutubeContainer>
+      </Grid>
+
+      <SectionHeader h='Gridniks'>
+        Grids playing by themselves. See what the Grid can do and what others can do with it. <a href='/gridniks'>Watch more Videos!</a>&nbsp;
+        <a href='https://www.youtube.com/playlist?list=PLyCfny1Hc_bvfJ33U-3DN4H37gw9cIYTi&jct=z1d0enqVw1qUM0cwcJwlF6lkjelR3g'>
+        Check the collab playlist on youtube
+        </a> or <a href='https://www.youtube.com/results?search_query=grid+bitwig&sp=CAI%253D'>search for grid videos</a> on youtube.
+      </SectionHeader>
+      <Grid>
+        <Gridniks limit='12' />
       </Grid>
 
       <SectionHeader h='Resources & Downloads'>
@@ -213,7 +238,7 @@ export default Mapped(({ modalLoginState }) => {
       </SectionHeader>
       <Grid>
         <ContentContainer title='Discord' link='https://discord.gg/0g2ZPafIN3eWParf' img='discord.png'>
-          <p>Inofficial Bitwig Discord Server. Come in, only frienldy bitwiggers in here and always someone to talk to! Discord can be used via a webapp or a standalonve native client.</p>
+          <p>Unofficial Bitwig discord server. Come in, only friendly people in here and always someone to talk to! Discord can be used via a web application or a standalone native client.</p>
         </ContentContainer>
         <ContentContainer title='reddit /r/bitwig' link='https://www.reddit.com/r/Bitwig/' img='reddit.png'>
           <p>Half forum half chat, reddit is a website and a nice source of information around bitwig.</p>
