@@ -31,9 +31,17 @@ const load = async (details) => {
   return db.collection('presets').orderBy('added', 'desc').get()
 }
 
+exports.onCreatePage = async ({ page, actions }) => {
+  if (page.path.match(/^\/forum/)) {
+    page.matchPath = '/forum/*'
+    // Update the page.
+    actions.createPage(page)
+  }
+}
+
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ page, graphql, actions, reporter }) => {
   // prepare preset data
   const Presets = []
   const Creators = []
@@ -71,13 +79,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // pages for each preset
   for (const Preset of Presets) {
-    actions.createPage({
-      path: '/preset-' + Preset.name.split('.')[0],
-      component: path.resolve('src/templates/preset-detail.js'),
-      context: {
-        preset: Preset
-      }
-    })
+    if (Preset.name) {
+      actions.createPage({
+        path: '/preset-' + Preset.name.split('.')[0],
+        component: path.resolve('src/templates/preset-detail.js'),
+        context: {
+          preset: Preset
+        }
+      })
+    }
   }
 
   // pages for each creator
