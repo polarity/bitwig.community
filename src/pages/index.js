@@ -221,7 +221,7 @@ export default Mapped(({ modalLoginState }) => {
         </ContentContainer>
         <ContentContainer
           title='Kim Åke - Text Tutorials'
-          link='https://aavepyora.com/category/bitwig/' img='aavepyora.png'
+          link='https://aavepyora.online/' img='aavepyora.png'
         >
           <p>Kim Åke's blog contains many articles about Bitwig written in text form. If you prefer to read and don't watch videos, this is the place for you.</p>
         </ContentContainer>
