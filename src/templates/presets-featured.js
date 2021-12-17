@@ -37,7 +37,6 @@ export default Mapped(({ modalLoginState, pageContext }) =>
     <SectionHeader h='Featured Presets'>
       Download Presets for Bitwig Studio from the community.
       <br />Want to add your Preset? Join our <a href='https://discord.gg/nGgWY7w' target='_blank' rel='noopener noreferrer'>Bitwig discord</a> and drag &amp; drop your files.
-      <br /><br />you can find more presets on <span role='img' aria-label='slayer hand symbol'>🤘</span><a href='https://bitwiggers.com/' rel='noopener noreferrer' target='_blank'><b>bitwiggers.com</b></a>
     </SectionHeader>
     <Grid fill='true'>
       <Presets presets={pageContext.presets} />

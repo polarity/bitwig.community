@@ -26,7 +26,9 @@ export default ({ children, limit, presets }) => {
                 <h3 style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                   <a href={'/preset-' + file.name.split('.')[0]}>{startCase(file.name.split('.')[0])}</a>
                 </h3>
-                <p className={styles.subheader}>by <a href={`/creator-${urlSlug(file.user.username)}`}>{file.user.username}</a></p>
+                <p className={styles.subheader}>by <a href={`/creator-${urlSlug(file.user.username)}`}>{file.user.username}</a> for <a href={`/device-${urlSlug(file.device_name)}`}>{file.device_name}</a></p>
+                <p className={styles.subheader}>Category: <a href={`/category-${urlSlug(file.preset_category)}`}>{file.preset_category}</a></p>
+                <p className={styles.subheader}>Bitwig Version: {file.application_version_name}</p>
               </div>
               {file.user.firebaseUrl && <img width='40' height='40' className={styles.avatar} src={file.user.firebaseUrl} alt={'Discord Avatar of ' + file.user.username} />}
             </div>
@@ -34,10 +36,10 @@ export default ({ children, limit, presets }) => {
               {!file.videoYoutube && <img src='/made-with-bitwig.png' alt='Made with Bitwig Logo' />}
               {file.videoYoutube && <Youtube key={file.id} title={file.name.split('.')[0]} link={file.videoYoutube} />}
             </div>
-            {file.desc &&
-              <div className={styles.info}>
-                <p className={styles.desc}>{file.desc}</p>
-              </div>}
+            <div className={styles.info}>
+              <p className={styles.desc}>{file.comment}</p>
+              <p className={styles.desc}>{file.desc}</p>
+            </div>
             <p><span role='img' aria-label='disk symbol'>💾</span>&nbsp;<a href={file.download} title={'Download ' + file.name + ' Preset'}>Download</a> this preset</p>
           </Typography>
         </article>

@@ -42,12 +42,14 @@ export default Mapped(({ modalLoginState, pageContext }) => {
       <SignIn />
 
       <SectionHeader h={startCase(file.name.split('.')[0])}>
-        <br />{file.desc} <i>by</i> <a href={`/creator-${urlSlug(file.user.username)}`}>{file.user.username}</a>
+        <br />{file.comment}
+        <br /> <br />{file.desc} <i>by</i> <a href={`/creator-${urlSlug(file.user.username)}`}>{file.user.username}</a>
       </SectionHeader>
 
       <SectionContent>
         {!file.videoYoutube && <img src='/made-with-bitwig.png' alt='Made with Bitwig Logo' />}
         {file.videoYoutube && <Youtube key={file.id} title={file.name.split('.')[0]} link={file.videoYoutube} quality='max' />}
+        <br />for {file.device_name} (<i>{file.device_category}</i>) / Category: {file.preset_category} / Bitwig Version: {file.application_version_name}
       </SectionContent>
       <SectionContent>
         {file.user.firebaseUrl && <img width='40' height='40' className={styles.avatar} src={file.user.firebaseUrl} alt={'Discord Avatar of ' + file.user.username} />}

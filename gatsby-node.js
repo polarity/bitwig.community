@@ -45,15 +45,35 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
   // prepare preset data
   const Presets = []
   const Creators = []
+  const Devices = []
+  const Categories = []
   const snapshot = await load()
   snapshot.forEach((doc) => {
     const data = doc.data()
     Presets.push(data)
-    if (Creators[urlSlug(data.user.username)]) {
-      Creators[urlSlug(data.user.username)].push(data)
+
+    if (Creators['__' + urlSlug(data.user.username)]) {
+      Creators['__' + urlSlug(data.user.username)].push(data)
     } else {
-      Creators[urlSlug(data.user.username)] = []
-      Creators[urlSlug(data.user.username)].push(data)
+      Creators['__' + urlSlug(data.user.username)] = []
+      Creators['__' + urlSlug(data.user.username)].push(data)
+    }
+
+    if (data.device_name && data.device_name.length > 0) {
+      if (Devices['__' + urlSlug(data.device_name)]) {
+        Devices['__' + urlSlug(data.device_name)].push(data)
+      } else {
+        Devices['__' + urlSlug(data.device_name)] = []
+        Devices['__' + urlSlug(data.device_name)].push(data)
+      }
+    }
+    if (data.preset_category && data.preset_category.length > 0) {
+      if (Categories['__' + urlSlug(data.preset_category)]) {
+        Categories['__' + urlSlug(data.preset_category)].push(data)
+      } else {
+        Categories['__' + urlSlug(data.preset_category)] = []
+        Categories['__' + urlSlug(data.preset_category)].push(data)
+      }
     }
   })
 
@@ -93,10 +113,32 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
   // pages for each creator
   for (const key in Creators) {
     actions.createPage({
-      path: '/creator-' + key,
+      path: '/creator-' + key.replace('__', ''),
       component: path.resolve('src/templates/preset-creator.js'),
       context: {
         presets: Creators[key]
+      }
+    })
+  }
+
+  // pages for each devices
+  for (const key in Devices) {
+    actions.createPage({
+      path: '/device-' + key.replace('__', ''),
+      component: path.resolve('src/templates/preset-device.js'),
+      context: {
+        presets: Devices[key]
+      }
+    })
+  }
+
+  // pages for each category
+  for (const key in Categories) {
+    actions.createPage({
+      path: '/category-' + key.replace('__', ''),
+      component: path.resolve('src/templates/preset-category.js'),
+      context: {
+        presets: Categories[key]
       }
     })
   }

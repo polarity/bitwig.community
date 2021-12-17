@@ -22,6 +22,7 @@
   height: 40px;
 }
 .info {
+  height: 120px;
   max-height: 120px;
   margin-bottom: 20px;
   overflow-y: auto;
