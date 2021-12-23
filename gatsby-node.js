@@ -31,6 +31,11 @@ const load = async (details) => {
   return db.collection('presets').orderBy('added', 'desc').get()
 }
 
+const loadChallenges = async (details) => {
+  const db = firebase.firestore()
+  return db.collection('ext-youtube-challenges').orderBy('date', 'desc').get()
+}
+
 exports.onCreatePage = async ({ page, actions }) => {
   if (page.path.match(/^\/forum/)) {
     page.matchPath = '/forum/*'
@@ -74,6 +79,21 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
         Categories['__' + urlSlug(data.preset_category)] = []
         Categories['__' + urlSlug(data.preset_category)].push(data)
       }
+    }
+  })
+
+  // challenges data
+  const Challenges = []
+  const snapshotChallenges = await loadChallenges()
+  snapshotChallenges.forEach((doc) => {
+    const data = doc.data()
+    Challenges.push(data)
+  })
+  actions.createPage({
+    path: '/grid-challenges',
+    component: path.resolve('src/templates/grid-challenges.js'),
+    context: {
+      challenges: Challenges
     }
   })
 

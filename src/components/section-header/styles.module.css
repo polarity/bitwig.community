@@ -17,6 +17,8 @@
 }
 .wrapper .sub {
   opacity: 0.7;
+  max-width: 740px;
+  margin: auto;
 }
 .wrapper a, .wrapper a:link, .wrapper a:visited {
   color: rgb(204, 152, 50);
