@@ -36,23 +36,27 @@ export default Mapped(({ modalLoginState, pageContext }) =>
     <SignIn />
 
     <SectionHeader h='Grid Challenges'>
-    How do you get better at patch building? You build a small patch every day.
-    And over time you memorise different combinations that sound good. The more often you do this, the better and faster you become.
-      <br /><br />This challenge page should help to give you ideas every day.
-    Try to solve the challenges in the grid and record your finished patches as youtube videos. Step by step to a better modular nerd.
+    How do you get better at patch building? You build a small <b>patch every day</b>.
+    And over time you memorise different combinations that sound good. The more often you do this, the better and faster you become. This challenge page should help to give you ideas every day. Try to solve the challenges in the grid and record your finished patches as youtube videos. Step by step to a better modular nerd.
     </SectionHeader>
     <Midsplit>
       <Grid>
         <section>
           <ContentContainer title='Pick your Challenge' img='/grid-challenges.png'>
-            <p>1.) Pick a challenge from this list, 2.) record a video of your solution, 3.) upload a video on youtube and use the <b>challenge code</b> in the youtube title. 4.) your video will show up on the right side of this page (within a day)</p>
+            <p>1.) Pick a challenge from this list,
+              <br />2.) record a video of your solution,
+              <br />3.) upload it on youtube and use the <b>challenge code</b> in the title.
+              <br />4.) your video will show up on the right side of this page (within a day)
+              <br />5.) earn fame and prizes
+            </p>
+            <p>Please challenge yourself to keep the patch as small and simple as possible. Maybe add a description on/in the video what you did. We look for the most efficient solution! Dont stress yourself too much, it´s all about learning and having fun.</p>
             <ul>
-              <li>create a very small, good sounding reverb.  <br />challenge code: <i>[bwcreverb1]</i></li>
-              <li>create a sequencer with pitch, gate and velocity parameters for each step. dont use the "gates" and "pitches" modules!!<br />challenge code: <i>[bwcseq1]</i></li>
-              <li>create a self sequencing and playing patch in C minor with as few modules as possible.  <br />challenge code: [bwcgenerate1]</li>
-              <li>create an simple stutter effect for beats and percussions. make it nicely tweakable for end users with useful macro knob mappings. <br />challenge code: [bwcstutter1]</li>
-              <li>create an audio effect that can pitch audio streams up or down in realtime<br />challenge code: [bwcaudiopitch1]</li>
-              <li>create an audio effect that adds nice textures to pads<br />challenge code: [bwcaudiotexture1]</li>
+              <li>create a very small, good sounding reverb.  <br />challenge code: <i>[bwcreverb1]</i><br /><br /></li>
+              <li>create a sequencer with pitch, gate and velocity parameters for each step. dont use the "gates" and "pitches" modules!!<br />challenge code: <i>[bwcseq1]</i><br /><br /></li>
+              <li>create a self sequencing and playing patch in C minor with as few modules as possible.  <br />challenge code: <i>[bwcgenerate1]</i><br /><br /></li>
+              <li>create an simple stutter effect for beats and percussions. make it nicely tweakable for end users with useful macro knob mappings. <br />challenge code: <i>[bwcstutter1]</i><br /><br /></li>
+              <li>create an audio effect that can pitch audio streams up or down in realtime<br />challenge code: <i>[bwcaudiopitch1]</i><br /><br /></li>
+              <li>create an audio effect that adds nice textures to pads<br />challenge code: <i>[bwcaudiotexture1]</i><br /><br /></li>
             </ul>
 
             <h2>Archived Challenges</h2>
@@ -67,6 +71,8 @@ export default Mapped(({ modalLoginState, pageContext }) =>
             <ul>
               <li>ask in the <a href='https://discord.gg/PKWNnzmezx'>community discord</a></li>
               <li>watch the free <a href='https://www.youtube.com/playlist?list=PLfXKHnSL0KtTfn8BX6TBxWfyVqr8Iu6Ue'>bitwig grid playlist</a></li>
+              <li>take a paid <a href='https://www.bitwig.com/de/learnings/askvideo-302-the-grid-explained-and-explored-35/'>grid course</a></li>
+              <li>watch some <a href='https://www.youtube.com/results?search_query=bitwig+grid+tutorial'>youtube tutorials</a></li>
             </ul>
           </ContentContainer>
           <Grid>
