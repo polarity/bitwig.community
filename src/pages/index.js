@@ -73,49 +73,38 @@ export default Mapped(({ modalLoginState }) => {
         <ContentContainer img='Bitwig-Studio-Screenshot.png'>
           <h2>Quick Links</h2>
           <ul>
-            <li><a href='https://www.bitwig.com/en/download.html'>Bitwig Download / Demo</a> - Try it for yourself (Linux/Mac/Win)</li>
-            <li><a href='mailto:contact@bitwig.com'>Support Mail</a> - Found a Bug?</li>
-            <li><a href='https://www.youtube.com/watch?v=GRNzPc3UpYg'>Bitwig Key Features</a> Plug-in Hosting & Crash Protection (video)</li>
-            <li><a href='https://www.youtube.com/watch?v=zvPhIm6Ttd8'>Getting around in The Grid</a> (video)</li>
             <li><b>#bitwig</b> on <a href='https://twitter.com/hashtag/bitwig'>twitter</a>, <a href='https://www.instagram.com/explore/tags/bitwig/'>instagram</a> and <a href='https://www.facebook.com/hashtag/bitwig'>facebook</a></li>
             <li><a href='https://discord.gg/0g2ZPafIN3eWParf'>Bitwig Chat</a> - Discord</li>
-            <li><a href='https://www.youtube.com/user/thechangeofends'>Brian Bollmann</a> - Videos of all bitwig devices & modulators (maybe outdated)</li>
+            <li><a href='https://www.reddit.com/r/Bitwig/'>Bitwig Reddit Discussion Board</a></li>
+            <li><a href='https://www.kvraudio.com/forum/viewforum.php?f=259'>Bitwig KVR Discussion Board</a></li>
+            <li><a href='https://www.facebook.com/groups/bitwigusers'>Bitwig Facebook Group (en)</a></li>
+            <li><a href='https://bitwish.top/'>Bitwish Community Feature requests</a></li>
             <li>lastest Bitwig Videos on <a href='https://www.youtube.com/results?search_query=bitwig&sp=CAI%253D'>youtube</a> and <a href='https://vimeo.com/search/sort:latest?q=bitwig'>vimeo</a> / <sub>thx wavedigit</sub></li>
-            <li><span title='new addition to the site!' role='img' aria-label='Fire Emojj'>🔥</span> Made With Bitwig <a href='https://open.spotify.com/playlist/579Upg3ro2afKOn25UpPor'>Spotify Playlist</a> by Martin Glover</li>
+            <li>Made With Bitwig <a href='https://open.spotify.com/playlist/579Upg3ro2afKOn25UpPor'>Spotify Playlist</a> by Martin Glover <span title='new addition to the site!' role='img' aria-label='Fire Emojj'>🔥</span></li>
           </ul>
 
           <h2>Presets</h2>
           <ul>
             <li>
-              <Link to='/presets'>Presets from the Community</Link>
+              <Link to='/presets'>Bitwig Presets from the Community</Link>
             </li>
             <li>
               <a href='https://www.bitwig.com/en/bitwig-studio/sound-content.html'>Official Sound Packs</a> - use the bitwig package manager
             </li>
+            <li>
+              <a href='https://www.audiobombs.com/?category=Bitwig&q=&sort='>Audiobombs</a> - collection of user contributed presets
+            </li>
+            <li>
+              <a href='https://aavepyora.online/product/outer-limits/'>Outer Limits</a> - Experimental sound tools for Bitwig 4 <span title='new addition to the site!' role='img' aria-label='Cupcake Emojj'>🧁</span>
+            </li>
+            <li>
+              <a href='http://www.mossgrabers.de/Software/Software.html'>Jürgen Moßgraber</a> - Scripts to support several controller devices (Push 1/2, APC40 / APC40mkII, Komplete Kontrol, Maschine and more)
+            </li>
+            <li>
+              <a href='https://www.patreon.com/polarity_music'>Polarity Productions</a> - Free/Payed Bitwig Presets
+            </li>
           </ul>
 
-          <h2>Samples</h2>
-          <ul>
-            <li>
-              <a href='https://intimatenoise.com/'>Intimate Noise</a> - unusual samples
-            </li>
-            <li>
-              <a href='https://hiphopdrumsamples.com/'>The Drum Broker</a> - vinyl samples
-            </li>
-            <li>
-              <a href='https://freesound.org/'>Freesounds</a> - Sample community with random samples
-            </li>
-            <li>
-              <a href='https://splice.com/sounds'>Splice</a> - Proffessional and modern samples
-            </li>
-            <li>
-              <a href='https://www.noiiz.com/cloud'>Noiiz</a> - Many many good Samplepacks for a monthly fee
-            </li>
-            <li>
-              <a href='https://www.ghostsyndicate.net/sample-packs/'>Ghostsyndicate</a> - Sample packs for electronic music
-            </li>
-
-          </ul>
         </ContentContainer>
         <ContentContainer img='bitwig-studio-3-package.png'>
           <h2>Buy Bitwig Studio</h2>
@@ -135,6 +124,8 @@ export default Mapped(({ modalLoginState }) => {
           <ul>
             <li><a href='https://shop.bitwig.com/order/checkout.php?PRODS=4710161&QTY=1&AFFILIATE=124276&CART=1'>order Bitwig Studio</a></li>
             <li><a href='https://shop.bitwig.com/order/checkout.php?PRODS=4713256&QTY=1&AFFILIATE=124276&CART=1'>order Bitwig Studio license renewal</a></li>
+            <li><a href='https://www.bitwig.com/en/download.html'>Demo / Trial</a> - Try it for yourself (Linux/Mac/Win)</li>
+            <li><a href='mailto:contact@bitwig.com'>Support Mail</a> - Found a Bug?</li>
           </ul>
           <p>use the voucher code <b>"POLARITY"</b> for a <b>10% discount!</b></p>
         </ContentContainer>
@@ -193,66 +184,6 @@ export default Mapped(({ modalLoginState }) => {
         <Gridniks limit='12' />
       </Grid>
 
-      <SectionHeader h='Resources & Downloads'>
-        Here you can find websites & tools to download additional content that you can use in Bitwig.
-      </SectionHeader>
-
-      <Grid>
-        <ContentContainer
-          title='Jürgen Moßgraber - Software'
-          link='http://www.mossgrabers.de/Software/Software.html' img='mossgraber.png'
-        >
-          <p>Jürgen is a great developer & musician creating scripts to support several controller devices (Push 1/2, APC40 / APC40mkII, Komplete Kontrol, Maschine and more) and protocols in Bitwig Studio.</p>
-        </ContentContainer>
-        <ContentContainer
-          title='Bitwiggers - Presets'
-          link='https://bitwiggers.com'
-          img='bitwiggers.png'
-        >
-          <p>A frequent topic of discussion in Bitwig-related channels is that sharing presets is a common but unmet need by the users. Presets are attached to forum posts, shared as Dropbox links, or whatever the sharer is familiar with, and the result is that it's hard to find any of them unless you're actively participating. I hope this changes that.</p>
-        </ContentContainer>
-        <ContentContainer
-          link='https://github.com/polarity/preset-party-app/releases'
-          title='Preset Party - Standalone Tool'
-          img='preset-party.png'
-        >
-          <p>Cross-platform GUI application for sharing and caring presets. Ready to run on all platforms.</p>
-          <p>You can this standalone App on your PC to download github hosted presets into your local preset directory with one click.</p>
-        </ContentContainer>
-        <ContentContainer
-          title='Kim Åke - Text Tutorials'
-          link='https://aavepyora.online/' img='aavepyora.png'
-        >
-          <p>Kim Åke's blog contains many articles about Bitwig written in text form. If you prefer to read and don't watch videos, this is the place for you.</p>
-        </ContentContainer>
-        <ContentContainer
-          title='Audio Bombs - Presets'
-          link='https://www.audiobombs.com/?category=Bitwig&q=&sort=' img='audio-bombs.png'
-        >
-          <p>Audiobombs is a collection of user contributed presets and tools for music production, djing, and live performance. All the items on the site are free to download.</p>
-        </ContentContainer>
-      </Grid>
-
-      <SectionHeader h='Social Media'>
-        Would you like to have a chat or get to know other Bitwig users?
-      </SectionHeader>
-      <Grid>
-        <ContentContainer title='Discord' link='https://discord.gg/0g2ZPafIN3eWParf' img='discord.png'>
-          <p>Unofficial Bitwig discord server. Come in, only friendly people in here and always someone to talk to! Discord can be used via a web application or a standalone native client.</p>
-        </ContentContainer>
-        <ContentContainer title='reddit /r/bitwig' link='https://www.reddit.com/r/Bitwig/' img='reddit.png'>
-          <p>Half forum half chat, reddit is a website and a nice source of information around bitwig.</p>
-        </ContentContainer>
-        <ContentContainer title='Facebook' link='https://www.facebook.com/groups/bitwigusers' img='facebook.png'>
-          <p>Everyone is on Facebook. Join the inofficial facebook group "Bitwig User Group"</p>
-        </ContentContainer>
-        <ContentContainer title='KVR' link='https://www.kvraudio.com/forum/viewforum.php?f=259' img='kvr.png'>
-          <p>KVR is older than the Internet just like the users there. If you want to have a forum with all its macken, here you are in good hands.</p>
-        </ContentContainer>
-        <ContentContainer title='Bitwig Studio Trickbox' link='https://www.facebook.com/groups/BSTrickbox/' img='facebook.png'>
-          <p>This group was created to share special Tips & Tricks about Bitwig Studio.</p>
-        </ContentContainer>
-      </Grid>
       <Footer />
     </div>
   )
