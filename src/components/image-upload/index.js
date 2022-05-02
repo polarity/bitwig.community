@@ -59,10 +59,10 @@ export default ({ keyString, doc, collection }) => {
 
   return (
     <div>
-      {doc && !dataUrl && <div><img style={{ maxWidth: '200px' }} src={doc[keyString]} /></div>}
+      {doc && !dataUrl && <div><img alt='' style={{ maxWidth: '200px' }} src={doc[keyString]} /></div>}
       {dataUrl &&
         <div>
-          <img style={{ maxWidth: '200px' }} src={dataUrl} />
+          <img alt='' style={{ maxWidth: '200px' }} src={dataUrl} />
           <br />
           <InputButton onClick={async (ev) => {
             // store the image and get the url

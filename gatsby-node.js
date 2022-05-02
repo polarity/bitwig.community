@@ -1,4 +1,5 @@
 const filter = require('lodash').filter
+const uniqBy = require('lodash').uniqBy
 const firebase = require('firebase-admin')
 const path = require('path')
 const urlSlug = require('url-slug')
@@ -36,6 +37,11 @@ const loadChallenges = async (details) => {
   return db.collection('ext-youtube-challenges').orderBy('date', 'desc').get()
 }
 
+const loadVideos = async (details) => {
+  const db = firebase.firestore()
+  return db.collection('ext-youtube').orderBy('date', 'desc').get()
+}
+
 exports.onCreatePage = async ({ page, actions }) => {
   if (page.path.match(/^\/forum/)) {
     page.matchPath = '/forum/*'
@@ -52,6 +58,44 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
   const Creators = []
   const Devices = []
   const Categories = []
+  const snapshotVideos = await loadVideos()
+
+  /**
+   * video GUIDES
+   * video creators
+   * video topics
+   */
+  const Videos = []
+  snapshotVideos.forEach(doc => {
+    const data = doc.data()
+    Videos.push(data)
+  })
+  const VideoCreators = uniqBy(Videos, (e) => {
+    return e.channel
+  })
+  actions.createPage({
+    path: '/video-guides',
+    component: path.resolve('src/templates/video-guides.js'),
+    context: {
+      videos: Videos,
+      creators: VideoCreators
+    }
+  })
+
+  // pages for each video guide creator
+  for (const key in VideoCreators) {
+    actions.createPage({
+      path: '/video-creator-' + urlSlug(VideoCreators[key].channel),
+      component: path.resolve('src/templates/video-guides.js'),
+      context: {
+        videos: filter(Videos, (e) => {
+          return e.channel === VideoCreators[key].channel
+        }),
+        creators: VideoCreators
+      }
+    })
+  }
+
   const snapshot = await load()
   snapshot.forEach((doc) => {
     const data = doc.data()
@@ -82,7 +126,9 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
     }
   })
 
-  // challenges data
+  /*
+    challenges
+  */
   const Challenges = []
   const snapshotChallenges = await loadChallenges()
   snapshotChallenges.forEach((doc) => {
@@ -97,8 +143,11 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
     }
   })
 
-  // create preset overview page
-  // and send all presets from firebase
+  /*
+    presets
+      create preset overview page
+      and send all presets from firebase
+ */
   actions.createPage({
     path: '/presets-all',
     component: path.resolve('src/templates/presets.js'),

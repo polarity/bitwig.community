@@ -8,7 +8,6 @@ import { mapper } from '@reduxless/react'
 import Footer from '../components/footer'
 import ContentContainer from '../components/content-container'
 import Midsplit from '../components/midsplit'
-import Gridniks from '../components/gridniks'
 import Challenges from '../components/challenges'
 import Youtube from '../components/youtube'
 

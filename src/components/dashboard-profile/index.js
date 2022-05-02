@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import firebase from 'firebase/app'
 import { map } from 'lodash'
-import styles from './styles.module.css'
 import Typography from '../typography'
 import InlineEdit from '../inline-edit'
 import ImageUpload from '../image-upload'

@@ -1,7 +1,6 @@
-import React, { useState, useEffect, Profiler } from 'react'
+import React, { useState, useEffect } from 'react'
 import firebase from 'firebase/app'
 import { map } from 'lodash'
-import { Link } from 'gatsby'
 import styles from './styles.module.css'
 import ForumAdd from '../forum-add'
 import Typo from '../typo'

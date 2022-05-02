@@ -12,8 +12,8 @@ const Limit = (data, limit) => {
 /**
  * query all rss feeds, and render the individual posts
  */
-export default ({ children, limit, challenges }) => {
-  return map(Limit(challenges, limit), (item, i) => {
+export default ({ children, limit, videos }) => {
+  return map(Limit(videos, limit), (item, i) => {
     return <Youtube key={item.id} title={item.title} link={item.url} />
   })
 }
