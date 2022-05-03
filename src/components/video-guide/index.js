@@ -1,19 +1,14 @@
 import React from 'react'
-import { map } from 'lodash'
+import { map, size } from 'lodash'
 import Youtube from '../youtube'
-
-const Limit = (data, limit) => {
-  if (limit) {
-    data.length = limit
-  }
-  return data
-}
 
 /**
  * query all rss feeds, and render the individual posts
  */
 export default ({ children, limit, videos }) => {
-  return map(Limit(videos, limit), (item, i) => {
+  const i = 1
+  return map(videos, (item, i) => {
+    if (i >= limit) return null
     return <Youtube key={item.id} title={item.title} link={item.url} />
   })
 }

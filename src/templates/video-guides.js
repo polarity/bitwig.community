@@ -41,12 +41,12 @@ export default Mapped(({ modalLoginState, pageContext }) =>
       <Leftsplit>
         <div>
           <Typography>
-            <ListFromArray limit={3} array={pageContext.creators} />
+            <ListFromArray array={pageContext.creators} />
           </Typography>
         </div>
 
         <Grid>
-          <VideoGuide videos={pageContext.videos} />
+          <VideoGuide videos={pageContext.videos} limit='50' />
         </Grid>
 
       </Leftsplit>
