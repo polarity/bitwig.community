@@ -88,6 +88,7 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
       path: '/video-creator-' + urlSlug(VideoCreators[key].channel),
       component: path.resolve('src/templates/video-guides.js'),
       context: {
+        type: 'creatorPage',
         videos: filter(Videos, (e) => {
           return e.channel === VideoCreators[key].channel
         }),

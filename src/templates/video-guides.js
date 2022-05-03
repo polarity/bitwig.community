@@ -20,7 +20,7 @@ export default Mapped(({ modalLoginState, pageContext }) =>
   <div>
     <Helmet>
       <meta charSet='utf-8' />
-      <title>Video Guides</title>
+      <title>Video Guides {pageContext.type === 'creatorPage' ? ' by ' + pageContext.videos[0].channel : ''}</title>
       <meta name='viewport' content='width=device-width' />
       <meta property='og:url' content='https://bitwig.community' />
       <meta property='og:title' content='Video Guides - Bitwig Videos &amp; Tutorials you might enjoy' />
@@ -39,16 +39,16 @@ export default Mapped(({ modalLoginState, pageContext }) =>
 
     <section>
       <Leftsplit>
-        <div>
+        <div id='VideoCreatorList'>
           <Typography>
             <ListFromArray array={pageContext.creators} />
           </Typography>
         </div>
-
-        <Grid>
-          <VideoGuide videos={pageContext.videos} limit='50' />
-        </Grid>
-
+        <div id='Videogrid'>
+          <Grid>
+            <VideoGuide videos={pageContext.videos} limit='50' />
+          </Grid>
+        </div>
       </Leftsplit>
     </section>
     <Footer />

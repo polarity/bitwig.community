@@ -5,7 +5,6 @@
   grid-row-gap: 1vw;
   box-sizing: border-box;
   padding: 0 1vw;
-  height: 0;
 }
 .wrapper-fill {
   display: grid;
