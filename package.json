@@ -23,6 +23,7 @@
     "dayjs": "^1.8.30",
     "discord.js": "^12.2.0",
     "dotenv": "^8.0.0",
+    "fetch": "^1.1.0",
     "firebase": "^7.0.0",
     "firebase-admin": "^8.12.1",
     "fs": "0.0.1-security",
