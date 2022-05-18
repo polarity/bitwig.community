@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styles from './styles.module.css'
 import getYoutubeImage from '../../utils/getYoutubeImage'
 import getYoutubeSlug from '../../utils/getYoutubeSlug'
+import Typography from '../typography'
 
 /**
  * query all rss feeds, and render the individual posts
@@ -37,5 +38,11 @@ export default ({ link, title, quality }) => {
           allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
           allowfullscreen='allowfullscreen'
         />}
+      {!player &&
+        <div className={styles.videoMetaData}>
+          <Typography>
+            <h3>{title}</h3>
+          </Typography>
+        </div>}
     </div>)
 }
