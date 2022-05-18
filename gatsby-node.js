@@ -34,7 +34,7 @@ const load = async (details) => {
 
 const loadChallenges = async (details) => {
   const db = firebase.firestore()
-  return db.collection('ext-youtube-challenges').orderBy('date', 'desc').get()
+  return db.collection('bitwig-challenge').orderBy('date', 'desc').get()
 }
 
 const loadVideos = async (details) => {
@@ -134,11 +134,12 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
   const snapshotChallenges = await loadChallenges()
   snapshotChallenges.forEach((doc) => {
     const data = doc.data()
+    data.id = doc.id
     Challenges.push(data)
   })
   actions.createPage({
-    path: '/grid-challenges',
-    component: path.resolve('src/templates/grid-challenges.js'),
+    path: '/challenges',
+    component: path.resolve('src/templates/challenges.js'),
     context: {
       challenges: Challenges
     }
@@ -166,6 +167,19 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
       presets: filter(Presets, { featured: true })
     }
   })
+
+  // pages for each challenge
+  for (const Challenge of Challenges) {
+    if (Challenge.title) {
+      actions.createPage({
+        path: '/challenge-' + Challenge.id,
+        component: path.resolve('src/templates/challenge-detail.js'),
+        context: {
+          challenge: Challenge
+        }
+      })
+    }
+  }
 
   // pages for each preset
   for (const Preset of Presets) {

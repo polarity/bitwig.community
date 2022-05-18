@@ -1,6 +1,7 @@
 import React from 'react'
 import { map } from 'lodash'
-import Youtube from '../youtube'
+import { Link } from 'gatsby'
+import firebaseTimestamp2FormattedString from '../../utils/firebaseTimestamp2FormattedString'
 
 const Limit = (data, limit) => {
   if (limit) {
@@ -9,11 +10,8 @@ const Limit = (data, limit) => {
   return data
 }
 
-/**
- * query all rss feeds, and render the individual posts
- */
 export default ({ children, limit, challenges }) => {
   return map(Limit(challenges, limit), (item, i) => {
-    return <Youtube key={item.id} title={item.title} link={item.url} />
+    return <li>{firebaseTimestamp2FormattedString(item.date)} » {firebaseTimestamp2FormattedString(item.deadline)}: <Link to={'/challenge-' + item.id}>{item.title}</Link>   ({item.participants} 👩‍🍳)</li>
   })
 }

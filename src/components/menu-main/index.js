@@ -19,7 +19,7 @@ export default Mapped(({ children, loggedInUser }) =>
       <Link to='/' className={styles.NavLinks}>Startpage</Link>
       &nbsp;| <Link to='/video-guides/' className={styles.NavLinks}>Videos</Link>
       &nbsp;| <Link to='/gridniks/' className={styles.NavLinks}>Gridniks</Link>
-      &nbsp;| <Link to='/grid-challenges/' className={styles.NavLinks}>Grid Challenges</Link>
+      &nbsp;| <Link to='/challenges/' className={styles.NavLinks}>Challenges</Link>
       &nbsp;| <Link to='/presets' className={styles.NavLinks}>Presets</Link>
       &nbsp;| <a href='https://discord.gg/0g2ZPafIN3eWParf' className={styles.NavLinks}>Discord</a>
       &nbsp;| <a href='https://social.bitwig.community' className={styles.NavLinks}>Mastodon</a>

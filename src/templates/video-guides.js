@@ -7,9 +7,10 @@ import SignIn from '../components/sign-in'
 import { mapper } from '@reduxless/react'
 import Footer from '../components/footer'
 import Leftsplit from '../components/leftsplit'
-import VideoGuide from '../components/video-guide'
+import VideoGuide from '../components/video-guide-list'
 import Typography from '../components/typography'
-import ListFromArray from '../components/list-from-array'
+import ListFromArray from '../components/video-guide-list-from-array'
+import { Link } from 'gatsby'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -41,6 +42,10 @@ export default Mapped(({ modalLoginState, pageContext }) =>
       <Leftsplit>
         <div id='VideoCreatorList'>
           <Typography>
+            <h3>Video Guides</h3>
+            <ul>
+              <li><Link to='/video-guides'>Video Guide Overview</Link></li>
+            </ul>
             <h3>Creators</h3>
             <ul>
               <ListFromArray array={pageContext.creators} />
