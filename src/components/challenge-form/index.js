@@ -74,7 +74,7 @@ class ChallengeForm extends Component {
       formData.append('Email', this.state.email)
       formData.append('challenge', this.state.challenge)
 
-      formData.append('userUid', this.props.loggedInUser.id)
+      formData.append('userUid', this.props.loggedInUser.uid)
       formData.append('photoURL', this.props.loggedInUser.photoURL)
       formData.append('displayName', this.props.loggedInUser.displayName)
 
