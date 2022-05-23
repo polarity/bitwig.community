@@ -44,7 +44,7 @@ export default Mapped(({ modalLoginState, handleOpenChallengeForm, pageContext }
       <meta property='og:image:width' content='1080' />
       <meta property='og:image:height' content='1080' />
       <meta property='og:type' content='website' />
-      <meta property='og:image' content='https://bitwig.community/bitwig-for-life.jpg' />
+      <meta property='og:image' content={'https://bitwig.community/' + pageContext.challenge.cover} />
     </Helmet>
 
     <Header />
