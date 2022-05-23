@@ -74,7 +74,7 @@ class ChallengeForm extends Component {
       formData.append('Email', this.state.email)
       formData.append('challenge', this.state.challenge)
 
-      window.fetch('http://localhost:5000/challenge', { // https://presetupload.herokuapp.com/challenge
+      window.fetch('https://presetupload.herokuapp.com/challenge', { // http://localhost:5000/challenge
         method: 'POST',
         body: formData
       })
