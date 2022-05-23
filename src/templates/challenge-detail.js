@@ -38,7 +38,7 @@ export default Mapped(({ modalLoginState, handleOpenChallengeForm, pageContext }
       <meta name='description' content={pageContext.challenge.description} />
       <meta name='title' content={pageContext.challenge.description} />
       <meta name='viewport' content='width=device-width' />
-      <meta property='og:url' content='https://bitwig.community' />
+      <meta property='og:url' content={'https://bitwig.community/challenge-' + pageContext.challenge.id} />
       <meta property='og:title' content={pageContext.challenge.description} />
       <meta property='og:description' content={pageContext.challenge.description} />
       <meta property='og:image:width' content='1080' />
