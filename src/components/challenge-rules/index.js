@@ -10,6 +10,6 @@ const Limit = (data, limit) => {
 
 export default ({ children, limit, rules }) => {
   return map(Limit(rules, limit), (item, i) => {
-    return <li>{item}</li>
+    return <li key={'rule-' + i}>{item}</li>
   })
 }

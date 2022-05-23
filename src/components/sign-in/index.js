@@ -96,7 +96,7 @@ class Signin extends Component {
                 <h1>Passwordless Login</h1>
                 <p>
                   You do not need a password for this website. Enter your email address below and we will send you a link to log in.
-                  <b>Your account will be bound to this email address.</b>
+                  <br /><br /><b>Your account will be bound to this email address.</b>
                 </p>
                 {this.state.info &&
                   <p>{this.state.info}</p>}
@@ -116,11 +116,12 @@ class Signin extends Component {
               <Typography>
                 <FormRow>
                   <Label style={{ width: '10vw' }} className={styles.label}>E-Mail:</Label>
-                  <InputText type='email' placeholder='your email' onChange={this.handleChange.bind(this)} />
+                  <InputText style={{ width: '10vw' }} type='email' placeholder='your email' onChange={this.handleChange.bind(this)} />
                 </FormRow>
+                <hr />
                 <FormRow>
-                  <Label style={{ width: '10vw' }}>send</Label>
-                  <Button onClick={this.handleSend.bind(this)} color='red'>Login</Button>
+                  <Label style={{ width: '10vw' }}>ready?</Label>
+                  <Button onClick={this.handleSend.bind(this)} color='red'>Login!!!</Button>
                   <Button onClick={this.props.handleModalState}>Cancel</Button>
                 </FormRow>
               </Typography>}

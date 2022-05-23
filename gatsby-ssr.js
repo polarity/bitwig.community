@@ -14,6 +14,7 @@ import { Container } from '@reduxless/react'
  */
 const store = createStore({
   initialState: {
+    modalChallengeForm: false,
     modalLoginState: false,
     loggedInUser: false
   }

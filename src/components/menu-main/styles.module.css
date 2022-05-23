@@ -6,8 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 40px;
-  padding: 0 2vw;
+  padding: 0px;
 }
 .login {
   justify-self: flex-end;

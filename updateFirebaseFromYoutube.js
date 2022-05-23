@@ -36,7 +36,7 @@ firebase.initializeApp(firebaseConfig)
  */
 const updateFirebaseFromYoutubeSearch = async (searchTerm) => {
   const db = firebase.firestore()
-  const videoData = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchTerm}&key=${process.env.GATSBY_YOUTUBE_API_KEY}&order=date&maxResults=250`)
+  const videoData = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searchTerm}&key=${process.env.GATSBY_YOUTUBE_API_KEY}&order=date&maxResults=50`)
   const videoJson = await videoData.json()
   for (let i = 0; i < videoJson.items.length; i++) {
     const videoItem = videoJson.items[i]

@@ -2,13 +2,10 @@ import React from 'react'
 import Header from '../components/menu-main'
 import ContentContainer from '../components/content-container'
 import Grid from '../components/grid'
-// import IndexStyles from '../styles/Index.css'
-import YoutubeContainer from '../components/content-container-youtube'
 import SectionHeader from '../components/section-header'
 import { Helmet } from 'react-helmet'
 import SignIn from '../components/sign-in'
 import { mapper } from '@reduxless/react'
-// import Chatbox from '../components/chatbox'
 import Gridniks from '../components/gridniks'
 import Footer from '../components/footer'
 import { Link } from 'gatsby'
@@ -129,49 +126,6 @@ export default Mapped(({ modalLoginState }) => {
           </ul>
           <p>use the voucher code <b>"POLARITY"</b> for a <b>10% discount!</b></p>
         </ContentContainer>
-      </Grid>
-
-      <SectionHeader h='Video Tutorials'>
-        If you like watching videos and learning something, you are in good hands with these Youtube channels.
-      </SectionHeader>
-      <Grid>
-        <YoutubeContainer title='Bitwig Official' channelId='UCkVdkd-DBrvSbpC4gefsnkw'>
-          <p>The official Bitwig Youtube channel with tutorials and trailers. If you are a Bitwig user you have to subscribe!</p>
-        </YoutubeContainer>
-        <YoutubeContainer title='Noize Busters' channelId='UCKAr00QT8YRT5G4P47H-gkg'>
-          <p>Being a successful musician, dj and producer myself, and combining these assets with my well rooted experience as Live music and Studio engineer, I have a founded knowledge for music productions as well as for all of the acoustics, hardware, and everything that revolves around it.</p>
-        </YoutubeContainer>
-        <YoutubeContainer title='Mattias Holmgren' channelId='UCPI1x2iyASeNaeRYVSGXTqA'>
-          <p>I created this channel to bring my interest in technology, music and design to a tight platform. I've been a professional artist, composer and designer for 20 years and thought I should share a few tricks and help the future generation of creative producers.</p>
-        </YoutubeContainer>
-        <YoutubeContainer title='Polarity Music' channelId='UC6fkScAhWG63SUSr3D1MI6w'>
-          <p>
-            Polarity is a musician from berlin, germany who coded this website,
-            and is busy on Youtube and Discord doing all kinds of stuff. The Videos
-            are always practial.
-          </p>
-        </YoutubeContainer>
-      </Grid>
-      <Grid>
-        <YoutubeContainer title='Baphometrix' channelId='UCuzDmHD4WeS4dwhFXPgm7GA'>
-          <p>Baphometrix makes very detailed videos on all topics concerning Bitwig. If other videos are too flat or don't give you enough information, here you can find long and detailed videos with all details.</p>
-        </YoutubeContainer>
-        <YoutubeContainer title='Land Of Bits' channelId='UCy734gZ6oxkntXZMfCcpbbQ'>
-          <p>Small music oriented tutorials. How to get things done in bitwig without loosing the focus of making music.</p>
-        </YoutubeContainer>
-        <YoutubeContainer title='Audio Digital' channelId='UCMLl5O-kS7iEMJgMrsZayMw'>
-          <p>Kevin is the man for synthesis. He knows the different synthesis
-        forms inside out and explains in his tutorials how
-        to use them in Bitwig
-          </p>
-        </YoutubeContainer>
-        <YoutubeContainer title='TraNzeM' channelId='UCsT5lJNXlbaphmYeK9J4mxw'>
-          <p>He is a russian musician but likes to build Bitwig instruments
-        which he provides as presets. Download his presets
-        from <a href='https://www.patreon.com/tranzem'>patreon</a>&nbsp;
-        or <a href='https://github.com/TraNzeM/tnm-bitwig-presets'>github</a>.
-          </p>
-        </YoutubeContainer>
       </Grid>
 
       <SectionHeader h='Gridniks'>

@@ -11,21 +11,36 @@ import Midsplit from '../components/midsplit'
 import Rules from '../components/challenge-rules'
 import firebaseTimestamp2FormattedString from '../utils/firebaseTimestamp2FormattedString'
 import ChallengeEntries from '../components/challenge-entries'
+import Youtube from '../components/youtube'
+import Link from 'gatsby-link'
+import Typography from '../components/typography'
+import ChallengeForm from '../components/challenge-form'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
 }, {
+  handleOpenChallengeForm: (store, ownProps, data) => {
+    // if the user is not logged in, open the login modal
+    if (store.get('loggedInUser')) {
+      store.set('modalChallengeForm', true)
+    } else {
+      // user is logged in, open submission form
+      store.set('modalLoginState', true)
+    }
+  }
 })
 
-export default Mapped(({ modalLoginState, pageContext }) =>
+export default Mapped(({ modalLoginState, handleOpenChallengeForm, pageContext }) =>
   <div>
     <Helmet>
       <meta charSet='utf-8' />
-      <title>Grid Challenges - create small patches everyday</title>
+      <title>{pageContext.challenge.description} - Grid Challenges</title>
+      <meta name='description' content={pageContext.challenge.description} />
+      <meta name='title' content={pageContext.challenge.description} />
       <meta name='viewport' content='width=device-width' />
       <meta property='og:url' content='https://bitwig.community' />
-      <meta property='og:title' content='Bitwig Challenges - create small patches everyday in Bitwig Studio' />
-      <meta property='og:description' content='Find an idea in our challenges list, create a patch, upload a video and get better!' />
+      <meta property='og:title' content={pageContext.challenge.description} />
+      <meta property='og:description' content={pageContext.challenge.description} />
       <meta property='og:image:width' content='1080' />
       <meta property='og:image:height' content='1080' />
       <meta property='og:type' content='website' />
@@ -34,6 +49,7 @@ export default Mapped(({ modalLoginState, pageContext }) =>
 
     <Header />
     <SignIn />
+    <ChallengeForm challenge={pageContext.challenge.id} />
 
     <SectionHeader h={pageContext.challenge.title + ' Challenge'}>
       {pageContext.challenge.description}
@@ -42,8 +58,12 @@ export default Mapped(({ modalLoginState, pageContext }) =>
     <Midsplit>
       <Grid>
         <section>
-          <ContentContainer title='Record your Patch' img='/grid-challenges.png'>
-            <h2>{pageContext.challenge.title}</h2>
+          <ContentContainer title='Record your Patch'>
+            <h2>Presentation ceremony</h2>
+            <p>At the end of each Bitwig challenge, we discuss the entries and enjoy what we have achieved. You missed the challenge? Look on the <Link to='/challenges'>overview page for the next upcoming challenge</Link>.</p>
+            {pageContext.challenge.resultYt && <Youtube link={pageContext.challenge.resultYt} />}
+            <hr />
+            <h2>Challenge Outline</h2>
             <p>{pageContext.challenge.description}</p>
             <h3>Rules</h3>
             <ul><Rules rules={pageContext.challenge.rules} /></ul>
@@ -56,10 +76,15 @@ export default Mapped(({ modalLoginState, pageContext }) =>
       </Grid>
       <Grid>
         <section>
-          <ContentContainer>
-            <h2>Entries</h2>
+          <Typography>
+            <h2>All Entries {pageContext.challenge.closed}</h2>
+            <p>Here you will find all the individual submissions of all users and, if available, even the individual presets or projects.</p>
+            {!pageContext.challenge.closed && <p>If you want to add your content, please login and use the <button onClick={handleOpenChallengeForm}>submission form!</button></p>}
+            {pageContext.challenge.closed && <p>The battle is <b>closed!</b> Take a look at the <b><Link to='/challenges'>overview page for the next upcoming challenge</Link></b></p>}
+          </Typography>
+          <Grid>
             <ChallengeEntries entries={pageContext.challenge.entries} />
-          </ContentContainer>
+          </Grid>
         </section>
       </Grid>
     </Midsplit>

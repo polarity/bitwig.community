@@ -4,6 +4,7 @@ import Typography from '../typography'
 import styles from './styles.module.css'
 import Youtube from '../youtube'
 import urlSlug from 'url-slug'
+import { Link } from 'gatsby'
 
 const Limit = (data, limit) => {
   if (limit) {
@@ -40,7 +41,11 @@ export default ({ children, limit, presets }) => {
               <p className={styles.desc}>{file.comment}</p>
               <p className={styles.desc}>{file.desc}</p>
             </div>
-            <p><span role='img' aria-label='disk symbol'>💾</span>&nbsp;<a href={file.download} title={'Download ' + file.name + ' Preset'}>Download</a> this preset</p>
+
+            <div>
+              {file.challenge && <span>This preset is <Link to={'/challenge-' + file.challenge}>part of a challenge</Link>.</span>}
+              <p><span role='img' aria-label='disk symbol'>💾</span>&nbsp;<a href={file.download} title={'Download ' + file.name + ' Preset'}>Download</a> this preset</p>
+            </div>
           </Typography>
         </article>
       )

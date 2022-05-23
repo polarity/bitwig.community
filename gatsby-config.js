@@ -53,45 +53,6 @@ module.exports = {
         url: 'https://www.youtube.com/feeds/videos.xml?playlist_id=PLyCfny1Hc_bvfJ33U-3DN4H37gw9cIYTi',
         name: 'Gridniks'
       }
-    },
-    {
-      resolve: 'gatsby-source-twitter',
-      options: {
-        credentials: {
-          consumer_key: process.env.GATSBY_TWITTER_CONSUMERKEY,
-          consumer_secret: process.env.GATSBY_TWITTER_CONSUMERSECRET,
-          bearer_token: process.env.GATSBY_TWITTER_BEARER
-        },
-        queries: {
-          bitwig: {
-            endpoint: 'search/tweets',
-            params: {
-              q: 'bitwig -filter:retweets -filter:replies',
-              result_type: 'recent'
-            },
-            fetchAllResults: true
-          }
-        }
-      }
-    },
-    {
-      resolve: 'gatsby-source-youtube-v2',
-      options: {
-        channelId: [
-          'UC6fkScAhWG63SUSr3D1MI6w',
-          'UCy734gZ6oxkntXZMfCcpbbQ',
-          'UCPI1x2iyASeNaeRYVSGXTqA',
-          'UCuzDmHD4WeS4dwhFXPgm7GA',
-          'UCkVdkd-DBrvSbpC4gefsnkw',
-          'UCMLl5O-kS7iEMJgMrsZayMw',
-          'UCsT5lJNXlbaphmYeK9J4mxw',
-          'UCn2Z_OilkVqNzkBTWOmkDMQ',
-          'UCKAr00QT8YRT5G4P47H-gkg', // Sparvnätter
-          'UCA3Fs29IqExQki0RdTTEuDg' // Empty Vessel
-        ],
-        apiKey: process.env.GATSBY_YOUTUBE_API_KEY,
-        maxVideos: 10 // Defaults to 50
-      }
     }
   ]
 }

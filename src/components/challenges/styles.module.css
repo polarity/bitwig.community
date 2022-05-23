@@ -1,33 +1,14 @@
-.subheader {
-  margin-bottom: 10px !important;
-  margin-top: -10px !important;
+.entry {
+
 }
-.cover {
-  margin-bottom: 20px;
-  max-width: 100%;
+.entryClosed {
+  opacity: 0.6;
 }
-.cover img {
-  max-width: 100%;
+.closedTag {
+  color:red;
+  font-weight: bold;
 }
-.header {
-  display: flex;
-  margin-bottom: 10px;
-}
-.headerText {
-  flex-basis: 100%;
-}
-.avatar {
-  border-radius: 20px;
-  width: 40px;
-  height: 40px;
-}
-.info {
-  height: 120px;
-  max-height: 120px;
-  margin-bottom: 20px;
-  overflow-y: auto;
-}
-.desc {
-  padding-right: 10px !important;
-  margin: 0px !important;
+.openTag {
+  color:green;
+  font-weight: bold;
 }

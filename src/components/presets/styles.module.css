@@ -20,6 +20,7 @@
   border-radius: 20px;
   width: 40px;
   height: 40px;
+  overflow: hidden;
 }
 .info {
   height: 120px;

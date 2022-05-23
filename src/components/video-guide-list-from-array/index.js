@@ -8,6 +8,6 @@ import urlSlug from 'url-slug'
  */
 export default ({ children, limit, array }) => {
   return map(array, (item, i) => {
-    return <li><Link to={'/video-creator-' + urlSlug(item.channel)}>{item.channel}</Link></li>
+    return <li key={'creator-' + i}><Link to={'/video-creator-' + urlSlug(item.channel)}>{item.channel}</Link></li>
   })
 }
