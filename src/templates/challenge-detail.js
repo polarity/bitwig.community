@@ -15,6 +15,7 @@ import Youtube from '../components/youtube'
 import Link from 'gatsby-link'
 import Typography from '../components/typography'
 import ChallengeForm from '../components/challenge-form'
+import styles from './styles.module.css'
 
 const Mapped = mapper({
   modalLoginState: store => store.get('modalLoginState')
@@ -79,7 +80,7 @@ export default Mapped(({ modalLoginState, handleOpenChallengeForm, pageContext }
           <Typography>
             <h2>All Entries {pageContext.challenge.closed}</h2>
             <p>Here you will find all the individual submissions of all users and, if available, even the individual presets or projects.</p>
-            {!pageContext.challenge.closed && <p>If you want to add your content, please login and use the <button onClick={handleOpenChallengeForm}>submission form!</button></p>}
+            {!pageContext.challenge.closed && <p>If you want to add your content, please login and use the <br /><br /><button className={styles.downloadButton} onClick={handleOpenChallengeForm}>submission form!</button></p>}
             {pageContext.challenge.closed && <p>The battle is <b>closed!</b> Take a look at the <b><Link to='/challenges'>overview page for the next upcoming challenge</Link></b></p>}
           </Typography>
           <Grid>
