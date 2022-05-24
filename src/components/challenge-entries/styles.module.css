@@ -1,33 +1,3 @@
-.subheader {
-  margin-bottom: 10px !important;
-  margin-top: -10px !important;
-}
-.cover {
-  margin-bottom: 20px;
-  max-width: 100%;
-}
-.cover img {
-  max-width: 100%;
-}
-.header {
-  display: flex;
-  margin-bottom: 10px;
-}
-.headerText {
-  flex-basis: 100%;
-}
-.avatar {
-  border-radius: 20px;
-  width: 40px;
-  height: 40px;
-}
-.info {
-  height: 120px;
-  max-height: 120px;
-  margin-bottom: 20px;
-  overflow-y: auto;
-}
-.desc {
-  padding-right: 10px !important;
-  margin: 0px !important;
+.main {
+  max-width: 600px;
 }
