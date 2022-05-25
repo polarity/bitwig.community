@@ -17,12 +17,12 @@ export default Mapped(({ modalLoginState, pageContext }) =>
   <div>
     <Helmet>
       <meta charSet='utf-8' />
-      <title>Grid Challenges - create small patches everyday</title>
+      <title>Bitwig Challenges - create small patches everyday</title>
       <meta name='viewport' content='width=device-width' />
-      <meta name='description' content='Find an idea in our challenges list, create a patch, upload a video and get better!' />
+      <meta name='description' content='Find an idea in our challenges list, create a patch or project, upload a video and get better!' />
       <meta name='title' content='Bitwig Challenges - create small patches everyday in Bitwig Studio' />
       <meta property='og:url' content='https://bitwig.community' />
-      <meta property='og:title' content='Bitwig Challenges - create small patches everyday in Bitwig Studio' />
+      <meta property='og:title' content='Bitwig Challenges - create small patches and projects everyday in Bitwig Studio' />
       <meta property='og:description' content='Find an idea in our challenges list, create a patch, upload a video and get better!' />
       <meta property='og:image:width' content='1080' />
       <meta property='og:image:height' content='1080' />
@@ -33,9 +33,9 @@ export default Mapped(({ modalLoginState, pageContext }) =>
     <Header />
     <SignIn />
 
-    <SectionHeader h='Grid Challenges'>
-      How do you get better at patch building? You build a small <b>patch every day</b>.
-      And over time you memorise different combinations that sound good. The more often you do this, the better and faster you become. This challenge page should help to give you ideas every day. Try to solve the challenges in the grid and record your finished patches as youtube videos. Step by step to a better modular nerd.
+    <SectionHeader h='Bitwig Challenges'>
+      How do you get better at using Bitwig? You build a small <b>project every day</b>.
+      And over time you memorise different combinations that sound good. The more often you do this, the better and faster you become. This challenge page should help to give you ideas every day. Try to solve the challenges in Bitwig and record your finished patches or projects as youtube videos.
     </SectionHeader>
     <ContentContainer>
       <h2>Challenges</h2>
