@@ -16,6 +16,16 @@ const Mapped = mapper({
   handleModalState: store => store.set('modalChallengeForm', false)
 })
 
+const isYoutubeUrl = (url) => {
+  // check if the youtube link is valid
+  const ytRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?/
+  if (!ytRegex.test(url)) {
+    return false
+  } else {
+    return true
+  }
+}
+
 class ChallengeForm extends Component {
   constructor ({ challenge }) {
     super()
@@ -65,37 +75,45 @@ class ChallengeForm extends Component {
     this.setState({
       inProcess: true
     })
+
     if (this.state.homebase && this.state.preset && this.state.yt && this.state.artist && this.state.email) {
-      const formData = new window.FormData()
-      formData.append('Homebase', this.state.homebase)
-      formData.append('preset', this.state.preset)
-      formData.append('Youtube', this.state.yt)
-      formData.append('Artist', this.state.artist)
-      formData.append('Email', this.state.email)
-      formData.append('challenge', this.state.challenge)
-
-      formData.append('userUid', this.props.loggedInUser.uid)
-      formData.append('photoURL', this.props.loggedInUser.photoURL)
-      formData.append('displayName', this.props.loggedInUser.displayName)
-
-      window.fetch('https://presetupload.herokuapp.com/challenge', { // http://localhost:5000/challenge
-        method: 'POST',
-        body: formData
-      })
-        .then(res => res.text())
-        .then((response) => {
-          this.setState({
-            inProcess: false,
-            info: response
-          })
+      if (!isYoutubeUrl(this.state.yt)) {
+        this.setState({
+          inProcess: false,
+          info: 'This doesnt look like a youtube video url'
         })
-        .catch((error) => {
+      } else {
+        const formData = new window.FormData()
+        formData.append('Homebase', this.state.homebase)
+        formData.append('preset', this.state.preset)
+        formData.append('Youtube', this.state.yt)
+        formData.append('Artist', this.state.artist)
+        formData.append('Email', this.state.email)
+        formData.append('challenge', this.state.challenge)
+
+        formData.append('userUid', this.props.loggedInUser.uid)
+        formData.append('photoURL', this.props.loggedInUser.photoURL)
+        formData.append('displayName', this.props.loggedInUser.displayName)
+
+        window.fetch('https://presetupload.herokuapp.com/challenge', { // http://localhost:5000/challenge
+          method: 'POST',
+          body: formData
+        })
+          .then(res => res.text())
+          .then((response) => {
+            this.setState({
+              inProcess: true,
+              info: response
+            })
+          })
+          .catch((error) => {
           // log server response
-          this.setState({
-            inProcess: false,
-            info: 'error: ' + error
+            this.setState({
+              inProcess: false,
+              info: 'error: ' + error
+            })
           })
-        })
+      }
     } else {
       this.setState({
         inProcess: false,
@@ -142,11 +160,11 @@ class ChallengeForm extends Component {
                   <InputFile style={{ width: '70%' }} name='bwpreset' placeholder='your preset file' onChange={this.handlePresetChange.bind(this)} />
                 </FormRow>
                 <FormRow>
-                  <Label style={{ width: '30%' }} className={styles.label}>Youtube:</Label>
+                  <Label style={{ width: '30%' }} className={styles.label}><abbr title='Showoff your patch / project with a nice video. People will love it!'>Youtube Video</abbr>:</Label>
                   <InputText style={{ width: '70%' }} name='youtube' placeholder='https://www.youtube.com/watch?v=_pUL7u-mYqA' onChange={this.handleVideoChange.bind(this)} />
                 </FormRow>
                 <FormRow>
-                  <Label style={{ width: '30%' }} className={styles.label}>Homebase URL:</Label>
+                  <Label style={{ width: '30%' }} className={styles.label}><abbr title='Your homepage, twitter url, facebook pages. whatever you prefer!'>Homebase URL</abbr>:</Label>
                   <InputText style={{ width: '70%' }} name='homebase' placeholder='https://my-homepage.com/' onChange={this.handleHomebaseChange.bind(this)} />
                 </FormRow>
                 <hr />
