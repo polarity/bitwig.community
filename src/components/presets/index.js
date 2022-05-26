@@ -12,6 +12,13 @@ const Limit = (data, limit) => {
   }
   return data
 }
+const youtube = (file) => {
+  if (file.yt && file.yt.length > 0) {
+    return <Youtube key={file.id} title={file.name.split('.')[0]} link={file.videoYoutube} />
+  } else {
+    return <img src='/dummy-patch.jpg' alt='Sorry, no video or image available1' />
+  }
+}
 
 /**
  * query all rss feeds, and render the individual posts
@@ -34,8 +41,7 @@ export default ({ children, limit, presets }) => {
               {file.user.firebaseUrl && <img width='40' height='40' className={styles.avatar} src={file.user.firebaseUrl} alt={'Discord Avatar of ' + file.user.username} />}
             </div>
             <div className={styles.cover}>
-              {!file.videoYoutube && <img src='/made-with-bitwig.png' alt='Made with Bitwig Logo' />}
-              {file.videoYoutube && <Youtube key={file.id} title={file.name.split('.')[0]} link={file.videoYoutube} />}
+              {youtube(file)}
             </div>
             <div className={styles.info}>
               <p className={styles.desc}>{file.comment}</p>
