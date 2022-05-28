@@ -81,7 +81,7 @@ export default Mapped(({ modalLoginState, handleOpenChallengeForm, pageContext }
             <h2>All Entries {pageContext.challenge.closed}</h2>
             <p>Here you will find all the individual submissions of all users and, if available, even the individual presets or projects.</p>
             {!pageContext.challenge.closed && <p>If you want to add your content, please login and use the <br /><br /><button className={styles.downloadButton} onClick={handleOpenChallengeForm}>submission form!</button></p>}
-            {pageContext.challenge.closed && <p>The battle is <b>closed!</b> Take a look at the <b><Link to='/challenges'>overview page for the next upcoming challenge</Link></b></p>}
+            {pageContext.challenge.closed && <p>The battle is <b>closed!</b> Take a look at the <b><Link to='/challenges'>overview page for the next upcoming challenge</Link></b><br /><br />but you can still add your content to the page <button className={styles.downloadButton} onClick={handleOpenChallengeForm}>submission form!</button></p>}
           </Typography>
           <Grid>
             <ChallengeEntries entries={pageContext.challenge.entries} />
