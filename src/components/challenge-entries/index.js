@@ -22,7 +22,7 @@ export default ({ children, limit, entries }) => {
           {youtube(item)}
         </div>
         <Typography>
-          <p><span role='img' aria-label='disk symbol'>💾</span>&nbsp;<a href={item.preset}>Download</a></p>
+          <p><span role='img' aria-label='disk symbol'>💾</span>&nbsp;<a href={item.preset}>Download</a> - by {item.artist}</p>
         </Typography>
       </div>
     )
