@@ -124,7 +124,6 @@ export default Mapped(({ modalLoginState }) => {
             <li><a href='https://www.bitwig.com/en/download.html'>Demo / Trial</a> - Try it for yourself (Linux/Mac/Win)</li>
             <li><a href='mailto:contact@bitwig.com'>Support Mail</a> - Found a Bug?</li>
           </ul>
-          <p>use the voucher code <b>"POLARITY"</b> for a <b>10% discount!</b></p>
         </ContentContainer>
       </Grid>
 
