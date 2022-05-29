@@ -56,6 +56,11 @@ export default Mapped(({ modalLoginState, pageContext }) =>
           <Grid>
             <VideoGuide videos={pageContext.videos} limit='250' />
           </Grid>
+          <div>
+            <Typography>
+              <Link to={'/video-guides' + pageContext.nextPage}>Next Page ({pageContext.numVideoPages})</Link>
+          </Typography>
+          </div>
         </div>
       </Leftsplit>
     </section>

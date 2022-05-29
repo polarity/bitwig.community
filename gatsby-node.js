@@ -66,6 +66,7 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
    * video topics
    */
   const Videos = []
+
   snapshotVideos.forEach(doc => {
     const data = doc.data()
     Videos.push(data)
@@ -73,13 +74,22 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
   const VideoCreators = uniqBy(Videos, (e) => {
     return e.channel
   })
-  actions.createPage({
-    path: '/video-guides',
-    component: path.resolve('src/templates/video-guides.js'),
-    context: {
-      videos: Videos,
-      creators: VideoCreators
-    }
+  const videosPerPage = 150
+  const countVideos = Videos.length
+  const numVideoPages = Math.ceil(countVideos / videosPerPage)
+  Array.from({ length: numVideoPages }).forEach((_, i) => {
+    actions.createPage({
+      path: i === 0 ? '/video-guides' : `/video-guides-${i + 1}`,
+      component: path.resolve('src/templates/video-guides.js'),
+      context: {
+        limit: videosPerPage,
+        nextPage: ((i + 2) > numVideoPages) ? '' : '-' + (i + 2),
+        numVideoPages,
+        currentPage: i + 1,
+        videos: Videos.slice((i * videosPerPage), ((i * videosPerPage) + videosPerPage)),
+        creators: VideoCreators
+      }
+    })
   })
 
   // pages for each video guide creator
