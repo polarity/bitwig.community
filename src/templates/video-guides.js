@@ -59,7 +59,7 @@ export default Mapped(({ modalLoginState, pageContext }) =>
           <div>
             <Typography>
               <Link to={'/video-guides' + pageContext.nextPage}>Next Page ({pageContext.numVideoPages})</Link>
-          </Typography>
+            </Typography>
           </div>
         </div>
       </Leftsplit>

@@ -74,7 +74,7 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
   const VideoCreators = uniqBy(Videos, (e) => {
     return e.channel
   })
-  const videosPerPage = 150
+  const videosPerPage = 100
   const countVideos = Videos.length
   const numVideoPages = Math.ceil(countVideos / videosPerPage)
   Array.from({ length: numVideoPages }).forEach((_, i) => {
