@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styles from './styles.module.css'
 import getYoutubeImage from '../../utils/getYoutubeImage'
 import getYoutubeSlug from '../../utils/getYoutubeSlug'
-import Typography from '../typography'
+import Typo from '../typo'
 
 /**
  * query all rss feeds, and render the individual posts
@@ -34,15 +34,15 @@ export default ({ link, title, quality }) => {
           title={title}
           className={styles.iframe}
           src={'https://www.youtube.com/embed/' + getYoutubeSlug(link) + '?autoplay=1&controls=1'}
-          frameborder='0'
+          frameBorder='0'
           allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
           allowfullscreen='allowfullscreen'
         />}
       {!player &&
         <div className={styles.videoMetaData}>
-          <Typography>
+          <Typo>
             <h3>{title}</h3>
-          </Typography>
+          </Typo>
         </div>}
     </div>)
 }

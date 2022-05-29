@@ -8,6 +8,7 @@ import { mapper } from '@reduxless/react'
 import Footer from '../components/footer'
 import Leftsplit from '../components/leftsplit'
 import VideoGuide from '../components/video-guide-list'
+import Typo from '../components/typo'
 import Typography from '../components/typography'
 import ListFromArray from '../components/video-guide-list-from-array'
 import { Link } from 'gatsby'
@@ -57,9 +58,9 @@ export default Mapped(({ modalLoginState, pageContext }) =>
             <VideoGuide videos={pageContext.videos} limit='250' />
           </Grid>
           <div>
-            <Typography>
+            <Typo>
               <Link to={'/video-guides' + pageContext.nextPage}>Next Page ({pageContext.numVideoPages})</Link>
-            </Typography>
+            </Typo>
           </div>
         </div>
       </Leftsplit>
