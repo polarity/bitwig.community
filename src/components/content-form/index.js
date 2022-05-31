@@ -80,7 +80,7 @@ class Form extends Component {
         formData.append('photoURL', this.props.loggedInUser.photoURL)
         formData.append('displayName', this.props.loggedInUser.displayName)
 
-        window.fetch(' http://localhost:5000/upload', { // https://presetupload.herokuapp.com/upload
+        window.fetch('https://presetupload.herokuapp.com/upload', { // http://localhost:5000/upload
           method: 'POST',
           body: formData
         })
