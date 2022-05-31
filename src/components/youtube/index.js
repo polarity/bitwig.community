@@ -36,7 +36,7 @@ export default ({ link, title, quality }) => {
           src={'https://www.youtube.com/embed/' + getYoutubeSlug(link) + '?autoplay=1&controls=1'}
           frameBorder='0'
           allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-          allowfullscreen='allowfullscreen'
+          allowFullScreen='allowfullscreen'
         />}
       {!player &&
         <div className={styles.videoMetaData}>

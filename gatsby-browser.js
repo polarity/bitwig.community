@@ -18,6 +18,7 @@ import 'firebase/analytics'
  */
 const store = createStore({
   initialState: {
+    modalPresetForm: false,
     modalChallengeForm: false,
     modalLoginState: false,
     loggedInUser: false

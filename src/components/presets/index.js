@@ -17,7 +17,7 @@ const youtube = (file) => {
   if (file.videoYoutube && file.videoYoutube.length > 0) {
     return <Youtube key={file.id} title={file.name.split('.')[0]} link={file.videoYoutube} />
   } else {
-    return <img src='/dummy-patch.jpg' alt='Sorry, no video or image available1' />
+    return <img src='/dummy-patch.jpg' alt='dummy patch' />
   }
 }
 

@@ -8,7 +8,7 @@ const youtube = (item) => {
   if (item.yt && item.yt.length > 0) {
     return <Youtube title={'Submission from ' + item.artist} link={item.yt} />
   } else {
-    return <img src='/dummy-patch.jpg' alt='Sorry, no video or image available1' />
+    return <img src='/dummy-patch.jpg' alt='dummy patch' />
   }
 }
 /**
