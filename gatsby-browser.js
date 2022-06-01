@@ -48,14 +48,36 @@ firebase.analytics().logEvent('app started')
 window.firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in.
-    store.set('loggedInUser', {
-      uid: user.uid || false,
-      displayName: user.displayName || (user.email).split('@')[0],
-      email: user.email || '',
-      photoURL: user.photoURL || ''
+    // get profile data with user.uid and set the localStorage
+    const db = firebase.firestore()
+    db.collection('profile').doc(user.uid).get().then((doc) => {
+      if (doc.exists) {
+        // we have a profile in the db,
+        // fill local storage with the data
+        const userData = doc.data()
+        store.set('loggedInUser', {
+          uid: user.uid || false,
+          displayName: userData.username,
+          email: user.email || '',
+          photoURL: userData.imageProfile || ''
+        })
+      } else {
+        // doc.data() will be undefined in this case
+        // no profile, try to create some rudementary
+        // data from the email
+        console.log('No such profile document!')
+        store.set('loggedInUser', {
+          uid: user.uid || false,
+          displayName: user.displayName || (user.email).split('@')[0],
+          email: user.email || '',
+          photoURL: user.photoURL || ''
+        })
+      }
+    }).catch((error) => {
+      console.log('Error getting profile document:', error)
     })
   } else {
-  // User is signed out.
+    // User is signed out
     console.log('Logged out')
     store.set('loggedInUser', false)
   }
