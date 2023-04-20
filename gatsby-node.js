@@ -3,6 +3,8 @@ const uniqBy = require('lodash').uniqBy
 const firebase = require('firebase-admin')
 const path = require('path')
 const urlSlug = require('url-slug')
+// import fs
+const fs = require('fs')
 
 const firebaseConfig = {
   credential: firebase.credential.cert({
@@ -166,6 +168,16 @@ exports.createPages = async ({ page, graphql, actions, reporter }) => {
     context: {
       presets: Presets
     }
+  })
+
+  // create a json file with all presets
+  // for the search
+  const json = JSON.stringify(Presets)
+  fs.writeFile('public/presets.json', json, 'utf8', function (err) {
+    if (err) {
+      return console.log(err)
+    }
+    console.log('The file was saved!')
   })
 
   // create preset overview page
