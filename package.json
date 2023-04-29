@@ -27,7 +27,7 @@
     "firebase": "^7.0.0",
     "firebase-admin": "^8.12.1",
     "fs": "0.0.1-security",
-    "gatsby": "^2.13.9",
+    "gatsby": "^5.5.0",
     "gatsby-plugin-create-client-paths": "^2.10.0",
     "gatsby-plugin-mdx": "*",
     "gatsby-plugin-react-helmet": "^3.1.2",
